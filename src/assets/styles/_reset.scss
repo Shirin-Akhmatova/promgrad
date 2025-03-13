@@ -1,0 +1,74 @@
+/**
+ * Reset & Normalize Styles
+ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li,
+blockquote,
+pre,
+figure,
+hr,
+fieldset,
+legend,
+button,
+input,
+textarea {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+//
+article,
+aside,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section {
+  display: block;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Базовые стили для текста */
+body {
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.5;
+  color: #333;
+  background-color: #fff;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  outline: none;
+}
