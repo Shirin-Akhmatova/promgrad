@@ -6,6 +6,8 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  outline: none;
+  box-shadow: none;
 }
 
 html,
@@ -52,10 +54,6 @@ ol {
   list-style: none;
 }
 
-a {
-  text-decoration: none;
-}
-
 table {
   border-collapse: collapse;
   border-spacing: 0;
@@ -70,9 +68,31 @@ body {
 }
 
 input,
+a,
 button,
 textarea,
 select {
-  font: inherit;
   outline: none;
+  text-decoration: none;
+  background: none;
+  border: none;
+}
+
+a:focus,
+button:focus,
+textarea:focus,
+select:focus,
+input:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+a:active,
+button:active,
+textarea:active,
+select:active,
+input:active {
+  outline: none;
+  // background: transparent;
+  box-shadow: none;
 }
