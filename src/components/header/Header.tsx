@@ -23,37 +23,45 @@ const Header = () => {
 
         <nav className={`${styles.nav} ${isMenuOpen ? styles.open : ""}`}>
           <ul>
-            <li className={styles.ulist}>
-              <a href="#about">Главная</a>
-              <img
-                src="/src/assets/icons/Vector.svg"
-                alt="About Icon"
-                className={styles.icon}
-              />
+            <li>
+              <a href="#about" className={styles.ulist}>
+                <span>Главная</span>
+                <img
+                  src="/src/assets/icons/Vector.svg"
+                  alt="About Icon"
+                  className={styles.icon}
+                />
+              </a>
             </li>
-            <li className={styles.ulist}>
-              <a href="#services">О нас</a>
-              <img
-                src="/src/assets/icons/Vector.svg"
-                alt="About Icon"
-                className={styles.icon}
-              />
+            <li>
+              <a href="#about" className={styles.ulist}>
+                <span>О нас</span>
+                <img
+                  src="/src/assets/icons/Vector.svg"
+                  alt="About Icon"
+                  className={styles.icon}
+                />
+              </a>
             </li>
-            <li className={styles.ulist}>
-              <a href="#portfolio">Наши работы</a>
-              <img
-                src="/src/assets/icons/Vector.svg"
-                alt="About Icon"
-                className={styles.icon}
-              />
+            <li>
+              <a href="#about" className={styles.ulist}>
+                <span>Наши работы</span>
+                <img
+                  src="/src/assets/icons/Vector.svg"
+                  alt="About Icon"
+                  className={styles.icon}
+                />
+              </a>
             </li>
-            <li className={styles.ulist}>
-              <a href="#contact">Контакты</a>
-              <img
-                src="/src/assets/icons/Vector.svg"
-                alt="About Icon"
-                className={styles.icon}
-              />
+            <li>
+              <a href="#about" className={styles.ulist}>
+                <span>Контакты</span>
+                <img
+                  src="/src/assets/icons/Vector.svg"
+                  alt="About Icon"
+                  className={styles.icon}
+                />
+              </a>
             </li>
           </ul>
         </nav>
