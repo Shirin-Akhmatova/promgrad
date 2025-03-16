@@ -23,12 +23,30 @@ const MainSlider = () => {
         <button>Наши работы</button>
       </div>
 
+      <button className={styles.customPrev}>
+        <img
+          src="/src/assets/icons/Arrow_left.svg"
+          alt="About Icon"
+          className={styles.icon}
+        />
+      </button>
+      <button className={styles.customNext}>
+        <img
+          src="/src/assets/icons/Arrow_right.svg"
+          alt="About Icon"
+          className={styles.icon}
+        />
+      </button>
+
       <Swiper
         // install Swiper modules
         modules={[Navigation, Pagination, Scrollbar, A11y]}
         spaceBetween={0}
         slidesPerView={1}
-        navigation
+        navigation={{
+          nextEl: `.${styles.customNext}`, // Используйте классы из styles
+          prevEl: `.${styles.customPrev}`, // Используйте классы из styles
+        }}
         pagination={{ clickable: true }}
         scrollbar={{ draggable: true }}
         onSwiper={(swiper) => console.log(swiper)}
