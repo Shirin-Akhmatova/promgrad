@@ -23,8 +23,6 @@
 .textBlock {
   position: absolute;
   width: 630px;
-  max-width: 1440px;
-  // margin: auto;
   margin-left: 50px;
   color: white;
   text-align: start;
@@ -132,6 +130,7 @@
 .sliderWrapper {
   position: relative;
   width: 100%;
+  max-width: 1440px;
   margin: 0 auto;
   height: 100vh;
   display: flex;
@@ -164,4 +163,22 @@
       display: none;
     }
   }
+}
+
+//! reactSwiper
+.sliderContainer {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.reactSwiper {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
 }
