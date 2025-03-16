@@ -29,6 +29,10 @@
     ul {
       display: flex;
       gap: 39px;
+
+      .navSite {
+        display: none;
+      }
     }
 
     a {
@@ -55,6 +59,7 @@
   .burger {
     display: none;
     z-index: 1001;
+    color: white;
   }
 
   .language {
@@ -63,6 +68,8 @@
 
   // media 768px
   @media (max-width: 768px) {
+    padding-top: 24px;
+
     .container {
       padding: 0 20px;
     }
@@ -85,10 +92,19 @@
       ul {
         display: flex;
         flex-direction: column;
-        gap: 20px;
+        gap: 40px;
         list-style-type: disc;
         // list-style-position: inside;
         color: white;
+
+        .navSite {
+          display: block;
+          font-family: Montserrat;
+          font-size: 20px;
+          font-weight: 700;
+          line-height: 24px;
+          margin-left: -16px;
+        }
       }
 
       a {

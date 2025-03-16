@@ -23,6 +23,7 @@ const Header = () => {
 
         <nav className={`${styles.nav} ${isMenuOpen ? styles.open : ""}`}>
           <ul>
+            <span className={styles.navSite}>Навигация по сайту</span>
             <li>
               <a href="#about" className={styles.ulist}>
                 <span>Главная</span>

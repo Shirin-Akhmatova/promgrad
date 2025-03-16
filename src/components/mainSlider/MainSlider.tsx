@@ -1,6 +1,12 @@
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
+import {
+  Navigation,
+  Pagination,
+  Scrollbar,
+  A11y,
+  Autoplay,
+} from "swiper/modules";
 import img1 from "../../assets/images/mainSlider.jpg";
 import img2 from "../../assets/images/mainSlider2.jpg";
 import styles from "./MainSlider.module.scss";
@@ -40,17 +46,22 @@ const MainSlider = () => {
 
       <Swiper
         // install Swiper modules
-        modules={[Navigation, Pagination, Scrollbar, A11y]}
+        modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
         spaceBetween={0}
         slidesPerView={1}
         navigation={{
-          nextEl: `.${styles.customNext}`, // Используйте классы из styles
-          prevEl: `.${styles.customPrev}`, // Используйте классы из styles
+          nextEl: `.${styles.customNext}`,
+          prevEl: `.${styles.customPrev}`,
         }}
         pagination={{ clickable: true }}
         scrollbar={{ draggable: true }}
-        onSwiper={(swiper) => console.log(swiper)}
-        onSlideChange={() => console.log("slide change")}
+        autoplay={{
+          delay: 5000,
+          disableOnInteraction: false,
+        }}
+        speed={800}
+        // onSwiper={(swiper) => console.log(swiper)}
+        // onSlideChange={() => console.log("slide change")}
       >
         <SwiperSlide>
           <div className={styles.slide}>

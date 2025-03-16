@@ -24,7 +24,7 @@
   position: absolute;
   width: 630px;
   max-width: 1440px;
-  margin: auto;
+  // margin: auto;
   margin-left: 50px;
   color: white;
   text-align: start;
@@ -77,11 +77,13 @@
   }
 
   @media (max-width: 768px) {
+    padding: 0px 10px 0px 10px;
     width: 328px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin-left: 0px;
 
     h1 {
       font-size: 24px;
@@ -117,6 +119,14 @@
       line-height: 120%;
     }
   }
+
+  @media (max-width: 350px) {
+    width: 280px;
+
+    h2 {
+      width: 280px;
+    }
+  }
 }
 
 .sliderWrapper {
@@ -133,17 +143,18 @@
     position: absolute;
     z-index: 2;
     cursor: pointer;
+    bottom: 32px;
+    right: 50px;
   }
 
   .customPrev {
-    bottom: 20px; /* Располагаем на 20px выше от нижней грани */
-    right: 80px; /* Сдвигаем на 80px влево от правой грани */
+    right: 110px;
   }
 
   .customNext {
-    bottom: 20px; /* Располагаем на 20px выше от нижней грани */
-    right: 20px; /* Сдвигаем на 20px от правой грани */
+    right: 50px;
   }
+
   //! media 768px
   @media (max-width: 768px) {
     justify-content: center;
