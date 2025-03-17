@@ -8,21 +8,13 @@ import downIcon from "../../assets/icons/downIcon.svg";
 const CustomZoomControls = () => {
   const map = useMap();
 
-  const scrollUp = () => {
-    map.panBy([0, -100]);
-  };
-
-  const scrollDown = () => {
-    map.panBy([0, 100]);
-  };
-
   return (
     <div className={styles.custom_zoom_controls}>
-      <button onClick={scrollUp} className={styles.scroll_button}>
-        <img src={downIcon} />
-      </button>
-      <button onClick={scrollDown} className={styles.scroll_button}>
+      <a href="#top" className={styles.scroll_button}>
         <img src={upIcon} />
+      </a>
+      <button onClick={() => {}} className={styles.scroll_button}>
+        <img src={downIcon} />
       </button>
 
       <button onClick={() => map.zoomIn()} className={styles.zoom_button}>

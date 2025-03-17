@@ -33,12 +33,12 @@
   z-index: 999;
   margin-bottom: 20px;
   display: none;
+  text-align: center;
 }
 
 @media (max-width: 768px) {
   .custom_zoom_controls {
     right: 16px;
-    top: 50%;
   }
   .scroll_button {
     display: block;

@@ -10,17 +10,23 @@
 }
 
 .navbar__menu {
-  cursor: pointer;
   display: flex;
   gap: 30px;
   font-size: 16px;
   font-weight: 600;
 }
 
+.navbar__menu li {
+  cursor: pointer;
+}
+
 .navbar__icons {
   display: flex;
   align-items: center;
   gap: 16px;
+}
+
+.navbar__icons img {
   cursor: pointer;
 }
 
@@ -31,6 +37,7 @@
   color: black;
   padding: 10px 15px;
   border-radius: 12px;
+  cursor: pointer;
 }
 
 @media (max-width: 768px) {
