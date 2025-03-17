@@ -49,13 +49,13 @@
   .navbar__menu {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    justify-items: start;
-    align-items: center;
-    text-align: center;
+    gap: 20px 20px;
+    justify-content: center;
+    text-align: start;
     font-size: 14px;
   }
   .navbar__menu li {
+    white-space: nowrap;
     padding: 0 40px;
   }
   .navbar__icons {
