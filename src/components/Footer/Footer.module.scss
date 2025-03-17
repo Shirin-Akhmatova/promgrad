@@ -20,7 +20,7 @@
 .navbar__icons {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 16px;
   cursor: pointer;
 }
 
@@ -31,4 +31,27 @@
   color: black;
   padding: 10px 15px;
   border-radius: 12px;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    height: 228px;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .navbar__menu {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    justify-items: start;
+    align-items: center;
+    text-align: center;
+    font-size: 14px;
+  }
+  .navbar__menu li {
+    padding: 0 40px;
+  }
+  .navbar__icons {
+    gap: 23px;
+  }
 }

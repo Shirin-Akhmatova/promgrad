@@ -10,7 +10,7 @@ const Map = () => {
       <MapContainer
         center={[42.8746, 74.625]}
         zoom={14}
-        style={{ height: "550px", width: "100%" }}
+        style={{ height: "100%", width: "100%" }}
         zoomControl={false}
       >
         <TileLayer url="https://tile2.maps.2gis.com/tiles?x={x}&y={y}&z={z}" />

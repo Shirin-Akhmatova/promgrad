@@ -11,3 +11,16 @@
 :global(.leaflet-control-zoom) {
   display: none;
 }
+
+@media (max-width: 768px) {
+  .map_container {
+    height: 708px;
+    margin-block: 0;
+    border-radius: 0;
+  }
+
+  .leaflet-control-zoom {
+    transform: scale(0.8);
+    margin-top: -10px;
+  }
+}

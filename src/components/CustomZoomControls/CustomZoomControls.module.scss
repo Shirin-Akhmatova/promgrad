@@ -5,7 +5,6 @@
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
-  gap: 10px;
   z-index: 1000;
 }
 
@@ -17,8 +16,31 @@
   height: 44px;
   font-size: 30px;
   font-weight: bold;
-  color: #003366;
   cursor: pointer;
-  border: none;
   z-index: 999;
+  margin-bottom: 20px;
+}
+
+.scroll_button {
+  background: #04132a;
+  border: none;
+  border-radius: 12px;
+  width: 44px;
+  height: 44px;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 999;
+  margin-bottom: 20px;
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .custom_zoom_controls {
+    right: 16px;
+    top: 50%;
+  }
+  .scroll_button {
+    display: block;
+  }
 }
