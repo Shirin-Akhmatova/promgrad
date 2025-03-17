@@ -1,3 +1,4 @@
+import Card from "./card/Card";
 import styles from "./OurWork.module.scss";
 
 const OurWork = () => {
@@ -8,7 +9,7 @@ const OurWork = () => {
       type: "Бизнес-центр",
       address: "г. Москва, ул. Ленина, д. 1",
       date: "2023-06-15",
-      image: "/src/assets/images/project1.jpg",
+      image: "/src/assets/images/card1.jpg",
     },
     {
       id: 2,
@@ -69,7 +70,11 @@ const OurWork = () => {
         </div>
 
         {/* cards */}
-        <div className=""></div>
+        <div className={styles.cards}>
+          {data.map((project) => (
+            <Card key={project.id} {...project} />
+          ))}
+        </div>
       </div>
     </div>
   );
