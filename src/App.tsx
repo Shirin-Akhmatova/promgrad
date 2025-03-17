@@ -1,5 +1,11 @@
+import OurWork from "./components/ourWork/OurWork";
+
 const App = () => {
-  return <div>App</div>;
+  return (
+    <div>
+      <OurWork />
+    </div>
+  );
 };
 
 export default App;
