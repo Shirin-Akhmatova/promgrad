@@ -1,0 +1,24 @@
+.custom_zoom_controls {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 1000;
+}
+
+.zoom_button {
+  background: #f3f8ff;
+  border: none;
+  border-radius: 12px;
+  width: 44px;
+  height: 44px;
+  font-size: 30px;
+  font-weight: bold;
+  color: #003366;
+  cursor: pointer;
+  border: none;
+  z-index: 999;
+}

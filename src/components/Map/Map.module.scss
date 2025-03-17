@@ -1,0 +1,13 @@
+.map_container {
+  max-width: 1410px;
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  height: 550px;
+  border-radius: 20px;
+  margin-block: 50px;
+}
+
+:global(.leaflet-control-zoom) {
+  display: none;
+}
