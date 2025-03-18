@@ -2,6 +2,7 @@
   max-width: 1440px;
   height: 100%;
   margin: 0 auto;
+  padding: 0px 16px 0px 16px;
 }
 
 .ourWork {
@@ -80,6 +81,54 @@
 
       span {
         color: white;
+      }
+    }
+  }
+}
+
+// ! adaptive
+@media (max-width: 840px) {
+  .workButtons {
+    .workButton {
+      padding: 14px 10px 14px 8px;
+
+      &:first-child {
+        padding: 14px 40px;
+      }
+
+      span {
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 130%;
+        text-align: center;
+        transition: color 0.5s ease;
+      }
+    }
+  }
+}
+@media (max-width: 735px) {
+  .workButtons {
+    // gap: 15px;
+    // justify-content: start;
+    // align-items: center;
+    flex-direction: column;
+
+    .workButton {
+      justify-content: start;
+      align-items: center;
+      padding: 14px 0px 14px 15px;
+      width: 328px;
+
+      &:first-child {
+        padding: 14px 0px 14px 15px;
+      }
+
+      span {
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 130%;
+        text-align: start;
+        transition: color 0.5s ease;
       }
     }
   }
