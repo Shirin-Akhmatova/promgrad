@@ -1,16 +1,45 @@
-import { useState } from "react";
-import styles from "./Header.module.scss";
+import { useEffect, useState } from "react";
 import { Divide as Hamburger } from "hamburger-react";
+import styles from "./Header.module.scss";
 
 const Header = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
+  const [isHidden, setIsHidden] = useState(false);
+  const [hasBackground, setHasBackground] = useState(false);
 
   const toggleMenu = () => {
     setMenuOpen((prev) => !prev);
   };
 
+  useEffect(() => {
+    let lastScrollY = window.scrollY;
+
+    const handleScroll = () => {
+      if (window.scrollY > lastScrollY) {
+        setIsHidden(true); // scroll down
+        setHasBackground(false);
+      } else {
+        setIsHidden(false); // scroll up
+        if (window.scrollY > 50) {
+          setHasBackground(true);
+        } else {
+          setHasBackground(false);
+        }
+      }
+      lastScrollY = window.scrollY;
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <header className={styles.header}>
+    <header
+      className={`${styles.header} 
+        ${isHidden ? styles.hidden : ""} 
+        ${hasBackground ? styles.withBackground : ""}
+      `}
+    >
       <div className={styles.container}>
         {/* Бургер-меню */}
         <div className={styles.burger}>

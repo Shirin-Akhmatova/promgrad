@@ -4,8 +4,18 @@
   left: 0;
   width: 100%;
   padding-top: 80px;
+  padding-bottom: 20px;
   background: transparent;
   z-index: 1000;
+
+  &.hidden {
+    transform: translateY(-100%);
+  }
+
+  &.withBackground {
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+  }
 
   .container {
     display: flex;

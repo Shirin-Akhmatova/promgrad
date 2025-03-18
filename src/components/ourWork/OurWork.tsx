@@ -7,7 +7,7 @@ const OurWork = () => {
       id: 1,
       name: "Проект А",
       type: "Бизнес-центр",
-      address: "г. Москва, ул. Ленина, д. 1",
+      address: "ул. Ленина, д. 1",
       date: "2023-06-15",
       image: "/src/assets/images/card1.jpg",
     },
@@ -15,17 +15,25 @@ const OurWork = () => {
       id: 2,
       name: "Проект Б",
       type: "Жилой дом",
-      address: "г. Санкт-Петербург, ул. Пушкина, д. 10",
+      address: "ул. Пушкина, д. 10",
       date: "2023-07-20",
-      image: "/src/assets/images/project2.jpg",
+      image: "/src/assets/images/card2.jpg",
     },
     {
       id: 3,
       name: "Проект В",
       type: "Торговый центр",
-      address: "г. Новосибирск, ул. Советская, д. 5",
+      address: "ул. Советская, д. 5",
       date: "2023-08-05",
-      image: "/src/assets/images/project3.jpg",
+      image: "/src/assets/images/mainSlider.jpg",
+    },
+    {
+      id: 3,
+      name: "Проект В",
+      type: "Торговый центр",
+      address: "ул. Советская, д. 5",
+      date: "2023-08-05",
+      image: "/src/assets/images/mainSlider.jpg",
     },
   ];
 
@@ -33,7 +41,7 @@ const OurWork = () => {
     <div className={styles.container}>
       <div className={styles.ourWork}>
         <h1>Наши работы</h1>
-        <p>Выберите направление по желанию</p>
+        <p className={styles.workTitle}>Выберите направление по желанию</p>
         <div className={styles.workButtons}>
           <button className={styles.workButton}>
             <img
