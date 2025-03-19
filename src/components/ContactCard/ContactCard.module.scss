@@ -1,0 +1,80 @@
+.contactCard {
+  border-radius: 12px;
+  width: 380px;
+  overflow: hidden;
+  position: relative;
+}
+
+.category_button {
+  background: #1a427f;
+  width: 380px;
+  height: 50px;
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: center;
+  padding: 12px;
+  font-weight: bold;
+  border-radius: 12px;
+  position: relative;
+  cursor: pointer;
+}
+
+.gradient {
+  display: flex;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.content {
+  padding: 20px 30px;
+  background: #f7f7f9;
+  border-radius: 12px;
+}
+
+.label {
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+.icons img {
+  margin-right: 16px;
+  cursor: pointer;
+}
+
+.button {
+  background: #04132a;
+  color: white;
+  width: 320px;
+  height: 49px;
+  padding: 10px;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 12px;
+}
+
+@media (max-width: 768px) {
+  .contactCard {
+    width: 328px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .category_button {
+    width: 328px;
+  }
+  .content {
+    padding: 20px 20px;
+  }
+  .button {
+    width: 288px;
+  }
+}
