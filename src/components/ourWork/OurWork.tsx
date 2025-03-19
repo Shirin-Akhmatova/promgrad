@@ -1,57 +1,20 @@
+import { useEffect, useState } from "react";
+import { useProjects } from "../../store/useProjects";
 import Card from "./card/Card";
 import styles from "./OurWork.module.scss";
+import Modal from "./modal/Modal";
+import { Project } from "../../types";
 
 const OurWork = () => {
-  const data = [
-    {
-      id: 1,
-      name: "Проект А",
-      type: "Бизнес-центр",
-      address: "ул. Ленина, д. 1",
-      date: "2023-06-15",
-      images: [
-        "/src/assets/images/card1.jpg",
-        "/src/assets/images/card2.jpg",
-        "/src/assets/images/card4.jpg",
-      ],
-    },
-    // {
-    //   id: 2,
-    //   name: "Проект Б",
-    //   type: "Жилой дом",
-    //   address: "ул. Пушкина, д. 10",
-    //   date: "2023-07-20",
-    //   images: [
-    //     "/src/assets/images/card1.jpg",
-    //     "/src/assets/images/card2.jpg",
-    //     "/src/assets/images/card4.jpg",
-    //   ],
-    // },
-    // {
-    //   id: 3,
-    //   name: "Проект В",
-    //   type: "Торговый центр",
-    //   address: "ул. Советская, д. 5",
-    //   date: "2023-08-05",
-    //   images: [
-    //     "/src/assets/images/card1.jpg",
-    //     "/src/assets/images/card2.jpg",
-    //     "/src/assets/images/card4.jpg",
-    //   ],
-    // },
-    // {
-    //   id: 4,
-    //   name: "Проект Г",
-    //   type: "Жилой комплекс",
-    //   address: "ул. Маяковского, д. 12",
-    //   date: "2023-09-01",
-    //   images: [
-    //     "/src/assets/images/card1.jpg",
-    //     "/src/assets/images/card2.jpg",
-    //     "/src/assets/images/card4.jpg",
-    //   ],
-    // },
-  ];
+  const { projects, loading, error, fetchProjects } = useProjects();
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+
+  useEffect(() => {
+    fetchProjects();
+  }, [fetchProjects]);
+
+  // console.log(projects, "projects");
+  // console.log(error, "error");
 
   return (
     <div className={styles.container}>
@@ -95,9 +58,17 @@ const OurWork = () => {
 
         {/* cards */}
         <div className={styles.cards}>
-          {data.map((project) => (
-            <Card key={project.id} {...project} />
+          {projects.map((project) => (
+            <Card
+              key={project.id}
+              project={project} // Передаем весь объект
+              onClick={() => setSelectedProject(project)} // Теперь передаем целый объект в onClick
+            />
           ))}
+          <Modal
+            project={selectedProject}
+            onClose={() => setSelectedProject(null)}
+          />
         </div>
       </div>
     </div>
