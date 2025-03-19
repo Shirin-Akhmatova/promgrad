@@ -1,0 +1,144 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+}
+
+.modal {
+  background: white;
+  padding: 20px;
+  border-radius: 24px;
+  width: 100%;
+  max-width: 1067px;
+  max-height: 589px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+}
+
+.close {
+  position: absolute;
+  top: 11px;
+  right: 20px;
+  border: none;
+  background: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+// ! image
+.card {
+  position: relative;
+  width: 100%;
+  max-width: 644px;
+
+  .card_image {
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25),
+      inset 1px -2px 4px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 40px;
+    width: 644px;
+    height: 541px;
+  }
+}
+
+.customPrev,
+.customNext {
+  position: absolute;
+  z-index: 2;
+  cursor: pointer;
+  bottom: 260px;
+  // right: 0px;
+  // opacity: 0;
+  // visibility: hidden;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+.customPrev {
+  left: 10px;
+}
+
+.customNext {
+  right: 10px;
+}
+// ! image end
+
+// ! descriptions
+.modal_infos {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 580px;
+  padding-left: 32px;
+
+  .modal_card_name {
+    // padding-top: 24px;
+    color: rgb(0, 0, 0);
+    font-family: Montserrat;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 120%;
+    letter-spacing: 0px;
+    text-align: left;
+  }
+
+  .info_icon {
+    padding-right: 8px;
+  }
+
+  .modal_info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* Body/16 Semibold */
+    color: rgb(111, 109, 115);
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0px;
+    text-align: left;
+  }
+
+  .modal_description {
+    color: rgb(0, 0, 0);
+    font-family: Mulish;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 0px;
+    text-align: left;
+  }
+
+  .modal_info_type {
+    padding-top: 20px;
+  }
+
+  .modal_info_address {
+    padding-top: 12px;
+  }
+
+  .modal_info_date {
+    padding-top: 12px;
+  }
+
+  .modal_description {
+    color: rgb(0, 0, 0);
+    font-family: Mulish;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 0px;
+    text-align: left;
+    padding-top: 24px;
+  }
+}

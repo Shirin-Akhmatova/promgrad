@@ -1,20 +1,26 @@
 import styles from "./Modal.module.scss";
+import "./Modal.scss";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/swiper-bundle.css";
+import {
+  Navigation,
+  Pagination,
+  Scrollbar,
+  A11y,
+  Autoplay,
+} from "swiper/modules";
+import { Project } from "../../../types";
 
 type ModalProps = {
-  project: {
-    id: number;
-    title: string;
-    description: string;
-    address: string;
-    end_date: string;
-    type_construction: { title: string };
-    images: { image: string }[];
-  } | null;
+  project: Project | null | undefined;
   onClose: () => void;
 };
 
 const Modal = ({ project, onClose }: ModalProps) => {
   if (!project) return null;
+  const { title, type_construction, address, end_date, images, description } =
+    project;
 
   return (
     <div className={styles.overlay} onClick={onClose}>
@@ -22,21 +28,72 @@ const Modal = ({ project, onClose }: ModalProps) => {
         <button className={styles.close} onClick={onClose}>
           ✖
         </button>
-        <h2>{project.title}</h2>
-        <p>{project.description}</p>
-        <p>
-          <strong>Адрес:</strong> {project.address}
-        </p>
-        <p>
-          <strong>Тип:</strong> {project.type_construction.title}
-        </p>
-        <p>
-          <strong>Дата завершения:</strong> {project.end_date}
-        </p>
-        <div className={styles.images}>
-          {project.images.map((img, index) => (
-            <img key={index} src={img.image} alt={`Проект ${project.title}`} />
-          ))}
+        <div className={styles.card}>
+          {/* Добавляем Swiper */}
+          <Swiper
+            modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
+            spaceBetween={0}
+            slidesPerView={1}
+            navigation={{
+              nextEl: `.${styles.customNext}`,
+              prevEl: `.${styles.customPrev}`,
+            }}
+            pagination={{ clickable: true }}
+            scrollbar={{ draggable: true }}
+            className={styles.card_swiper}
+          >
+            {images.map((img, index) => (
+              <SwiperSlide key={index}>
+                <img
+                  src={img.image}
+                  alt={`${name} - ${index + 1}`}
+                  className={styles.card_image}
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+          <button className={styles.customPrev}>
+            <img
+              src="/src/assets/icons/Arrow_left.svg"
+              alt="About Icon"
+              className={styles.icon}
+            />
+          </button>
+          <button className={styles.customNext}>
+            <img
+              src="/src/assets/icons/Arrow_right.svg"
+              alt="About Icon"
+              className={styles.icon}
+            />
+          </button>
+        </div>
+        <div className={styles.modal_infos}>
+          <h1 className={styles.modal_card_name}>{title}</h1>
+          <p className={`${styles.modal_info} ${styles.modal_info_type}`}>
+            <img
+              src="/src/assets/icons/business.svg"
+              alt="business Icon"
+              className={styles.info_icon}
+            />
+            <span>{type_construction.title}</span>
+          </p>
+          <p className={`${styles.modal_info} ${styles.modal_info_address}`}>
+            <img
+              src="/src/assets/icons/location.svg"
+              alt="location Icon"
+              className={styles.info_icon}
+            />
+            <span>{address}</span>
+          </p>
+          <p className={`${styles.modal_info} ${styles.modal_info_date}`}>
+            <img
+              src="/src/assets/icons/clock.svg"
+              alt="clock Icon"
+              className={styles.info_icon}
+            />
+            <span>{end_date}</span>
+          </p>
+          <h2 className={styles.modal_description}>{description}</h2>
         </div>
       </div>
     </div>

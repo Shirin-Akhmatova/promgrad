@@ -13,13 +13,13 @@ const OurWork = () => {
     fetchProjects();
   }, [fetchProjects]);
 
-  // console.log(projects, "projects");
-  // console.log(error, "error");
+  console.log(projects, "projects");
+  console.log(error, "error");
 
   return (
     <div className={styles.container}>
       <div className={styles.ourWork}>
-        <h1>Наши работы</h1>
+        <h1 className={styles.ourWork_h1}>Наши работы</h1>
         <p className={styles.workTitle}>Выберите направление по желанию</p>
         <div className={styles.workButtons}>
           <button className={styles.workButton}>
@@ -65,8 +65,11 @@ const OurWork = () => {
               onClick={() => setSelectedProject(project)} // Теперь передаем целый объект в onClick
             />
           ))}
+        </div>
+        {/* modal */}
+        <div className={styles.card_modal}>
           <Modal
-            project={selectedProject}
+            project={selectedProject ? selectedProject : undefined} // Передаем только проект или undefined
             onClose={() => setSelectedProject(null)}
           />
         </div>
