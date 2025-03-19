@@ -9,32 +9,48 @@ const OurWork = () => {
       type: "Бизнес-центр",
       address: "ул. Ленина, д. 1",
       date: "2023-06-15",
-      image: "/src/assets/images/card1.jpg",
+      images: [
+        "/src/assets/images/card1.jpg",
+        "/src/assets/images/card2.jpg",
+        "/src/assets/images/card4.jpg",
+      ],
     },
-    {
-      id: 2,
-      name: "Проект Б",
-      type: "Жилой дом",
-      address: "ул. Пушкина, д. 10",
-      date: "2023-07-20",
-      image: "/src/assets/images/card2.jpg",
-    },
-    {
-      id: 3,
-      name: "Проект В",
-      type: "Торговый центр",
-      address: "ул. Советская, д. 5",
-      date: "2023-08-05",
-      image: "/src/assets/images/mainSlider.jpg",
-    },
-    {
-      id: 3,
-      name: "Проект В",
-      type: "Торговый центр",
-      address: "ул. Советская, д. 5",
-      date: "2023-08-05",
-      image: "/src/assets/images/mainSlider.jpg",
-    },
+    // {
+    //   id: 2,
+    //   name: "Проект Б",
+    //   type: "Жилой дом",
+    //   address: "ул. Пушкина, д. 10",
+    //   date: "2023-07-20",
+    //   images: [
+    //     "/src/assets/images/card1.jpg",
+    //     "/src/assets/images/card2.jpg",
+    //     "/src/assets/images/card4.jpg",
+    //   ],
+    // },
+    // {
+    //   id: 3,
+    //   name: "Проект В",
+    //   type: "Торговый центр",
+    //   address: "ул. Советская, д. 5",
+    //   date: "2023-08-05",
+    //   images: [
+    //     "/src/assets/images/card1.jpg",
+    //     "/src/assets/images/card2.jpg",
+    //     "/src/assets/images/card4.jpg",
+    //   ],
+    // },
+    // {
+    //   id: 4,
+    //   name: "Проект Г",
+    //   type: "Жилой комплекс",
+    //   address: "ул. Маяковского, д. 12",
+    //   date: "2023-09-01",
+    //   images: [
+    //     "/src/assets/images/card1.jpg",
+    //     "/src/assets/images/card2.jpg",
+    //     "/src/assets/images/card4.jpg",
+    //   ],
+    // },
   ];
 
   return (
