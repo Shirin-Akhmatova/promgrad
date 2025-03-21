@@ -23,6 +23,10 @@
   display: flex;
   align-items: start;
   justify-content: space-between;
+
+  .modal_header {
+    display: none;
+  }
 }
 
 .close {
@@ -56,9 +60,6 @@
   z-index: 2;
   cursor: pointer;
   bottom: 260px;
-  // right: 0px;
-  // opacity: 0;
-  // visibility: hidden;
   transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
 }
 .customPrev {
@@ -203,42 +204,120 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    padding: 15px;
   }
 
   .card {
     max-width: 328px;
 
+    .customPrev,
+    .customNext {
+      display: none;
+    }
+
     .card_image {
-      border-radius: 40px;
+      border-radius: 20px;
       width: 328px;
       height: 275px;
     }
   }
 
-  .customPrev,
-  .customNext {
-    bottom: 110px;
-  }
-
   .modal_infos {
-    padding-left: 15px;
+    padding-left: 0px;
+    width: 100%;
+    height: auto;
+
+    .modal_card_name {
+      padding-top: 16px;
+    }
 
     .modal_info_type {
       padding-top: 12px;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 22px;
     }
 
     .modal_info_address {
       padding-top: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 22px;
     }
 
     .modal_info_date {
       padding-top: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 22px;
     }
 
     .modal_description {
       font-size: 14px;
       font-weight: 700;
       padding-top: 10px;
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .modal {
+    .modal_header {
+      display: block;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-bottom: 35px;
+
+      .icon {
+        margin-left: -100px;
+        cursor: pointer;
+      }
+
+      p {
+        color: rgb(0, 0, 0);
+        font-family: Montserrat;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 24px;
+        letter-spacing: 0px;
+        text-align: left;
+        padding-left: 35px;
+      }
+    }
+  }
+
+  .close {
+    display: none;
+  }
+}
+
+@media (max-width: 360px) {
+  .modal {
+    padding: 10px;
+  }
+
+  .card {
+    max-width: 280px;
+
+    .card_image {
+      border-radius: 20px;
+      width: 280px;
+      height: 235px;
+    }
+  }
+
+  .modal {
+    .modal_header {
+      padding-bottom: 35px;
+
+      .icon {
+        margin-left: -60px;
+      }
+
+      p {
+        padding-left: 35px;
+      }
     }
   }
 }

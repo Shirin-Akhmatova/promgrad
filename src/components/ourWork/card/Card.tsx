@@ -13,8 +13,8 @@ import {
 import { Project } from "../../../types";
 
 type CardProps = {
-  project: Project; // Теперь передаем целый объект проекта
-  onClick: (project: Project) => void; // Тип для onClick
+  project: Project;
+  onClick: (project: Project) => void;
 };
 
 const Card = ({ project, onClick }: CardProps) => {

@@ -19,8 +19,10 @@ const OurWork = () => {
   return (
     <div className={styles.container}>
       <div className={styles.ourWork}>
-        <h1 className={styles.ourWork_h1}>Наши работы</h1>
-        <p className={styles.workTitle}>Выберите направление по желанию</p>
+        <div className={styles.ourWork_header}>
+          <h1 className={styles.ourWork_h1}>Наши работы</h1>
+          <p className={styles.workTitle}>Выберите направление по желанию</p>
+        </div>
         <div className={styles.workButtons}>
           <button className={styles.workButton}>
             <img
@@ -61,15 +63,15 @@ const OurWork = () => {
           {projects.map((project) => (
             <Card
               key={project.id}
-              project={project} // Передаем весь объект
-              onClick={() => setSelectedProject(project)} // Теперь передаем целый объект в onClick
+              project={project}
+              onClick={() => setSelectedProject(project)}
             />
           ))}
         </div>
         {/* modal */}
         <div className={styles.card_modal}>
           <Modal
-            project={selectedProject ? selectedProject : undefined} // Передаем только проект или undefined
+            project={selectedProject ? selectedProject : undefined}
             onClose={() => setSelectedProject(null)}
           />
         </div>

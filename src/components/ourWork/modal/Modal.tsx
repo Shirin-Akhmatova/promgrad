@@ -28,6 +28,15 @@ const Modal = ({ project, onClose }: ModalProps) => {
         <button className={styles.close} onClick={onClose}>
           ✖
         </button>
+        <div className={styles.modal_header}>
+          <img
+            src="/src/assets/icons/back.svg"
+            alt="About Icon"
+            className={styles.icon}
+            onClick={onClose}
+          />
+          <p>Наши работы</p>
+        </div>
         <div className={styles.card}>
           {/* Добавляем Swiper */}
           <Swiper
