@@ -71,12 +71,14 @@ const OurWork = () => {
           ))}
         </div>
         {/* modal */}
-        <div className={styles.card_modal}>
-          <Modal
-            project={selectedProject ? selectedProject : undefined}
-            onClose={() => setSelectedProject(null)}
-          />
-        </div>
+        {selectedProject && (
+          <div className={styles.card_modal}>
+            <Modal
+              project={selectedProject}
+              onClose={() => setSelectedProject(null)}
+            />
+          </div>
+        )}
       </div>
     </div>
   );

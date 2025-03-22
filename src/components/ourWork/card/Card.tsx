@@ -1,8 +1,6 @@
 import styles from "./Card.module.scss";
-import "./Card.scss";
-
-import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
+import { Swiper, SwiperSlide } from "swiper/react";
 import {
   Navigation,
   Pagination,
@@ -11,7 +9,7 @@ import {
   Autoplay,
 } from "swiper/modules";
 import { Project } from "../../../types";
-import { useRef } from "react";
+import { useState } from "react";
 
 type CardProps = {
   project: Project;
@@ -20,22 +18,32 @@ type CardProps = {
 
 const Card = ({ project, onClick }: CardProps) => {
   const { title, type_construction, address, end_date, images } = project;
+  const [swiperInstance, setSwiperInstance] = useState<any>(null);
 
-  const swiperRef = useRef<any>(null);
+  const handleSlidePrev = (event: React.MouseEvent) => {
+    event.stopPropagation();
+    if (swiperInstance) {
+      swiperInstance.slidePrev();
+    }
+  };
+
+  const handleSlideNext = (event: React.MouseEvent) => {
+    event.stopPropagation();
+    if (swiperInstance) {
+      swiperInstance.slideNext();
+    }
+  };
 
   return (
     <div className={styles.container} onClick={() => onClick(project)}>
       <div className={styles.card}>
-        {/* Добавляем Swiper */}
+        {/*  Swiper */}
         <Swiper
-          onSwiper={(swiper) => (swiperRef.current = swiper)}
+          onSwiper={setSwiperInstance}
           modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
           spaceBetween={0}
           slidesPerView={1}
-          navigation={{
-            nextEl: `.${styles.customNext}`,
-            prevEl: `.${styles.customPrev}`,
-          }}
+          navigation={false} // Убираем стандартные кнопки навигации, будем использовать свои
           pagination={{ clickable: true }}
           scrollbar={{ draggable: true }}
           className={styles.card_swiper}
@@ -54,12 +62,10 @@ const Card = ({ project, onClick }: CardProps) => {
             </SwiperSlide>
           ))}
         </Swiper>
+
         <button
           className={styles.customPrev}
-          onClick={(event) => {
-            event.stopPropagation(); // Останавливаем всплытие события
-            swiperRef.current?.slidePrev(); // Двигаем только этот Swiper влево
-          }}
+          onClick={handleSlidePrev} // Используем локальную логику
         >
           <img
             src="/src/assets/icons/Arrow_left.svg"
@@ -67,12 +73,10 @@ const Card = ({ project, onClick }: CardProps) => {
             className={styles.icon}
           />
         </button>
+
         <button
           className={styles.customNext}
-          onClick={(event) => {
-            event.stopPropagation(); // Останавливаем всплытие события
-            swiperRef.current?.slideNext(); // Двигаем только этот Swiper вправо
-          }}
+          onClick={handleSlideNext} // Используем локальную логику
         >
           <img
             src="/src/assets/icons/Arrow_right.svg"
