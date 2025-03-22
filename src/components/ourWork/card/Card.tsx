@@ -11,6 +11,7 @@ import {
   Autoplay,
 } from "swiper/modules";
 import { Project } from "../../../types";
+import { useRef } from "react";
 
 type CardProps = {
   project: Project;
@@ -20,11 +21,14 @@ type CardProps = {
 const Card = ({ project, onClick }: CardProps) => {
   const { title, type_construction, address, end_date, images } = project;
 
+  const swiperRef = useRef<any>(null);
+
   return (
     <div className={styles.container} onClick={() => onClick(project)}>
       <div className={styles.card}>
         {/* Добавляем Swiper */}
         <Swiper
+          onSwiper={(swiper) => (swiperRef.current = swiper)}
           modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
           spaceBetween={0}
           slidesPerView={1}
@@ -40,31 +44,55 @@ const Card = ({ project, onClick }: CardProps) => {
             <SwiperSlide key={index}>
               <img
                 src={img.image}
-                alt={`${name} - ${index + 1}`}
+                alt={`${title} - ${index + 1}`}
                 className={styles.card_image}
+                onClick={(event) => {
+                  event.stopPropagation(); // Останавливаем всплытие
+                  onClick(project);
+                }}
               />
             </SwiperSlide>
           ))}
         </Swiper>
-        <button className={styles.customPrev}>
+        <button
+          className={styles.customPrev}
+          onClick={(event) => {
+            event.stopPropagation(); // Останавливаем всплытие события
+            swiperRef.current?.slidePrev(); // Двигаем только этот Swiper влево
+          }}
+        >
           <img
             src="/src/assets/icons/Arrow_left.svg"
-            alt="About Icon"
+            alt="Arrow_left Icon"
             className={styles.icon}
           />
         </button>
-        <button className={styles.customNext}>
+        <button
+          className={styles.customNext}
+          onClick={(event) => {
+            event.stopPropagation(); // Останавливаем всплытие события
+            swiperRef.current?.slideNext(); // Двигаем только этот Swiper вправо
+          }}
+        >
           <img
             src="/src/assets/icons/Arrow_right.svg"
-            alt="About Icon"
+            alt="Arrow_right Icon"
             className={styles.icon}
           />
         </button>
 
-        <h3 className={styles.card_name}>{title}</h3>
+        <h3
+          className={styles.card_name}
+          onClick={(event) => event.stopPropagation()}
+        >
+          {title}
+        </h3>
       </div>
 
-      <div className={styles.infos}>
+      <div
+        className={styles.infos}
+        onClick={(event) => event.stopPropagation()}
+      >
         <p className={`${styles.info} ${styles.info_type}`}>
           <img
             src="/src/assets/icons/business.svg"

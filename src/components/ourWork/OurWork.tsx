@@ -7,6 +7,8 @@ import { Project } from "../../types";
 
 const OurWork = () => {
   const { projects, loading, error, fetchProjects } = useProjects();
+  console.log(projects, "projects");
+
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   useEffect(() => {
