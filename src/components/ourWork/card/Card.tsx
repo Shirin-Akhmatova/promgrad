@@ -43,8 +43,14 @@ const Card = ({ project, onClick }: CardProps) => {
           modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
           spaceBetween={0}
           slidesPerView={1}
-          navigation={false} // Убираем стандартные кнопки навигации, будем использовать свои
-          pagination={{ clickable: true }}
+          navigation={false}
+          // pagination={{ clickable: true }}
+          pagination={{
+            clickable: true,
+            renderBullet: (index, className) => {
+              return `<span onClick="event.stopPropagation()"></span>`;
+            },
+          }}
           scrollbar={{ draggable: true }}
           className={styles.card_swiper}
         >
