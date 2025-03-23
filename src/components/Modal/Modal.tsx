@@ -1,23 +1,70 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./Modal.module.scss";
-import { useModalStore } from "../../store/modalStore";
 import closeIcon from "../../assets/icons/close_icon.svg";
 import dropdownIcon from "../../assets/icons/downIcon.svg";
+import { useModalStore } from "../../store/modalStore";
+import { useDirections } from "../../store/useDirections";
+import { useFeedback } from "../../store/useFeedback";
 
 const Modal: React.FC = () => {
   const { isOpen, closeModal } = useModalStore();
+  const {
+    directions = [],
+    loading: directionsLoading,
+    error: directionsError,
+    fetchDirections,
+  } = useDirections();
+  const {
+    sendFeedback,
+    loading: feedbackLoading,
+    error: feedbackError,
+    success,
+  } = useFeedback();
 
-  const [name, setName] = useState("");
-  const [whatsapp, setWhatsapp] = useState("");
-  const [email, setEmail] = useState("");
-  const [selectedOption, setSelectedOption] = useState("Выберите направление");
-  const [isDropdownOpen, setDropdownOpen] = useState(false);
+  const [name, setName] = useState<string>("");
+  const [phone_number, setPhoneNumber] = useState<string>("");
+  const [email, setEmail] = useState<string>("");
+  const [selectedOption, setSelectedOption] = useState<number | null>(null);
+  const [selectedLabel, setSelectedLabel] = useState<string>(
+    "Выберите направление"
+  );
+  const [isDropdownOpen, setDropdownOpen] = useState<boolean>(false);
+
+  useEffect(() => {
+    if (isOpen) {
+      fetchDirections();
+    }
+  }, [isOpen, fetchDirections]);
+
+  useEffect(() => {
+    if (success) {
+      handleClose();
+    }
+  }, [success]);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (!name || !phone_number || !email || selectedOption === null) {
+      return;
+    }
+
+    const formData = {
+      name,
+      phone_number,
+      email,
+      organization: selectedOption,
+    };
+
+    await sendFeedback(formData);
+  };
 
   const handleClose = () => {
     setName("");
-    setWhatsapp("");
+    setPhoneNumber("");
     setEmail("");
-    setSelectedOption("Выберите направление");
+    setSelectedOption(null);
+    setSelectedLabel("Выберите направление");
     setDropdownOpen(false);
     closeModal();
   };
@@ -35,10 +82,10 @@ const Modal: React.FC = () => {
         <div className={styles.modalHeader}>
           <div className={styles.modalTitle}>Ваши данные</div>
           <button className={styles.closeButton} onClick={handleClose}>
-            <img src={closeIcon} />
+            <img src={closeIcon} alt="Close" />
           </button>
         </div>
-        <form>
+        <form onSubmit={handleSubmit}>
           <input
             type="text"
             placeholder="Имя"
@@ -48,10 +95,10 @@ const Modal: React.FC = () => {
           />
           <input
             type="text"
-            placeholder="Номер в WhatsApp"
+            placeholder="Номер телефона"
             className={styles.input}
-            value={whatsapp}
-            onChange={(e) => setWhatsapp(e.target.value)}
+            value={phone_number}
+            onChange={(e) => setPhoneNumber(e.target.value)}
           />
           <input
             type="email"
@@ -67,33 +114,53 @@ const Modal: React.FC = () => {
             }`}
             onClick={() => setDropdownOpen(!isDropdownOpen)}
           >
-            <span>{selectedOption}</span>
+            <span>{selectedLabel}</span>
             <img src={dropdownIcon} className={styles.dropdownIcon} />
           </div>
 
           {isDropdownOpen && (
-            <ul className={styles.dropdownMenu}>
-              {[
-                "Архитектурное проектирование",
-                "Конструктивные решения",
-                "Инженерные коммуникации",
-              ].map((option, index) => (
-                <li
-                  key={index}
-                  className={styles.dropdownItem}
-                  onClick={() => {
-                    setSelectedOption(option);
-                    setDropdownOpen(false);
-                  }}
-                >
-                  {option}
+            <ul className={styles.dropdownList}>
+              {directionsLoading ? (
+                <li className={styles.dropdownItem}>Загрузка...</li>
+              ) : directionsError ? (
+                <li className={styles.dropdownItem}>{directionsError}</li>
+              ) : directions.length > 0 ? (
+                directions.map((option) => (
+                  <li
+                    key={option.id}
+                    className={styles.dropdownItem}
+                    onClick={() => {
+                      setSelectedOption(option.id);
+                      setSelectedLabel(option.title);
+                      setDropdownOpen(false);
+                    }}
+                  >
+                    {option.title}
+                  </li>
+                ))
+              ) : (
+                <li className={styles.dropdownItem}>
+                  Нет доступных направлений
                 </li>
-              ))}
+              )}
             </ul>
           )}
 
-          <button className={styles.submitButton} type="submit">
-            Подать заявку
+          {feedbackError && <p className={styles.error}>{feedbackError}</p>}
+
+          <button
+            className={styles.submitButton}
+            type="submit"
+            disabled={feedbackLoading}
+          >
+            {feedbackLoading ? "Отправка..." : "Подать заявку"}
+          </button>
+          <button
+            className={styles.cancelButton}
+            type="button"
+            onClick={handleClose}
+          >
+            Отмена
           </button>
         </form>
       </div>
