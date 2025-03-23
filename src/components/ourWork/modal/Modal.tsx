@@ -9,6 +9,7 @@ import {
   Scrollbar,
   A11y,
   Autoplay,
+  EffectCube,
 } from "swiper/modules";
 import { Project } from "../../../types";
 
@@ -40,8 +41,23 @@ const Modal = ({ project, onClose }: ModalProps) => {
         <div className={styles.card}>
           {/* Добавляем Swiper */}
           <Swiper
-            modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
-            spaceBetween={0}
+            effect={"cube"}
+            cubeEffect={{
+              shadow: true,
+              slideShadows: true,
+              shadowOffset: 20,
+              shadowScale: 0.94,
+              // rotate: 50, // Устанавливает угол поворота куба
+            }}
+            modules={[
+              Navigation,
+              Pagination,
+              Scrollbar,
+              A11y,
+              Autoplay,
+              EffectCube,
+            ]}
+            spaceBetween={10}
             slidesPerView={1}
             navigation={{
               nextEl: `.${styles.customNext}`,

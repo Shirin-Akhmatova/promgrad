@@ -7,6 +7,7 @@ import {
   Scrollbar,
   A11y,
   Autoplay,
+  EffectCreative,
 } from "swiper/modules";
 import { Project } from "../../../types";
 import { useState } from "react";
@@ -40,10 +41,28 @@ const Card = ({ project, onClick }: CardProps) => {
         {/*  Swiper */}
         <Swiper
           onSwiper={setSwiperInstance}
-          modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
+          modules={[
+            Navigation,
+            Pagination,
+            Scrollbar,
+            A11y,
+            Autoplay,
+            EffectCreative,
+          ]}
           spaceBetween={0}
           slidesPerView={1}
           navigation={false}
+          grabCursor={true}
+          effect={"creative"}
+          creativeEffect={{
+            prev: {
+              shadow: true,
+              translate: [0, 0, -400],
+            },
+            next: {
+              translate: ["100%", 0, 0],
+            },
+          }}
           // pagination={{ clickable: true }}
           pagination={{
             clickable: true,
