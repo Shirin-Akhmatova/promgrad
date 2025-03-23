@@ -6,7 +6,7 @@ const OurContacts = () => {
   return (
     <section>
       <div className={styles.title}>Наши контакты</div>
-      <div className={styles.subtitle}>Выберите направление по желанию</div>
+      <div className={styles.subtitle}>Выберите категорию по желанию</div>
       <div className={styles.contact_card_wrapper}>
         <ContactCard
           title="Инженерные коммуникации"
