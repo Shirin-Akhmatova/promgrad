@@ -63,11 +63,12 @@ const Card = ({ project, onClick }: CardProps) => {
               translate: ["100%", 0, 0],
             },
           }}
+          speed={380}
           // pagination={{ clickable: true }}
           pagination={{
             clickable: true,
             renderBullet: (index, className) => {
-              return `<span  onClick="event.stopPropagation()"></span>`;
+              return `<span class="${className}" onclick="event.stopPropagation(); swiperInstance.slideTo(${index})"></span>`;
             },
           }}
           scrollbar={{ draggable: true }}
@@ -80,7 +81,7 @@ const Card = ({ project, onClick }: CardProps) => {
                 alt={`${title} - ${index + 1}`}
                 className={styles.card_image}
                 onClick={(event) => {
-                  event.stopPropagation(); // Останавливаем всплытие
+                  event.stopPropagation();
                   onClick(project);
                 }}
               />
@@ -88,10 +89,7 @@ const Card = ({ project, onClick }: CardProps) => {
           ))}
         </Swiper>
 
-        <button
-          className={styles.customPrev}
-          onClick={handleSlidePrev} // Используем локальную логику
-        >
+        <button className={styles.customPrev} onClick={handleSlidePrev}>
           <img
             src="/src/assets/icons/Arrow_left.svg"
             alt="Arrow_left Icon"
@@ -99,10 +97,7 @@ const Card = ({ project, onClick }: CardProps) => {
           />
         </button>
 
-        <button
-          className={styles.customNext}
-          onClick={handleSlideNext} // Используем локальную логику
-        >
+        <button className={styles.customNext} onClick={handleSlideNext}>
           <img
             src="/src/assets/icons/Arrow_right.svg"
             alt="Arrow_right Icon"

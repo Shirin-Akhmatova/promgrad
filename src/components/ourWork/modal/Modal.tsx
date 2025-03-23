@@ -39,7 +39,7 @@ const Modal = ({ project, onClose }: ModalProps) => {
           <p>Наши работы</p>
         </div>
         <div className={styles.card}>
-          {/* Добавляем Swiper */}
+          {/*  Swiper */}
           <Swiper
             effect={"cube"}
             cubeEffect={{
@@ -47,7 +47,6 @@ const Modal = ({ project, onClose }: ModalProps) => {
               slideShadows: true,
               shadowOffset: 20,
               shadowScale: 0.94,
-              // rotate: 50, // Устанавливает угол поворота куба
             }}
             modules={[
               Navigation,

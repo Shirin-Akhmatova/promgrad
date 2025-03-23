@@ -21,15 +21,13 @@ const OurWork = () => {
   }, []);
 
   const filterProjectsByTags = () => {
-    // Если выбран тег, показываем проекты с этим тегом
-    if (selectedTags.length === 0) return projects; // Если тегов нет, показываем все проекты
-    return projects.filter(
-      (project) => project.tags.some((tag) => selectedTags.includes(tag.id)) // Фильтруем по тегу
+    if (selectedTags.length === 0) return projects;
+    return projects.filter((project) =>
+      project.tags.some((tag) => selectedTags.includes(tag.id))
     );
   };
 
   const handleTagClick = (tagId: number) => {
-    // Заменяем текущий выбранный тег на новый, чтобы показывать только проекты с этим тегом
     setSelectedTags([tagId]);
   };
 
@@ -41,11 +39,11 @@ const OurWork = () => {
           <p className={styles.workTitle}>Выберите направление по желанию</p>
         </div>
 
-        {/* Динамические кнопки для тегов */}
+        {/*  кнопки для тегов */}
         <div className={styles.workButtons}>
           <button
             className={styles.workButton}
-            onClick={() => setSelectedTags([])} // Очистить выбранные теги
+            onClick={() => setSelectedTags([])}
           >
             <img
               src="/src/assets/icons/bird.svg"
