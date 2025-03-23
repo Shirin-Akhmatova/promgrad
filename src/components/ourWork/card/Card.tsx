@@ -48,7 +48,7 @@ const Card = ({ project, onClick }: CardProps) => {
           pagination={{
             clickable: true,
             renderBullet: (index, className) => {
-              return `<span onClick="event.stopPropagation()"></span>`;
+              return `<span  onClick="event.stopPropagation()"></span>`;
             },
           }}
           scrollbar={{ draggable: true }}
