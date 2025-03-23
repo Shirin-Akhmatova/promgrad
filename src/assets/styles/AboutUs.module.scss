@@ -12,7 +12,7 @@
     font-weight: 700;
     line-height: 40px;
     text-align: center;
-    padding-top: 30px;
+    padding-top: 50px;
 
     @media (max-width: 1024px) {
       font-family: Montserrat;
@@ -35,6 +35,13 @@
       font-family: Montserrat;
       font-weight: 700;
       padding-left: 20px;
+      font-size: 28px;
+    }
+    @media (max-width: 320px) {
+      color: rgb(0, 0, 0);
+      font-family: Montserrat;
+      font-weight: 700;
+      padding-left: 20px;
       font-size: 26px;
     }
   }
@@ -44,8 +51,8 @@
     width: 100%;
     padding: 32px;
     border-radius: 16px;
-    display: flex;
     margin: 56px auto;
+    display: flex;
     align-items: center;
     background: rgb(255, 255, 255);
     justify-content: space-between;
@@ -60,16 +67,20 @@
     @media (max-width: 768px) {
       padding: 20px;
       background: rgb(255, 255, 255);
+      margin: 28px auto;
     }
 
     @media (max-width: 480px) {
       background: none repeat;
-      margin-top: 28px;
+      margin: 28px auto;
+    }
+    @media (max-width: 320px) {
+      background: none repeat;
+      margin: 20px auto;
     }
 
     h2 {
       display: flex;
-      padding: 0px;
       align-items: center;
       color: rgb(0, 0, 0);
       font-family: Montserrat;
@@ -78,7 +89,7 @@
       line-height: 130%;
       align-self: stretch;
       text-align: left;
-      flex: 1 1 45%;
+      flex: 1 1 40%;
       @media (max-width: 1024px) {
         flex: 1 1 100%;
         display: flex;
@@ -115,7 +126,7 @@
         height: 240px;
         color: rgb(0, 0, 0);
         font-family: Montserrat;
-        font-size: 26px;
+        font-size: 30px;
         font-weight: 700;
       }
     }
@@ -127,7 +138,7 @@
       padding: 0px;
       color: rgb(0, 0, 0);
       font-family: Mulish;
-      flex: 1 1 35%;
+      flex: 1 1 32%;
 
       @media (max-width: 1024px) {
         flex: 1 1 100%;
@@ -174,22 +185,19 @@
   .OurDirections {
     max-width: 1132px;
     margin: 0 auto;
-    padding: 44px 0px 0px 7px; 
-
     .sectionTitle {
       max-width: 1132px;
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
       align-items: flex-start;
-      padding: 44px 0px 0px 7px;
+      padding: 80px 0px 26px 7px;
       color: rgb(26, 66, 127);
       font-family: Montserrat;
       font-size: 24px;
       font-weight: 700;
       line-height: 120%;
       text-align: left;
-      margin: 22px 0px;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -200,22 +208,22 @@
         align-items: center;
       }
       @media (max-width: 768px) {
-        padding: 74px 0px 0px 0px;
+        padding: 74px 0px 16px 0px;
         text-align: left;
       }
 
       @media (max-width: 480px) {
         max-width: 328px;
         height: 29px;
-        padding: 74px 44px 14px 0px;
-        text-align: left;
+        padding: 74px 44px 16px 30px;
+        text-align: center;
         justify-content: center;
+        margin-bottom: 20px;
       }
       @media (max-width: 320px) {
         font-size: 22px;
         text-align: center;
         margin: 0 auto;
-        margin-bottom: 10px;
       }
     }
   }
@@ -267,10 +275,13 @@
       margin-top: 56px; 
       @media (max-width: 480px) {
         height: auto;
-        margin-top: 50px; 
+        margin-top: 0px; 
       }  
       .textContent {
         padding: 16px 0 16px 24px;
+        @media (max-width: 480px) {
+          padding: 16px 0 16px 16px;
+        }  
         @media (max-width: 320px) {
           padding: 16px 0 16px 16px;
         }  
@@ -284,10 +295,10 @@
           margin-top: 8px;
   
           @media (max-width: 768px) {
-            font-size: 16px;
+            font-size: 18px;
           }
           @media (max-width: 320px) {
-            font-size: 14px;
+            font-size: 16px;
           }
         }
       }
