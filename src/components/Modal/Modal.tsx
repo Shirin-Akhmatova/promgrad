@@ -5,7 +5,7 @@ import dropdownIcon from "../../assets/icons/downIcon.svg";
 import { useModalStore } from "../../store/modalStore";
 import { useDirections } from "../../store/useDirections";
 import { useFeedback } from "../../store/useFeedback";
-import { toast, ToastContainer } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Modal: React.FC = () => {
@@ -39,21 +39,23 @@ const Modal: React.FC = () => {
   }, [isOpen, fetchDirections]);
 
   useEffect(() => {
-    try {
-      if (success) {
-        toast.success("Заявка успешно отправлена!", {
-          position: "top-center",
-          autoClose: 5000,
-          closeOnClick: true,
-          draggable: true,
-          pauseOnHover: true,
-        });
-        handleClose();
-      }
-    } catch (error) {
-      console.error("Ошибка при отображении уведомления:", error);
+    if (success) {
+      toast.success("Заявка успешно отправлена!", {
+        autoClose: 5000,
+        closeOnClick: true,
+        draggable: true,
+        pauseOnHover: true,
+      });
+
+      setName("");
+      setPhoneNumber("");
+      setEmail("");
+      setSelectedOption(null);
+      setSelectedLabel("Выберите направление");
+
+      closeModal();
     }
-  }, [success]);
+  }, [success, closeModal]);
 
   useEffect(() => {
     if (feedbackError) {
@@ -83,7 +85,7 @@ const Modal: React.FC = () => {
       name,
       phone_number,
       email,
-      organization: selectedOption,
+      organization: selectedOption !== null ? String(selectedOption) : "",
     };
 
     try {
@@ -123,7 +125,7 @@ const Modal: React.FC = () => {
           <div className={styles.modalHeader}>
             <div className={styles.modalTitle}>Ваши данные</div>
             <button className={styles.closeButton} onClick={handleClose}>
-              <img src={closeIcon} alt="Close" />
+              <img src={closeIcon} />
             </button>
           </div>
           <form onSubmit={handleSubmit}>
@@ -204,7 +206,6 @@ const Modal: React.FC = () => {
           </form>
         </div>
       </div>
-      <ToastContainer style={{ zIndex: 1000000 }} />
     </>
   );
 };
