@@ -72,9 +72,106 @@
     color: white;
   }
 
-  .language {
-    color: white;
+  // ? modal
+  .languageWrapper {
+    position: relative;
+    cursor: pointer;
+
+    .language {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #fff;
+      padding: 10px 15px 10px 15px;
+      border-radius: 12px;
+    }
+
+    .language span {
+      color: rgb(0, 0, 0);
+      font-family: Mulish;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 120%;
+      letter-spacing: 0px;
+      text-align: left;
+      padding-right: 6px;
+    }
   }
+
+  .languageModal {
+    position: absolute;
+    top: 110%;
+    right: 2px;
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 100;
+  }
+
+  .languageModal button {
+    padding: 4px 12px;
+    font-size: 14px;
+    background-color: white;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+    color: rgb(0, 0, 0);
+    font-family: Mulish;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 120%;
+    letter-spacing: 0px;
+    text-align: left;
+  }
+
+  @media (max-width: 435px) {
+    .languageWrapper {
+      .language {
+        background-color: transparent;
+        padding: 5px 8px 5px 8px;
+        border: 1px solid rgb(243, 248, 255);
+        border-radius: 8px;
+
+        .icon {
+          display: none;
+        }
+      }
+
+      .language span {
+        color: rgb(255, 255, 255);
+        font-family: Montserrat;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 130%;
+        padding-right: 0;
+      }
+    }
+
+    .languageModal {
+      position: absolute;
+      top: 110%;
+      right: -6px;
+      padding: 8px;
+      border-radius: 8px;
+      gap: 8px;
+    }
+
+    .languageModal button {
+      padding: 3px 8px;
+      font-size: 14px;
+      border-radius: 8px;
+      font-weight: 800;
+      line-height: 130%;
+    }
+  }
+
+  // ? modal end
 
   // media 768px
   @media (max-width: 768px) {

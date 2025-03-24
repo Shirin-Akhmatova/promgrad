@@ -6,14 +6,50 @@ const Header = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
   const [isHidden, setIsHidden] = useState(false);
   const [hasBackground, setHasBackground] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [language, setLanguage] = useState("RU");
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
+  const handleLanguageSelect = (lang: string) => {
+    setLanguage(lang);
+    closeModal();
+  };
 
   const toggleMenu = () => {
     setMenuOpen((prev) => !prev);
   };
 
+  // Закрытие модалки
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const modal = document.querySelector(`.${styles.languageModal}`);
+      const languageButton = document.querySelector(
+        `.${styles.languageWrapper}`
+      );
+      if (
+        modal &&
+        !modal.contains(event.target as Node) &&
+        !languageButton?.contains(event.target as Node)
+      ) {
+        closeModal();
+      }
+    };
+
+    document.addEventListener("click", handleClickOutside);
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, []);
+
   useEffect(() => {
     let lastScrollY = window.scrollY;
-
     const handleScroll = () => {
       if (window.scrollY > lastScrollY) {
         setIsHidden(true); // scroll down
@@ -96,7 +132,28 @@ const Header = () => {
           </ul>
         </nav>
 
-        <div className={styles.language}>RU</div>
+        {/*модалка */}
+        <div className={styles.languageWrapper}>
+          <div className={styles.language} onClick={openModal}>
+            <span> {language}</span>
+            <img
+              src="/src/assets/icons/language.svg"
+              alt="About Icon"
+              className={styles.icon}
+            />
+          </div>
+
+          {isModalOpen && (
+            <div
+              className={styles.languageModal}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button onClick={() => handleLanguageSelect("KG")}>KG</button>
+              <button onClick={() => handleLanguageSelect("RU")}>RU</button>
+              <button onClick={() => handleLanguageSelect("EN")}>EN</button>
+            </div>
+          )}
+        </div>
       </div>
     </header>
   );
