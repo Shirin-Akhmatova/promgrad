@@ -1,0 +1,19 @@
+.swiper-pagination-bullet {
+  background-color: #bbb !important;
+  transition: background-color 0.3s ease !important;
+  width: 12px !important;
+  height: 8px !important;
+  border-radius: 50% !important;
+  margin: 0 5px !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 0 10px rgba(14, 13, 13, 0.5) !important;
+  margin-bottom: 32px !important;
+}
+
+.swiper-pagination-bullet-active {
+  width: 17px !important;
+  color: white !important;
+  border-radius: 14px !important;
+  transform: scale(1.2) !important;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.6) !important;
+}

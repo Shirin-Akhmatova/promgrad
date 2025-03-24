@@ -1,0 +1,164 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-top: 80px;
+  padding-bottom: 20px;
+  background: transparent;
+  z-index: 1000;
+
+  &.hidden {
+    transform: translateY(-100%);
+  }
+
+  &.withBackground {
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 50px;
+  }
+
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+  }
+
+  .nav {
+    list-style: none;
+
+    ul {
+      display: flex;
+      gap: 39px;
+
+      .navSite {
+        display: none;
+      }
+    }
+
+    a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 24px;
+
+      &:hover {
+        color: #cddad0;
+      }
+    }
+
+    &.open {
+      display: block;
+    }
+
+    .icon {
+      display: none;
+    }
+  }
+
+  .burger {
+    display: none;
+    z-index: 1001;
+    color: white;
+  }
+
+  .language {
+    color: white;
+  }
+
+  // media 768px
+  @media (max-width: 768px) {
+    padding-top: 24px;
+
+    .container {
+      padding: 0 20px;
+    }
+
+    .nav {
+      display: none;
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      // right: 0;
+      background-color: #000;
+      justify-content: start;
+      align-items: center;
+      transition: transform 0.3s ease-in-out;
+      z-index: 1000;
+      padding-left: 50px;
+
+      ul {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        list-style-type: disc;
+        // list-style-position: inside;
+        color: white;
+
+        .navSite {
+          display: block;
+          font-family: Montserrat;
+          font-size: 20px;
+          font-weight: 700;
+          line-height: 24px;
+          margin-left: -16px;
+        }
+      }
+
+      a {
+        font-size: 16px;
+        font-family: Montserrat;
+        // color: white;
+      }
+
+      .icon {
+        display: flex;
+      }
+
+      .ulist {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 320px;
+      }
+    }
+
+    .burger {
+      display: flex;
+    }
+
+    .logo {
+      font-size: 16px;
+    }
+
+    .nav.open {
+      display: flex;
+    }
+  }
+
+  @media (max-width: 400px) {
+    .container {
+      padding: 0 10px;
+    }
+
+    .nav {
+      padding-left: 35px;
+
+      .ulist {
+        width: 240px;
+      }
+    }
+  }
+}
