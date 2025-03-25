@@ -5,6 +5,7 @@ import right from "../../../assets/icons/Arrow_right.svg";
 import business from "../../../assets/icons/business.svg";
 import location from "../../../assets/icons/location.svg";
 import clock from "../../../assets/icons/clock.svg";
+import back from "../../../assets/icons/back.svg";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
@@ -38,7 +39,7 @@ const Modal = ({ project, onClose }: ModalProps) => {
         </button>
         <div className={styles.modal_header}>
           <img
-            src="/src/assets/icons/back.svg"
+            src={back}
             alt="About Icon"
             className={styles.icon}
             onClick={onClose}
