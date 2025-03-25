@@ -103,20 +103,10 @@ const AboutUs: React.FC = () => {
 
   return (
     <div className={styles.aboutContainer}>
-      <h1>О нас</h1>
+      <h1>{t("aboutUs.sectionTitle")}</h1>
       <div className={styles.Comfort}>
-        <h2>
-          Комфорт. Надёжность. Точный сроки. Большой опыт. Команда
-          профессионалов
-        </h2>
-        <p>
-          <span>Промградстрой</span> — это надёжный партнёр в области
-          проектирования и чертежей зданий, предлагающий полный спектр услуг в
-          трёх ключевых направлениях: архитектурное проектирование, инженерные
-          коммуникации и конструктивные решения. Мы обладаем многолетним опытом
-          работы в строительной отрасли и стремимся предоставлять нашим клиентам
-          высококачественные и инновационные решения.
-        </p>
+        <h2>{t("aboutUs.comfort")}</h2>
+        <p>{t("aboutUs.companyDescription")}</p>
       </div>
 
       <div className={styles.CardGrid}>
@@ -145,7 +135,7 @@ const AboutUs: React.FC = () => {
         ))}
       </div>
       <div className={styles.OurDirections}>
-        <h1 className={styles.sectionTitle}>Наши направления</h1>
+        <h1 className={styles.sectionTitle}>{t("directions.sectionTitle")}</h1>
       </div>
 
       <div className={styles.CardGrid}>

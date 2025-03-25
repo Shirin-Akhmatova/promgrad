@@ -6,12 +6,14 @@ import Modal from "./modal/Modal";
 import { Project } from "../../types";
 import { useTags } from "../../store/useTags";
 import { useLanguageStore } from "../../store/useLanguage";
+import { useTranslation } from "react-i18next";
 
 const OurWork = () => {
   const { projects, loading, error, fetchProjects } = useProjects();
   const { tags, fetchTags } = useTags();
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [selectedTags, setSelectedTags] = useState<number[]>([]);
+  const { t } = useTranslation();
 
   console.log(selectedProject, "selectedProject");
   console.log(selectedTags, "selectedTags");
@@ -26,7 +28,6 @@ const OurWork = () => {
 
   useEffect(() => {
     fetchProjects();
-    // fetchTags();
   }, []);
 
   const filterProjectsByTags = () => {
@@ -44,8 +45,8 @@ const OurWork = () => {
     <div className={styles.container}>
       <div className={styles.ourWork}>
         <div className={styles.ourWork_header}>
-          <h1 className={styles.ourWork_h1}>Наши работы</h1>
-          <p className={styles.workTitle}>Выберите направление по желанию</p>
+          <h1 className={styles.ourWork_h1}>{t("ourWork.sectionTitle")}</h1>
+          <p className={styles.workTitle}>{t("ourWork.workTitle")}</p>
         </div>
 
         {/*  кнопки для тегов */}
@@ -59,7 +60,7 @@ const OurWork = () => {
               alt="About Icon"
               className={styles.icon}
             />
-            <span>Все проекты</span>
+            <span>{t("ourWork.allProjects")}</span>
           </button>
           {tags.map((tag) => (
             <button
