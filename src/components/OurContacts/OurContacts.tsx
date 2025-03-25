@@ -1,30 +1,39 @@
+import { useTranslation } from "react-i18next";
 import ContactCard from "../ContactCard/ContactCard";
 import Modal from "../Modal/Modal";
 import styles from "./OurContacts.module.scss";
 
 const OurContacts = () => {
+  const { t } = useTranslation();
+
+  // Преобразуем объект в массив строк
+  const getAddresses = (key: string) => {
+    const addresses = t(key, { returnObjects: true });
+    return Array.isArray(addresses) ? addresses : Object.values(addresses);
+  };
+
   return (
     <section>
-      <div className={styles.title}>Наши контакты</div>
-      <div className={styles.subtitle}>Выберите категорию по желанию</div>
+      <div className={styles.title}>{t("ourContacts.sectionTitle")}</div>
+      <div className={styles.subtitle}>{t("ourContacts.subtitle")}</div>
       <div className={styles.contact_card_wrapper}>
         <ContactCard
-          title="Инженерные коммуникации"
+          title={t("ourContacts.engineering")}
           phone="+996 505 00 12 45"
           email="easyjet@gmail.com"
-          addresses={["Чуй 97/а", "Исанова 97/а", "Чуй 97/а"]}
+          addresses={getAddresses("ourContacts.addresses.engineering")}
         />
         <ContactCard
-          title="Конструктивные решения"
+          title={t("ourContacts.structural")}
           phone="+996 505 00 12 45"
           email="easyjet@gmail.com"
-          addresses={["Чуй 97/а", "Исанова 97/а", "Чуй 97/а"]}
+          addresses={getAddresses("ourContacts.addresses.structuralSolutions")}
         />
         <ContactCard
-          title="Архитектурное проектирование"
+          title={t("ourContacts.architectural")}
           phone="+996 505 00 12 45"
           email="easyjet@gmail.com"
-          addresses={["Чуй 97/а", "Исанова 97/а", "Чуй 97/а"]}
+          addresses={getAddresses("ourContacts.addresses.architecturalDesign")}
         />
       </div>
       <Modal />

@@ -9,6 +9,7 @@ import instagramIcon from "../../assets/icons/Component (4).svg";
 import twitterIcon from "../../assets/icons/Component (5).svg";
 import gradient from "../../assets/icons/Rectangle.svg";
 import { useModalStore } from "../../store/modalStore";
+import { useTranslation } from "react-i18next";
 
 interface ContactCardProps {
   title: string;
@@ -24,6 +25,7 @@ const ContactCard: React.FC<ContactCardProps> = ({
   addresses,
 }) => {
   const { openModal } = useModalStore();
+  const { t } = useTranslation();
 
   return (
     <div className={styles.contactCard}>
@@ -32,7 +34,7 @@ const ContactCard: React.FC<ContactCardProps> = ({
       <img src={gradient} className={styles.gradient} />
 
       <div className={styles.content}>
-        <p className={styles.label}>Телефон:</p>
+        <p className={styles.label}>{t("contactCard.phone")}</p>
         <p className={styles.info}>
           <img src={phoneIcon} />
           {phone}
@@ -44,7 +46,7 @@ const ContactCard: React.FC<ContactCardProps> = ({
           {email}
         </p>
 
-        <p className={styles.label}>Адреса:</p>
+        <p className={styles.label}>{t("contactCard.addresses")}</p>
         <ul>
           {addresses.map((addr, index) => (
             <li key={index} className={styles.info}>
@@ -70,7 +72,7 @@ const ContactCard: React.FC<ContactCardProps> = ({
         </div>
 
         <button className={styles.button} onClick={openModal}>
-          Подать заявку
+          {t("contactCard.submitButton")}
         </button>
       </div>
     </div>

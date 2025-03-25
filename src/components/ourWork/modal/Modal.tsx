@@ -12,6 +12,7 @@ import {
   EffectCube,
 } from "swiper/modules";
 import { Project } from "../../../types";
+import { useTranslation } from "react-i18next";
 
 type ModalProps = {
   project: Project | null | undefined;
@@ -22,6 +23,7 @@ const Modal = ({ project, onClose }: ModalProps) => {
   if (!project) return null;
   const { title, type_construction, address, end_date, images, description } =
     project;
+  const { t } = useTranslation();
 
   return (
     <div className={styles.overlay} onClick={onClose}>
@@ -36,7 +38,7 @@ const Modal = ({ project, onClose }: ModalProps) => {
             className={styles.icon}
             onClick={onClose}
           />
-          <p>Наши работы</p>
+          <p>{t("ourWork.sectionTitle")}</p>
         </div>
         <div className={styles.card}>
           {/*  Swiper */}

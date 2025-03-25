@@ -12,13 +12,17 @@ import "./MainSlider.scss";
 
 import img1 from "../../assets/images/mainSlider.jpg";
 import img2 from "../../assets/images/mainSlider2.jpg";
+import { useTranslation } from "react-i18next";
 
 const MainSlider = () => {
+  const { t } = useTranslation();
+  console.log(t, "ttttttttttttt");
+
   return (
     <div className={styles.sliderContainer}>
       <div className={styles.sliderWrapper}>
         <div className={styles.textBlock}>
-          <h1>Профессиональные</h1>
+          {/* <h1>Профессиональные</h1>
           <h2>чертежи и проектирование зданий</h2>
           <p>
             Наша компания готова предложить вам полный спектр услуг,
@@ -26,7 +30,11 @@ const MainSlider = () => {
             чтобы обсудить ваш проект и узнать, как мы можем помочь
             вам в его реализации
           </p>
-          <button>Наши работы</button>
+          <button>Наши работы</button> */}
+          <h1>{t("slider.name")}</h1>
+          <h2>{t("slider.title")}</h2>
+          <p>{t("slider.description")}</p>
+          <button>{t("slider.button")}</button>
         </div>
 
         <button className={styles.customPrev}>

@@ -1,5 +1,6 @@
 import { create } from "zustand";
 import axios from "axios";
+import { useLanguageStore } from "./useLanguage";
 
 type Tag = {
   id: number;
@@ -21,8 +22,18 @@ export const useTags = create<TagStore>((set) => ({
 
   fetchTags: async () => {
     set({ loading: true, error: null });
+
+    const language = useLanguageStore.getState().language;
+
     try {
-      const response = await axios.get("https://promgrad.kipoha.fun/api/tags/");
+      const response = await axios.get(
+        "https://promgrad.kipoha.fun/api/tags/",
+        {
+          headers: {
+            "Accept-Language": language,
+          },
+        }
+      );
       set({ tags: response.data, loading: false });
     } catch (error) {
       set({
@@ -32,3 +43,7 @@ export const useTags = create<TagStore>((set) => ({
     }
   },
 }));
+
+useLanguageStore.subscribe((state) => {
+  useTags.getState().fetchTags(); // Автоматически обновляем теги при смене языка
+});

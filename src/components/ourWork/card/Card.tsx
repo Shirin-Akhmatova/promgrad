@@ -11,6 +11,7 @@ import {
 } from "swiper/modules";
 import { Project } from "../../../types";
 import { useState } from "react";
+import { useLanguageStore } from "../../../store/useLanguage";
 
 type CardProps = {
   project: Project;
@@ -20,6 +21,7 @@ type CardProps = {
 const Card = ({ project, onClick }: CardProps) => {
   const { title, type_construction, address, end_date, images } = project;
   const [swiperInstance, setSwiperInstance] = useState<any>(null);
+  const language = useLanguageStore((state) => state.language);
 
   const handleSlidePrev = (event: React.MouseEvent) => {
     event.stopPropagation();

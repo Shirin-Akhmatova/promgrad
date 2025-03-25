@@ -1,0 +1,85 @@
+{
+  "navigation": "Site Navigation",
+  "home": "Home",
+  "about": "About Us",
+  "works": "Our Works",
+  "contacts": "Contacts",
+  "slider": {
+    "name": "Professional ",
+    "title": "drawings and building design",
+    "description": "Our company is ready to offer you a full range of services to turn your ideas into reality. Contact us to discuss your project and find out how we can help you with its implementation.",
+    "button": "Our works"
+  },
+  "aboutUs": {
+    "comfort": "Comfort. Reliability. Precise deadlines. Extensive experience. A team of professionals",
+    "companyDescription": "Promgradstroy is a reliable partner in the field of building design and drafting, offering a full range of services in three key areas: architectural design, engineering communications, and structural solutions. We have many years of experience in the construction industry and strive to provide our clients with high-quality and innovative solutions.",
+    "sectionTitle": "About Us"
+  },
+  "directions": {
+    "sectionTitle": "Our Directions",
+    "engineeringCommunications": "Engineering Communications:",
+    "structuralSolutions": "Structural Solutions:",
+    "architecturalDesign": "Architectural Design:"
+  },
+  "card": {
+    "years": "years",
+    "projects": "projects",
+    "clients": "satisfied clients",
+    "experience": "Market Experience",
+    "complex1": "Comprehensive Approach:",
+    "quality2": "Quality and Reliability:",
+    "clientOrientation3": "Client Orientation:",
+    "descriptions1": "We provide a full range of services from architectural design to the implementation of engineering communications and structural solutions, allowing our clients to receive all necessary services in one place.",
+    "descriptions2": "We guarantee high-quality project documentation and drawings, adhering to all modern standards and regulations.",
+    "descriptions3": "We prioritize our clients' interests and strive to understand their needs and expectations."
+  },
+  "descriptions": {
+    "engineering": "We design heating, ventilation, air conditioning, power supply, and water supply systems, ensuring efficiency and reliability in all engineering communications. Our team considers all technical norms and requirements to guarantee maximum safety and comfort.",
+    "structural": "We develop structural solutions that ensure the strength, stability, and durability of buildings. Our team conducts calculations and analysis to propose optimal structural schemes that meet project requirements and operating conditions.",
+    "architectural": "We create functional and aesthetically appealing architectural solutions that meet modern requirements and client needs. Our team develops detailed architectural plans, facades, and sections, ensuring a harmonious combination of form and function."
+  },
+  "ourWork": {
+    "sectionTitle": "Our Works",
+    "workTitle": "Choose the direction as you wish",
+    "allProjects": "All projects"
+  },
+  "ourContacts": {
+    "sectionTitle": "Our Contacts",
+    "subtitle": "Choose a category as you wish",
+    "engineering": "Engineering Communications",
+    "structuralSolutions": "Structural Solutions",
+    "architecturalDesign": "Architectural Design",
+    "addresses": {
+      "engineering": ["Chuy 97/a", "Isanova 97/a", "Chuy 97/a"],
+      "structuralSolutions": ["Isanova 35/b", "Manas 55/a", "Toktogul 12/b"],
+      "architecturalDesign": ["Abdrahmanov 12", "Ala-Arch 10", "Jibek Jolu 23"]
+    }
+  },
+  "contactCard": {
+    "phone": "Phone:",
+    "addresses": "Addresses:",
+    "submitButton": "Submit Request"
+  },
+  "modal": {
+    "yourData": "Your Data",
+    "namePlaceholder": "Name",
+    "phonePlaceholder": "Phone number (WhatsApp)",
+    "emailPlaceholder": "Email",
+    "chooseDirection": "Choose a direction",
+    "loading": "Loading...",
+    "noDirections": "No available directions",
+    "submitButton": "Submit Application",
+    "cancelButton": "Cancel",
+    "error": "An error occurred while submitting data.",
+    "success": "Your application has been successfully submitted!"
+  },
+  "map": {
+    "address1": "Chuy 97/A",
+    "address2": "Isanova 97/A"
+  },
+  "whatsapp": {
+    "accountName": "Promgradstroy",
+    "chatMessage": "Hello! How can I help?",
+    "placeholder": "Enter your message..."
+  }
+}
