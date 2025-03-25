@@ -76,5 +76,10 @@
   "map": {
     "address1": "Chuy 97/A",
     "address2": "Isanova 97/A"
+  },
+  "whatsapp": {
+    "accountName": "Promgradstroy",
+    "chatMessage": "Hello! How can I help?",
+    "placeholder": "Enter your message..."
   }
 }
