@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useMap } from "react-leaflet";
 import L from "leaflet";
-import Location from "../../assets/icons/icons(3).svg";
+import Location from "../../assets/icons/icons3.svg";
 
 type CustomMarkerProps = {
   position: [number, number]; // Пример для координат
