@@ -1,5 +1,6 @@
 import { create } from "zustand";
 import axios from "axios";
+import { useLanguageStore } from "./useLanguage";
 
 type Project = {
   id: number;
@@ -26,9 +27,16 @@ export const useProjects = create<ProjectStore>((set) => ({
 
   fetchProjects: async () => {
     set({ loading: true, error: null });
+
+    const language = useLanguageStore.getState().language;
     try {
       const response = await axios.get(
-        "https://promgrad.kipoha.fun/api/projects/"
+        "https://promgrad.kipoha.fun/api/projects/",
+        {
+          headers: {
+            "Accept-Language": language,
+          },
+        }
       );
       set({ projects: response.data, loading: false });
     } catch (error) {

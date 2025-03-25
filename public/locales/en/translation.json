@@ -1,0 +1,37 @@
+{
+  "navigation": "Site Navigation",
+  "home": "Home",
+  "about": "About Us",
+  "works": "Our Works",
+  "contacts": "Contacts",
+  "slider": {
+    "name": "Professional ",
+    "title": "drawings and building design",
+    "description": "Our company is ready to offer you a full range of services to turn your ideas into reality. Contact us to discuss your project and find out how we can help you with its implementation.",
+    "button": "Our works"
+  },
+  "aboutUs": {
+    "comfort": "Comfort. Reliability. Accurate deadlines. Extensive experience. Professional team",
+    "companyDescription": "Promgradstroy is a reliable partner in the field of building design and drafting, offering a full range of services in three key areas: architectural design, engineering communications, and structural solutions. With many years of experience in the construction industry, we strive to provide our clients with high-quality and innovative solutions.",
+    "sectionTitle": "About Us"
+  },
+  "directions": {
+    "sectionTitle": "Our Directions",
+    "engineeringCommunications": "Engineering Communications",
+    "structuralSolutions": "Structural Solutions",
+    "architecturalDesign": "Architectural Design"
+  },
+  "card": {
+    "years": "years",
+    "projects": "projects",
+    "clients": "clients",
+    "experience": "Experience in the market",
+    "quality": "Quality and reliability",
+    "clientOrientation": "Customer-oriented"
+  },
+  "descriptions": {
+    "engineering": "We design heating, ventilation, air conditioning, power supply, and water supply systems, ensuring the efficiency and reliability of all engineering communications. Our team takes into account all technical standards and requirements to guarantee maximum safety and comfort.",
+    "structural": "We develop structural solutions that provide strength, stability, and durability of buildings. Our team performs calculations and analysis to propose optimal structural schemes that meet the project’s requirements and operating conditions.",
+    "architectural": "We create functional and aesthetically attractive architectural solutions that meet modern requirements and client needs. Our team develops detailed architectural plans, facades, and cross-sections, ensuring a harmonious combination of form and function."
+  }
+}

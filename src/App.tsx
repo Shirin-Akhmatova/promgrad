@@ -6,14 +6,14 @@ import Header from "./components/header/Header";
 import MainSlider from "./components/mainSlider/MainSlider";
 import OurWork from "./components/ourWork/OurWork";
 
-
 const App = () => {
   return (
     <div>
       <Header />
       <MainSlider />
-      <AboutUs/>
+      <AboutUs />
       <OurWork />
+      <OurContacts />
       <Footer />
       <ToastContainer style={{ zIndex: 1000000 }} />
     </div>

@@ -5,6 +5,7 @@ import styles from "./OurWork.module.scss";
 import Modal from "./modal/Modal";
 import { Project } from "../../types";
 import { useTags } from "../../store/useTags";
+import { useLanguageStore } from "../../store/useLanguage";
 
 const OurWork = () => {
   const { projects, loading, error, fetchProjects } = useProjects();
@@ -15,9 +16,17 @@ const OurWork = () => {
   console.log(selectedProject, "selectedProject");
   console.log(selectedTags, "selectedTags");
 
+  const language = useLanguageStore((state) => state.language);
+  console.log(language, "language tags");
+
+  useEffect(() => {
+    fetchTags();
+    fetchProjects();
+  }, [language]);
+
   useEffect(() => {
     fetchProjects();
-    fetchTags();
+    // fetchTags();
   }, []);
 
   const filterProjectsByTags = () => {
