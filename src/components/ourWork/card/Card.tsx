@@ -12,6 +12,11 @@ import {
 import { Project } from "../../../types";
 import { useState } from "react";
 import { useLanguageStore } from "../../../store/useLanguage";
+import left from "../../../assets/icons/Arrow_left.svg";
+import right from "../../../assets/icons/Arrow_right.svg";
+import business from "../../../assets/icons/business.svg";
+import location from "../../../assets/icons/location.svg";
+import clock from "../../../assets/icons/clock.svg";
 
 type CardProps = {
   project: Project;
@@ -93,19 +98,11 @@ const Card = ({ project, onClick }: CardProps) => {
         </Swiper>
 
         <button className={styles.customPrev} onClick={handleSlidePrev}>
-          <img
-            src="/src/assets/icons/Arrow_left.svg"
-            alt="Arrow_left Icon"
-            className={styles.icon}
-          />
+          <img src={left} alt="bird Icon" className={styles.icon} />
         </button>
 
         <button className={styles.customNext} onClick={handleSlideNext}>
-          <img
-            src="/src/assets/icons/Arrow_right.svg"
-            alt="Arrow_right Icon"
-            className={styles.icon}
-          />
+          <img src={right} alt="Arrow_right Icon" className={styles.icon} />
         </button>
 
         <h3
@@ -122,7 +119,7 @@ const Card = ({ project, onClick }: CardProps) => {
       >
         <p className={`${styles.info} ${styles.info_type}`}>
           <img
-            src="/src/assets/icons/business.svg"
+            src={business}
             alt="business Icon"
             className={styles.info_icon}
           />
@@ -130,18 +127,14 @@ const Card = ({ project, onClick }: CardProps) => {
         </p>
         <p className={`${styles.info} ${styles.info_address}`}>
           <img
-            src="/src/assets/icons/location.svg"
+            src={location}
             alt="location Icon"
             className={styles.info_icon}
           />
           <span>{address}</span>
         </p>
         <p className={`${styles.info} ${styles.info_date}`}>
-          <img
-            src="/src/assets/icons/clock.svg"
-            alt="clock Icon"
-            className={styles.info_icon}
-          />
+          <img src={clock} alt="clock Icon" className={styles.info_icon} />
           <span>{end_date}</span>
         </p>
       </div>

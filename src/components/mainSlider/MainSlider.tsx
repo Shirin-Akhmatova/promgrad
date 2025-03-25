@@ -12,6 +12,9 @@ import "./MainSlider.scss";
 
 import img1 from "../../assets/images/mainSlider.jpg";
 import img2 from "../../assets/images/mainSlider2.jpg";
+import left from "../../assets/icons/Arrow_left.svg";
+import right from "../../assets/icons/Arrow_right.svg";
+
 import { useTranslation } from "react-i18next";
 
 const MainSlider = () => {
@@ -36,18 +39,10 @@ const MainSlider = () => {
         </div>
 
         <button className={styles.customPrev}>
-          <img
-            src="/src/assets/icons/Arrow_left.svg"
-            alt="About Icon"
-            className={styles.icon}
-          />
+          <img src={left} alt="left Icon" className={styles.icon} />
         </button>
         <button className={styles.customNext}>
-          <img
-            src="/src/assets/icons/Arrow_right.svg"
-            alt="About Icon"
-            className={styles.icon}
-          />
+          <img src={right} alt="left Icon" className={styles.icon} />
         </button>
       </div>
       <div className={styles.reactSwiper}>

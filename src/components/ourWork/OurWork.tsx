@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
-import { useProjects } from "../../store/useProjects";
+import { useTranslation } from "react-i18next";
 import Card from "./card/Card";
 import styles from "./OurWork.module.scss";
 import Modal from "./modal/Modal";
+import { useProjects } from "../../store/useProjects";
 import { Project } from "../../types";
 import { useTags } from "../../store/useTags";
 import { useLanguageStore } from "../../store/useLanguage";
-import { useTranslation } from "react-i18next";
+import bird from "../../assets/icons/bird.svg";
 
 const OurWork = () => {
   const { projects, fetchProjects } = useProjects();
@@ -51,11 +52,7 @@ const OurWork = () => {
             className={styles.workButton}
             onClick={() => setSelectedTags([])}
           >
-            <img
-              src="/src/assets/icons/bird.svg"
-              alt="About Icon"
-              className={styles.icon}
-            />
+            <img src={bird} alt="bird Icon" className={styles.icon} />
             <span>{t("ourWork.allProjects")}</span>
           </button>
           {tags.map((tag) => (
@@ -64,11 +61,7 @@ const OurWork = () => {
               className={styles.workButton}
               onClick={() => handleTagClick(tag.id)}
             >
-              <img
-                src="/src/assets/icons/bird.svg"
-                alt="About Icon"
-                className={styles.icon}
-              />
+              <img src={bird} alt="bird Icon" className={styles.icon} />
               <span>{tag.title}</span>
             </button>
           ))}

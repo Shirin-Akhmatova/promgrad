@@ -4,6 +4,7 @@ import styles from "./Header.module.scss";
 import { useLanguageStore } from "../../store/useLanguage";
 import { useTranslation } from "react-i18next";
 import vector from "../../assets/icons/Vector.svg";
+import language1 from "../../assets/icons/language.svg";
 
 const Header = () => {
   const { t, i18n } = useTranslation();
@@ -150,11 +151,12 @@ const Header = () => {
             <span>
               <span>{language.toUpperCase()}</span>
             </span>
-            <img
+            {/* <img
               src="/src/assets/icons/language.svg"
               alt="language Icon"
               className={styles.icon}
-            />
+            /> */}
+            <img src={language1} alt="language Icon" className={styles.icon} />
           </div>
 
           {isModalOpen && (
