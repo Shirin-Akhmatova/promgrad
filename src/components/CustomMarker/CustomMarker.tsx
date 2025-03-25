@@ -3,16 +3,22 @@ import { useMap } from "react-leaflet";
 import L from "leaflet";
 import Location from "../../assets/icons/icons (3).svg";
 
-const CustomMarker = ({ position, text, width = 73, height = 26 }) => {
+type CustomMarkerProps = {
+  position: [number, number]; // Пример для координат
+  text: string;
+  width?: number;
+  height?: number;
+};
+
+const CustomMarker: React.FC<CustomMarkerProps> = ({
+  position,
+  text,
+  width = 73,
+  height = 26,
+}) => {
   const map = useMap();
 
   useEffect(() => {
-    const icon = L.icon({
-      iconUrl: Location,
-      iconSize: [20, 20],
-      iconAnchor: [10, 10],
-    });
-
     const label = L.divIcon({
       className: "custom-label",
       html: `<div style="display: flex; justify-content: center; align-items: center; 

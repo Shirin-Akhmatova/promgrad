@@ -13,7 +13,7 @@ const OurContacts = () => {
   };
 
   return (
-    <section>
+    <section id="contacts">
       <div className={styles.title}>{t("ourContacts.sectionTitle")}</div>
       <div className={styles.subtitle}>{t("ourContacts.subtitle")}</div>
       <div className={styles.contact_card_wrapper}>
@@ -24,13 +24,13 @@ const OurContacts = () => {
           addresses={getAddresses("ourContacts.addresses.engineering")}
         />
         <ContactCard
-          title={t("ourContacts.structural")}
+          title={t("ourContacts.structuralSolutions")}
           phone="+996 505 00 12 45"
           email="easyjet@gmail.com"
           addresses={getAddresses("ourContacts.addresses.structuralSolutions")}
         />
         <ContactCard
-          title={t("ourContacts.architectural")}
+          title={t("ourContacts.architecturalDesign")}
           phone="+996 505 00 12 45"
           email="easyjet@gmail.com"
           addresses={getAddresses("ourContacts.addresses.architecturalDesign")}

@@ -24,6 +24,7 @@ export const useTags = create<TagStore>((set) => ({
     set({ loading: true, error: null });
 
     const language = useLanguageStore.getState().language;
+    console.log(language);
 
     try {
       const response = await axios.get(

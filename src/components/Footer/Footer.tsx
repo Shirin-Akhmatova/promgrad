@@ -14,15 +14,25 @@ const Footer = () => {
       <Map />
       <nav className={styles.navbar}>
         <ul className={styles.navbar__menu}>
-          <li> {t("home")}</li>
-          <li> {t("about")}</li>
-          <li> {t("works")}</li>
-          <li> {t("contacts")}</li>
+          <li>
+            <a href="#home">{t("home")}</a>
+          </li>
+          <li>
+            <a href="#about">{t("about")}</a>
+          </li>
+          <li>
+            <a href="#works">{t("works")}</a>
+          </li>
+          <li>
+            <a href="#contacts">{t("contacts")}</a>
+          </li>
         </ul>
         <div className={styles.navbar__icons}>
           <img src={Telegram} />
           <img src={WhatsApp} />
-          <div className={styles.navbar__logo}>LOGO</div>
+          <div className={styles.navbar__logo}>
+            <a href="#home">LOGO</a>
+          </div>
           <img src={Instagram} />
           <img src={Twitter} />
         </div>

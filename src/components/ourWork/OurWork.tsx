@@ -9,17 +9,13 @@ import { useLanguageStore } from "../../store/useLanguage";
 import { useTranslation } from "react-i18next";
 
 const OurWork = () => {
-  const { projects, loading, error, fetchProjects } = useProjects();
+  const { projects, fetchProjects } = useProjects();
   const { tags, fetchTags } = useTags();
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [selectedTags, setSelectedTags] = useState<number[]>([]);
   const { t } = useTranslation();
 
-  console.log(selectedProject, "selectedProject");
-  console.log(selectedTags, "selectedTags");
-
   const language = useLanguageStore((state) => state.language);
-  console.log(language, "language tags");
 
   useEffect(() => {
     fetchTags();
@@ -42,7 +38,7 @@ const OurWork = () => {
   };
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} id="works">
       <div className={styles.ourWork}>
         <div className={styles.ourWork_header}>
           <h1 className={styles.ourWork_h1}>{t("ourWork.sectionTitle")}</h1>
