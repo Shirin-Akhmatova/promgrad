@@ -45,6 +45,6 @@ export const useTags = create<TagStore>((set) => ({
   },
 }));
 
-useLanguageStore.subscribe((state) => {
-  useTags.getState().fetchTags(); // Автоматически обновляем теги при смене языка
-});
+// useLanguageStore.subscribe((state) => {
+//   useTags.getState().fetchTags(); // Автоматически обновляем теги при смене языка
+// });
