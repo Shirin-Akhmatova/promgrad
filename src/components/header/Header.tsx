@@ -101,17 +101,25 @@ const Header = () => {
           <ul>
             <span className={styles.navSite}>{t("navigation")}</span>
             <li>
-              <a href="#about" className={styles.ulist}>
+              <a
+                href="#home"
+                className={styles.ulist}
+                onClick={() => setMenuOpen(false)}
+              >
                 <span>{t("home")}</span>
                 <img
                   src="/src/assets/icons/Vector.svg"
-                  alt="About Icon"
+                  alt="home Icon"
                   className={styles.icon}
                 />
               </a>
             </li>
             <li>
-              <a href="#about" className={styles.ulist}>
+              <a
+                href="#about"
+                className={styles.ulist}
+                onClick={() => setMenuOpen(false)}
+              >
                 <span>{t("about")}</span>
                 <img
                   src="/src/assets/icons/Vector.svg"
@@ -121,21 +129,29 @@ const Header = () => {
               </a>
             </li>
             <li>
-              <a href="#about" className={styles.ulist}>
+              <a
+                href="#works"
+                className={styles.ulist}
+                onClick={() => setMenuOpen(false)}
+              >
                 <span>{t("works")}</span>
                 <img
                   src="/src/assets/icons/Vector.svg"
-                  alt="About Icon"
+                  alt="works Icon"
                   className={styles.icon}
                 />
               </a>
             </li>
             <li>
-              <a href="#about" className={styles.ulist}>
+              <a
+                href="#contacts"
+                className={styles.ulist}
+                onClick={() => setMenuOpen(false)}
+              >
                 <span>{t("contacts")}</span>
                 <img
                   src="/src/assets/icons/Vector.svg"
-                  alt="About Icon"
+                  alt="contacts Icon"
                   className={styles.icon}
                 />
               </a>
@@ -151,7 +167,7 @@ const Header = () => {
             </span>
             <img
               src="/src/assets/icons/language.svg"
-              alt="About Icon"
+              alt="language Icon"
               className={styles.icon}
             />
           </div>
@@ -161,7 +177,7 @@ const Header = () => {
               className={styles.languageModal}
               onClick={(e) => e.stopPropagation()}
             >
-              <button onClick={() => handleLanguageSelect("KG")}>KG</button>
+              <button onClick={() => handleLanguageSelect("KG")}>KY</button>
               <button onClick={() => handleLanguageSelect("RU")}>RU</button>
               <button onClick={() => handleLanguageSelect("EN")}>EN</button>
             </div>

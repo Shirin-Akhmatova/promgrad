@@ -102,7 +102,7 @@ const AboutUs: React.FC = () => {
   }, []);
 
   return (
-    <div className={styles.aboutContainer}>
+    <div className={styles.aboutContainer} id="about">
       <h1>{t("aboutUs.sectionTitle")}</h1>
       <div className={styles.Comfort}>
         <h2>{t("aboutUs.comfort")}</h2>
