@@ -72,5 +72,9 @@
     "cancelButton": "Cancel",
     "error": "An error occurred while submitting data.",
     "success": "Your application has been successfully submitted!"
+  },
+  "map": {
+    "address1": "Chuy 97/A",
+    "address2": "Isanova 97/A"
   }
 }
