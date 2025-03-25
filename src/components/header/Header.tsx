@@ -3,6 +3,7 @@ import { Divide as Hamburger } from "hamburger-react";
 import styles from "./Header.module.scss";
 import { useLanguageStore } from "../../store/useLanguage";
 import { useTranslation } from "react-i18next";
+import vector from "../../assets/icons/Vector.svg";
 
 const Header = () => {
   const { t, i18n } = useTranslation();
@@ -107,11 +108,7 @@ const Header = () => {
                 onClick={() => setMenuOpen(false)}
               >
                 <span>{t("home")}</span>
-                <img
-                  src="/src/assets/icons/Vector.svg"
-                  alt="home Icon"
-                  className={styles.icon}
-                />
+                <img src={vector} alt="home Icon" className={styles.icon} />
               </a>
             </li>
             <li>
@@ -121,11 +118,7 @@ const Header = () => {
                 onClick={() => setMenuOpen(false)}
               >
                 <span>{t("about")}</span>
-                <img
-                  src="/src/assets/icons/Vector.svg"
-                  alt="About Icon"
-                  className={styles.icon}
-                />
+                <img src={vector} alt="about Icon" className={styles.icon} />
               </a>
             </li>
             <li>
@@ -135,11 +128,7 @@ const Header = () => {
                 onClick={() => setMenuOpen(false)}
               >
                 <span>{t("works")}</span>
-                <img
-                  src="/src/assets/icons/Vector.svg"
-                  alt="works Icon"
-                  className={styles.icon}
-                />
+                <img src={vector} alt="works Icon" className={styles.icon} />
               </a>
             </li>
             <li>
@@ -149,11 +138,7 @@ const Header = () => {
                 onClick={() => setMenuOpen(false)}
               >
                 <span>{t("contacts")}</span>
-                <img
-                  src="/src/assets/icons/Vector.svg"
-                  alt="contacts Icon"
-                  className={styles.icon}
-                />
+                <img src={vector} alt="contacts Icon" className={styles.icon} />
               </a>
             </li>
           </ul>
