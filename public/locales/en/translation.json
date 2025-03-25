@@ -42,5 +42,35 @@
     "sectionTitle": "Our Works",
     "workTitle": "Choose the direction as you wish",
     "allProjects": "All projects"
+  },
+  "ourContacts": {
+    "sectionTitle": "Our Contacts",
+    "subtitle": "Choose a category as you wish",
+    "engineering": "Engineering Communications",
+    "structuralSolutions": "Structural Solutions",
+    "architecturalDesign": "Architectural Design",
+    "addresses": {
+      "engineering": ["Chuy 97/a", "Isanova 97/a", "Chuy 97/a"],
+      "structuralSolutions": ["Isanova 35/b", "Manas 55/a", "Toktogul 12/b"],
+      "architecturalDesign": ["Abdrahmanov 12", "Ala-Arch 10", "Jibek Jolu 23"]
+    }
+  },
+  "contactCard": {
+    "phone": "Phone:",
+    "addresses": "Addresses:",
+    "submitButton": "Submit Request"
+  },
+  "modal": {
+    "yourData": "Your Data",
+    "namePlaceholder": "Name",
+    "phonePlaceholder": "Phone number (WhatsApp)",
+    "emailPlaceholder": "Email",
+    "chooseDirection": "Choose a direction",
+    "loading": "Loading...",
+    "noDirections": "No available directions",
+    "submitButton": "Submit Application",
+    "cancelButton": "Cancel",
+    "error": "An error occurred while submitting data.",
+    "success": "Your application has been successfully submitted!"
   }
 }

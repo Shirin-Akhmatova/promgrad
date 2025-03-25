@@ -7,8 +7,10 @@ import { useDirections } from "../../store/useDirections";
 import { useFeedback } from "../../store/useFeedback";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useTranslation } from "react-i18next";
 
 const Modal: React.FC = () => {
+  const { t } = useTranslation();
   const { isOpen, closeModal } = useModalStore();
   const {
     directions = [],
@@ -28,7 +30,7 @@ const Modal: React.FC = () => {
   const [email, setEmail] = useState<string>("");
   const [selectedOption, setSelectedOption] = useState<number | null>(null);
   const [selectedLabel, setSelectedLabel] = useState<string>(
-    "Выберите направление"
+    t("modal.chooseDirection")
   );
   const [isDropdownOpen, setDropdownOpen] = useState<boolean>(false);
 
@@ -40,7 +42,7 @@ const Modal: React.FC = () => {
 
   useEffect(() => {
     if (success) {
-      toast.success("Заявка успешно отправлена!", {
+      toast.success(t("modal.success"), {
         autoClose: 5000,
         closeOnClick: true,
         draggable: true,
@@ -51,7 +53,7 @@ const Modal: React.FC = () => {
       setPhoneNumber("");
       setEmail("");
       setSelectedOption(null);
-      setSelectedLabel("Выберите направление");
+      setSelectedLabel(t("modal.chooseDirection"));
 
       closeModal();
     }
@@ -59,7 +61,7 @@ const Modal: React.FC = () => {
 
   useEffect(() => {
     if (feedbackError) {
-      toast.error(`Ошибка: ${feedbackError}`, {
+      toast.error(`${t("modal.error")}: ${feedbackError}`, {
         autoClose: 5000,
         closeOnClick: true,
         draggable: true,
@@ -72,7 +74,7 @@ const Modal: React.FC = () => {
     e.preventDefault();
 
     if (!name || !phone_number || !email || selectedOption === null) {
-      toast.error("Пожалуйста, заполните все поля.", {
+      toast.error(t("modal.error"), {
         autoClose: 5000,
         closeOnClick: true,
         draggable: true,
@@ -92,7 +94,7 @@ const Modal: React.FC = () => {
       await sendFeedback(formData);
     } catch (error) {
       console.error("Ошибка отправки:", error);
-      toast.error("Произошла ошибка при отправке данных.", {
+      toast.error(t("modal.error"), {
         autoClose: 5000,
         closeOnClick: true,
         draggable: true,
@@ -106,7 +108,7 @@ const Modal: React.FC = () => {
     setPhoneNumber("");
     setEmail("");
     setSelectedOption(null);
-    setSelectedLabel("Выберите направление");
+    setSelectedLabel(t("modal.chooseDirection"));
     setDropdownOpen(false);
     closeModal();
   };
@@ -123,7 +125,7 @@ const Modal: React.FC = () => {
           onClick={(e) => e.stopPropagation()}
         >
           <div className={styles.modalHeader}>
-            <div className={styles.modalTitle}>Ваши данные</div>
+            <div className={styles.modalTitle}>{t("modal.yourData")}</div>
             <button className={styles.closeButton} onClick={handleClose}>
               <img src={closeIcon} />
             </button>
@@ -131,14 +133,14 @@ const Modal: React.FC = () => {
           <form onSubmit={handleSubmit}>
             <input
               type="text"
-              placeholder="Имя"
+              placeholder={t("modal.namePlaceholder")}
               className={styles.input}
               value={name}
               onChange={(e) => setName(e.target.value)}
             />
             <input
               type="text"
-              placeholder="Номер в Whats app"
+              placeholder={t("modal.phonePlaceholder")}
               className={styles.input}
               value={phone_number}
               onChange={(e) => setPhoneNumber(e.target.value)}
@@ -164,7 +166,7 @@ const Modal: React.FC = () => {
             {isDropdownOpen && (
               <ul className={styles.dropdownList}>
                 {directionsLoading ? (
-                  <li className={styles.dropdownItem}>Загрузка...</li>
+                  <li className={styles.dropdownItem}>{t("modal.loading")}</li>
                 ) : directionsError ? (
                   <li className={styles.dropdownItem}>{directionsError}</li>
                 ) : directions.length > 0 ? (
@@ -183,7 +185,7 @@ const Modal: React.FC = () => {
                   ))
                 ) : (
                   <li className={styles.dropdownItem}>
-                    Нет доступных направлений
+                    {t("modal.noDirections")}
                   </li>
                 )}
               </ul>
@@ -194,14 +196,14 @@ const Modal: React.FC = () => {
               type="submit"
               disabled={feedbackLoading}
             >
-              {feedbackLoading ? "Отправка..." : "Подать заявку"}
+              {feedbackLoading ? t("modal.loading") : t("modal.submitButton")}
             </button>
             <button
               className={styles.cancelButton}
               type="button"
               onClick={handleClose}
             >
-              Отмена
+              {t("modal.cancelButton")}
             </button>
           </form>
         </div>

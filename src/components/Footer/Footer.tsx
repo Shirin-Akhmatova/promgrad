@@ -4,17 +4,20 @@ import WhatsApp from "../../assets/icons/Icons-22.svg";
 import Instagram from "../../assets/icons/Component.svg";
 import Twitter from "../../assets/icons/Component (1).svg";
 import Map from "../Map/Map";
+import { useTranslation } from "react-i18next";
 
 const Footer = () => {
+  const { t } = useTranslation();
+
   return (
     <footer>
       <Map />
       <nav className={styles.navbar}>
         <ul className={styles.navbar__menu}>
-          <li>Главная</li>
-          <li>О нас</li>
-          <li>Наши работы</li>
-          <li>Контакты</li>
+          <li> {t("home")}</li>
+          <li> {t("about")}</li>
+          <li> {t("works")}</li>
+          <li> {t("contacts")}</li>
         </ul>
         <div className={styles.navbar__icons}>
           <img src={Telegram} />

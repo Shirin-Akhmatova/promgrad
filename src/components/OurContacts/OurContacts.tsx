@@ -1,27 +1,30 @@
+import { useTranslation } from "react-i18next";
 import ContactCard from "../ContactCard/ContactCard";
 import Modal from "../Modal/Modal";
 import styles from "./OurContacts.module.scss";
 
 const OurContacts = () => {
+  const { t } = useTranslation();
+
   return (
     <section>
-      <div className={styles.title}>Наши контакты</div>
-      <div className={styles.subtitle}>Выберите категорию по желанию</div>
+      <div className={styles.title}>{t("ourContacts.sectionTitle")}</div>
+      <div className={styles.subtitle}>{t("ourContacts.subtitle")}</div>
       <div className={styles.contact_card_wrapper}>
         <ContactCard
-          title="Инженерные коммуникации"
+          title={t("ourContacts.engineering")}
           phone="+996 505 00 12 45"
           email="easyjet@gmail.com"
           addresses={["Чуй 97/а", "Исанова 97/а", "Чуй 97/а"]}
         />
         <ContactCard
-          title="Конструктивные решения"
+          title={t("ourContacts.structuralSolutions")}
           phone="+996 505 00 12 45"
           email="easyjet@gmail.com"
           addresses={["Чуй 97/а", "Исанова 97/а", "Чуй 97/а"]}
         />
         <ContactCard
-          title="Архитектурное проектирование"
+          title={t("ourContacts.architecturalDesign")}
           phone="+996 505 00 12 45"
           email="easyjet@gmail.com"
           addresses={["Чуй 97/а", "Исанова 97/а", "Чуй 97/а"]}

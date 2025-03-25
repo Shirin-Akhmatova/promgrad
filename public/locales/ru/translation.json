@@ -42,5 +42,35 @@
     "sectionTitle": "Наши работы",
     "workTitle": "Выберите направление по желанию",
     "allProjects": "Все проекты"
+  },
+  "ourContacts": {
+    "sectionTitle": "Наши контакты",
+    "subtitle": "Выберите категорию по желанию",
+    "engineering": "Инженерные коммуникации",
+    "structuralSolutions": "Конструктивные решения",
+    "architecturalDesign": "Архитектурное проектирование",
+    "addresses": {
+      "engineering": ["Чуй 97/а", "Исанова 97/а", "Чуй 97/а"],
+      "structuralSolutions": ["Исанова 35/б", "Манас 55/а", "Токтогула 12/б"],
+      "architecturalDesign": ["Абдрахманова 12", "Ала-Арча 10", "Жибек Жолу 23"]
+    }
+  },
+  "contactCard": {
+    "phone": "Телефон:",
+    "addresses": "Адреса:",
+    "submitButton": "Подать заявку"
+  },
+  "modal": {
+    "yourData": "Ваши данные",
+    "namePlaceholder": "Имя",
+    "phonePlaceholder": "Номер в WhatsApp",
+    "emailPlaceholder": "Email",
+    "chooseDirection": "Выберите направление",
+    "loading": "Загрузка...",
+    "noDirections": "Нет доступных направлений",
+    "submitButton": "Подать заявку",
+    "cancelButton": "Отмена",
+    "error": "Произошла ошибка при отправке данных.",
+    "success": "Заявка успешно отправлена!"
   }
 }
