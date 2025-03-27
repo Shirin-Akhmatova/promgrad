@@ -8,6 +8,7 @@ import OurWork from "./components/ourWork/OurWork";
 import { FloatingWhatsApp } from "react-floating-whatsapp";
 import "./App.scss";
 import { useTranslation } from "react-i18next";
+import Map from "./components/Map/Map";
 
 const App = () => {
   const { t } = useTranslation();
@@ -19,6 +20,7 @@ const App = () => {
       <AboutUs />
       <OurWork />
       <OurContacts />
+      {/* <Map /> */}
       <Footer />
 
       <FloatingWhatsApp
