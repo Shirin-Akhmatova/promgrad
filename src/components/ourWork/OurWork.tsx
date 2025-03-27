@@ -8,6 +8,7 @@ import { Project } from "../../types";
 import { useTags } from "../../store/useTags";
 import { useLanguageStore } from "../../store/useLanguage";
 import bird from "../../assets/icons/bird.svg";
+import { useModalScroll } from "../../store/useModalscroll";
 
 const OurWork = () => {
   const { projects, fetchProjects } = useProjects();
@@ -17,6 +18,8 @@ const OurWork = () => {
   const { t } = useTranslation();
 
   const language = useLanguageStore((state) => state.language);
+
+  const { openModal, closeModal, isModalOpens } = useModalScroll();
 
   useEffect(() => {
     fetchTags();
@@ -36,6 +39,11 @@ const OurWork = () => {
 
   const handleTagClick = (tagId: number) => {
     setSelectedTags([tagId]);
+  };
+
+  const handleProjectClick = (project: Project) => {
+    setSelectedProject(project);
+    openModal();
   };
 
   return (
@@ -73,17 +81,34 @@ const OurWork = () => {
             <Card
               key={project.id}
               project={project}
-              onClick={() => setSelectedProject(project)}
+              // onClick={() => setSelectedProject(project)}
+              onClick={() => handleProjectClick(project)}
             />
           ))}
         </div>
 
         {/* modal */}
-        {selectedProject && (
+        {/* {selectedProject && (
           <div className={styles.card_modal}>
             <Modal
               project={selectedProject}
-              onClose={() => setSelectedProject(null)}
+              // onClose={() => setSelectedProject(null)}
+              onClose={() => {
+                setSelectedProject(null);
+                closeModal(); // закрываем модалку
+              }}
+            />
+          </div>
+        )} */}
+        {/* modal */}
+        {isModalOpens && selectedProject && (
+          <div className={styles.card_modal}>
+            <Modal
+              project={selectedProject}
+              onClose={() => {
+                setSelectedProject(null);
+                closeModal(); // Закрываем модалку
+              }}
             />
           </div>
         )}

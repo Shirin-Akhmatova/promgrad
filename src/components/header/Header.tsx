@@ -5,6 +5,9 @@ import { useLanguageStore } from "../../store/useLanguage";
 import { useTranslation } from "react-i18next";
 import vector from "../../assets/icons/Vector.svg";
 import language1 from "../../assets/icons/language.svg";
+import logo from "../../assets/icons/logo_mobile.svg";
+import logo_desktop from "../../assets/icons/logo_mobile_big.svg";
+import { useModalScroll } from "../../store/useModalscroll";
 
 const Header = () => {
   const { t, i18n } = useTranslation();
@@ -14,6 +17,8 @@ const Header = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const { language, setLanguage } = useLanguageStore();
+  const { isModalOpens } = useModalScroll();
+
   const languageMapping = {
     KG: "ky",
     RU: "ru",
@@ -64,6 +69,10 @@ const Header = () => {
   useEffect(() => {
     let lastScrollY = window.scrollY;
     const handleScroll = () => {
+      if (isModalOpens) {
+        return; // Если модалка открыта, не скрываем/показываем хедер
+      }
+
       if (window.scrollY > lastScrollY) {
         setIsHidden(true); // scroll down
         setHasBackground(false);
@@ -80,7 +89,7 @@ const Header = () => {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [isModalOpens]);
 
   return (
     <header
@@ -95,8 +104,14 @@ const Header = () => {
           <Hamburger toggled={isMenuOpen} toggle={toggleMenu} />
         </div>
 
-        <a href="#" className={styles.logo}>
-          LOGO
+        <a href="#" className={styles.logo1}>
+          {/* LOGO */}
+          <img
+            src={logo_desktop}
+            alt="logo Icon"
+            className={styles.logo_desktop}
+          />
+          <img src={logo} alt="logo Icon" className={styles.logo} />
         </a>
 
         <nav className={`${styles.nav} ${isMenuOpen ? styles.open : ""}`}>
@@ -151,11 +166,6 @@ const Header = () => {
             <span>
               <span>{language.toUpperCase()}</span>
             </span>
-            {/* <img
-              src="/src/assets/icons/language.svg"
-              alt="language Icon"
-              className={styles.icon}
-            /> */}
             <img src={language1} alt="language Icon" className={styles.icon} />
           </div>
 

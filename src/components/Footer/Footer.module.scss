@@ -41,13 +41,11 @@ footer {
 }
 
 .navbar__logo {
-  background: white;
-  font-size: 20px;
-  font-weight: 700;
-  color: black;
-  padding: 10px 15px;
-  border-radius: 12px;
   cursor: pointer;
+
+  .logo {
+    display: none;
+  }
 }
 
 @media (max-width: 768px) {
@@ -70,5 +68,14 @@ footer {
   }
   .navbar__icons {
     gap: 23px;
+  }
+
+  .navbar__logo {
+    .logo {
+      display: block;
+    }
+    .logo_desktop {
+      display: none;
+    }
   }
 }
