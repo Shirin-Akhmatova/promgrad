@@ -13,9 +13,9 @@ const CustomZoomControls = () => {
       <a href="#top" className={styles.scroll_button}>
         <img src={upIcon} />
       </a>
-      <button onClick={() => {}} className={styles.scroll_button}>
+      <a href="#footer" className={styles.scroll_button}>
         <img src={downIcon} />
-      </button>
+      </a>
 
       <button onClick={() => map.zoomIn()} className={styles.zoom_button}>
         <img src={zoomIn} />

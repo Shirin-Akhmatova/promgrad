@@ -10,7 +10,7 @@ const Footer = () => {
   const { t } = useTranslation();
 
   return (
-    <footer>
+    <footer id="footer">
       <Map />
       <nav className={styles.navbar}>
         <ul className={styles.navbar__menu}>
