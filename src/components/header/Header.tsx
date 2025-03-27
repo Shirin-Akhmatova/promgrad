@@ -70,7 +70,7 @@ const Header = () => {
     let lastScrollY = window.scrollY;
     const handleScroll = () => {
       if (isModalOpens) {
-        return; // Если модалка открыта, не скрываем/показываем хедер
+        return;
       }
 
       if (window.scrollY > lastScrollY) {
