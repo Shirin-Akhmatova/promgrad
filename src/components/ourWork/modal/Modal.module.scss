@@ -1,0 +1,323 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+}
+
+.modal {
+  background: white;
+  padding: 20px;
+  border-radius: 24px;
+  width: 100%;
+  max-width: 1067px;
+  max-height: 589px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+
+  .modal_header {
+    display: none;
+  }
+}
+
+.close {
+  position: absolute;
+  top: 11px;
+  right: 20px;
+  border: none;
+  background: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+// ! image
+.card {
+  position: relative;
+  width: 100%;
+  max-width: 644px;
+
+  .card_image {
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25),
+      inset 1px -2px 4px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 40px;
+    width: 644px;
+    height: 541px;
+  }
+}
+
+.customPrev,
+.customNext {
+  position: absolute;
+  z-index: 2;
+  cursor: pointer;
+  bottom: 260px;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+.customPrev {
+  left: 10px;
+}
+
+.customNext {
+  right: 10px;
+}
+// ! image end
+
+// ! descriptions
+.modal_infos {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 580px;
+  padding-left: 32px;
+
+  .modal_card_name {
+    // padding-top: 24px;
+    color: rgb(0, 0, 0);
+    font-family: Montserrat;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 120%;
+    letter-spacing: 0px;
+    text-align: left;
+  }
+
+  .info_icon {
+    padding-right: 8px;
+  }
+
+  .modal_info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* Body/16 Semibold */
+    color: rgb(111, 109, 115);
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0px;
+    text-align: left;
+  }
+
+  .modal_description {
+    color: rgb(0, 0, 0);
+    font-family: Mulish;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 0px;
+    text-align: left;
+  }
+
+  .modal_info_type {
+    padding-top: 20px;
+  }
+
+  .modal_info_address {
+    padding-top: 12px;
+  }
+
+  .modal_info_date {
+    padding-top: 12px;
+  }
+
+  .modal_description {
+    color: rgb(0, 0, 0);
+    font-family: Mulish;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 0px;
+    text-align: left;
+    padding-top: 24px;
+  }
+}
+
+// ? adaptive 1024px
+@media (max-width: 1024px) {
+  .modal {
+    align-items: center;
+  }
+
+  .card {
+    max-width: 450px;
+
+    .card_image {
+      border-radius: 40px;
+      width: 450px;
+      height: 390px;
+    }
+  }
+
+  .customPrev,
+  .customNext {
+    bottom: 170px;
+  }
+
+  .modal_infos {
+    padding-left: 15px;
+
+    .modal_info_type {
+      padding-top: 12px;
+    }
+
+    .modal_info_address {
+      padding-top: 8px;
+    }
+
+    .modal_info_date {
+      padding-top: 8px;
+    }
+
+    .modal_description {
+      font-size: 14px;
+      font-weight: 700;
+      padding-top: 10px;
+    }
+  }
+}
+
+// ? adaptive 865px
+@media (max-width: 810px) {
+  .overlay {
+    padding: 0px;
+  }
+
+  .modal {
+    border-radius: 0px;
+    width: 100%;
+    height: 100vh;
+    max-width: 100%;
+    max-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  .card {
+    max-width: 328px;
+
+    .customPrev,
+    .customNext {
+      display: none;
+    }
+
+    .card_image {
+      border-radius: 20px;
+      width: 328px;
+      height: 275px;
+    }
+  }
+
+  .modal_infos {
+    padding-left: 0px;
+    width: 100%;
+    height: auto;
+
+    .modal_card_name {
+      padding-top: 16px;
+    }
+
+    .modal_info_type {
+      padding-top: 12px;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 22px;
+    }
+
+    .modal_info_address {
+      padding-top: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 22px;
+    }
+
+    .modal_info_date {
+      padding-top: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 22px;
+    }
+
+    .modal_description {
+      font-size: 14px;
+      font-weight: 700;
+      padding-top: 10px;
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .modal {
+    .modal_header {
+      display: block;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-bottom: 35px;
+
+      .icon {
+        margin-left: -100px;
+        cursor: pointer;
+      }
+
+      p {
+        color: rgb(0, 0, 0);
+        font-family: Montserrat;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 24px;
+        letter-spacing: 0px;
+        text-align: left;
+        padding-left: 35px;
+      }
+    }
+  }
+
+  .close {
+    display: none;
+  }
+}
+
+@media (max-width: 360px) {
+  .modal {
+    padding: 10px;
+  }
+
+  .card {
+    max-width: 280px;
+
+    .card_image {
+      border-radius: 20px;
+      width: 280px;
+      height: 235px;
+    }
+  }
+
+  .modal {
+    .modal_header {
+      padding-bottom: 35px;
+
+      .icon {
+        margin-left: -60px;
+      }
+
+      p {
+        padding-left: 35px;
+      }
+    }
+  }
+}
