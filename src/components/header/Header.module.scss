@@ -6,7 +6,9 @@
   padding-top: 80px;
   padding-bottom: 20px;
   background: transparent;
+  transition: transform 0.3s ease-in-out, background-color 0.2s ease-in-out;
   z-index: 1000;
+  transform: translateY(0);
 
   &.hidden {
     transform: translateY(-100%);
@@ -15,6 +17,7 @@
   &.withBackground {
     background-color: rgba(0, 0, 0, 0.3);
     color: white;
+    backdrop-filter: blur(2px);
   }
 
   .container {
@@ -25,16 +28,32 @@
     width: 100%;
     margin: 0 auto;
     padding: 0 50px;
+
+    .burger,
+    .logo1 {
+      outline: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .burger:focus,
+    .logo1:focus {
+      outline: none;
+      box-shadow: none;
+    }
+
+    .burger:active,
+    .logo1:active {
+      background-color: transparent !important;
+    }
   }
 
   .logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: white;
+    display: none;
   }
 
   .nav {
     list-style: none;
+    padding: 0 10px 0px 10px;
 
     ul {
       display: flex;
@@ -182,26 +201,33 @@
     }
 
     .nav {
-      display: none;
+      // display: none
       width: 100%;
       position: fixed;
       top: 0;
       left: 0;
       bottom: 0;
-      // right: 0;
       background-color: #000;
       justify-content: start;
       align-items: center;
-      transition: transform 0.3s ease-in-out;
       z-index: 1000;
       padding-left: 50px;
+      transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+      transform: translateX(-100%);
+      opacity: 0;
+      visibility: hidden;
+
+      &.open {
+        transform: translateX(0);
+        opacity: 1;
+        visibility: visible;
+      }
 
       ul {
         display: flex;
         flex-direction: column;
         gap: 40px;
         list-style-type: disc;
-        // list-style-position: inside;
         color: white;
 
         .navSite {
@@ -217,7 +243,6 @@
       a {
         font-size: 16px;
         font-family: Montserrat;
-        // color: white;
       }
 
       .icon {
@@ -237,7 +262,10 @@
     }
 
     .logo {
-      font-size: 16px;
+      display: block;
+    }
+    .logo_desktop {
+      display: none;
     }
 
     .nav.open {

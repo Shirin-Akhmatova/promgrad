@@ -8,6 +8,7 @@ import { useFeedback } from "../../store/useFeedback";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useTranslation } from "react-i18next";
+import { useLanguageStore } from "../../store/useLanguage";
 
 const Modal: React.FC = () => {
   const { t } = useTranslation();
@@ -18,6 +19,8 @@ const Modal: React.FC = () => {
     error: directionsError,
     fetchDirections,
   } = useDirections();
+  const { language } = useLanguageStore();
+
   const {
     sendFeedback,
     loading: feedbackLoading,
@@ -36,9 +39,9 @@ const Modal: React.FC = () => {
 
   useEffect(() => {
     if (isOpen) {
-      fetchDirections();
+      fetchDirections(language);
     }
-  }, [isOpen, fetchDirections]);
+  }, [isOpen, language, fetchDirections]);
 
   useEffect(() => {
     if (success) {

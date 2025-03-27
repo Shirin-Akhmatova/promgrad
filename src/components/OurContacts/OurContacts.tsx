@@ -13,7 +13,7 @@ const OurContacts = () => {
   };
 
   return (
-    <section id="contacts">
+    <section id="contacts" className={styles.contacts_container}>
       <div className={styles.title}>{t("ourContacts.sectionTitle")}</div>
       <div className={styles.subtitle}>{t("ourContacts.subtitle")}</div>
       <div className={styles.contact_card_wrapper}>

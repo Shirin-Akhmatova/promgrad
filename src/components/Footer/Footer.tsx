@@ -5,6 +5,8 @@ import Instagram from "../../assets/icons/Component.svg";
 import Twitter from "../../assets/icons/Component (1).svg";
 import Map from "../Map/Map";
 import { useTranslation } from "react-i18next";
+import logo from "../../assets/icons/logo_mobile.svg";
+import logo_desktop from "../../assets/icons/logo_mobile_big.svg";
 
 const Footer = () => {
   const { t } = useTranslation();
@@ -31,7 +33,15 @@ const Footer = () => {
           <img src={Telegram} />
           <img src={WhatsApp} />
           <div className={styles.navbar__logo}>
-            <a href="#home">LOGO</a>
+            <a href="#home">
+              {/* LOGO */}
+              <img
+                src={logo_desktop}
+                alt="logo Icon"
+                className={styles.logo_desktop}
+              />
+              <img src={logo} alt="logo Icon" className={styles.logo} />
+            </a>
           </div>
           <img src={Instagram} />
           <img src={Twitter} />
