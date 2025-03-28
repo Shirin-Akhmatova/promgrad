@@ -7,7 +7,7 @@ import vector from "../../assets/icons/Vector.svg";
 import language1 from "../../assets/icons/language.svg";
 import logo from "../../assets/icons/logo_mobile.svg";
 import logo_desktop from "../../assets/icons/logo_mobile_big.svg";
-import { useModalScroll } from "../../store/useModalscroll";
+import { useModalProps } from "../../store/useModalProps";
 
 const Header = () => {
   const { t, i18n } = useTranslation();
@@ -17,7 +17,7 @@ const Header = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const { language, setLanguage } = useLanguageStore();
-  const { isModalOpens } = useModalScroll();
+  const { isModalOpens } = useModalProps();
 
   const languageMapping = {
     KG: "ky",
@@ -70,6 +70,7 @@ const Header = () => {
     let lastScrollY = window.scrollY;
     const handleScroll = () => {
       if (isModalOpens) {
+        setIsHidden(true);
         return;
       }
 

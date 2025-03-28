@@ -1,5 +1,3 @@
-// import create from "zustand";
-
 import { create } from "zustand";
 
 interface ModalScrollState {
@@ -8,7 +6,7 @@ interface ModalScrollState {
   closeModal: () => void;
 }
 
-export const useModalScroll = create<ModalScrollState>((set) => ({
+export const useModalProps = create<ModalScrollState>((set) => ({
   isModalOpens: false,
   openModal: () => set({ isModalOpens: true }),
   closeModal: () => set({ isModalOpens: false }),

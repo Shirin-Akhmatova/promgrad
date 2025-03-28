@@ -80,6 +80,7 @@
   "whatsapp": {
     "accountName": "Promgradstroy",
     "chatMessage": "Hello! How can I help?",
-    "placeholder": "Enter your message..."
+    "placeholder": "Enter your message...",
+    "statusMessage": "Typically replies within 10 minutes"
   }
 }

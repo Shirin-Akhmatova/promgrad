@@ -8,7 +8,7 @@ import { Project } from "../../types";
 import { useTags } from "../../store/useTags";
 import { useLanguageStore } from "../../store/useLanguage";
 import bird from "../../assets/icons/bird.svg";
-import { useModalScroll } from "../../store/useModalscroll";
+import { useModalProps } from "../../store/useModalProps";
 
 const OurWork = () => {
   const { projects, fetchProjects } = useProjects();
@@ -19,7 +19,7 @@ const OurWork = () => {
 
   const language = useLanguageStore((state) => state.language);
 
-  const { openModal, closeModal, isModalOpens } = useModalScroll();
+  const { openModal, closeModal, isModalOpens } = useModalProps();
 
   useEffect(() => {
     fetchTags();

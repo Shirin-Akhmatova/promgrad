@@ -44,6 +44,10 @@ const Modal: React.FC = () => {
   }, [isOpen, language, fetchDirections]);
 
   useEffect(() => {
+    setSelectedLabel(t("modal.chooseDirection"));
+  }, [language, t]);
+
+  useEffect(() => {
     if (success) {
       toast.success(t("modal.success"), {
         autoClose: 5000,

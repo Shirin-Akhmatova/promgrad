@@ -28,6 +28,7 @@ const App = () => {
         allowClickAway={true}
         chatMessage={t("whatsapp.chatMessage")}
         placeholder={t("whatsapp.placeholder")}
+        statusMessage={t("whatsapp.statusMessage")}
         className="whatsapp-button"
       />
       <ToastContainer style={{ zIndex: 1000000 }} />
