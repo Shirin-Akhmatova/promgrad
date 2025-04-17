@@ -15,6 +15,7 @@ const Map = () => {
         zoom={14}
         style={{ height: "100%", width: "100%" }}
         zoomControl={false}
+        scrollWheelZoom={false}
       >
         <TileLayer url="https://tile2.maps.2gis.com/tiles?x={x}&y={y}&z={z}" />
 
