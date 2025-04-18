@@ -49,16 +49,14 @@
     "engineering": "Инженерные коммуникации",
     "structuralSolutions": "Конструктивные решения",
     "architecturalDesign": "Архитектурное проектирование",
-    "addresses": {
-      "engineering": ["Чуй 97/а", "Исанова 97/а", "Чуй 97/а"],
-      "structuralSolutions": ["Исанова 35/б", "Манас 55/а", "Токтогула 12/б"],
-      "architecturalDesign": ["Абдрахманова 12", "Ала-Арча 10", "Жибек Жолу 23"]
+    "address": {
+      "engineering": "Чуй 97/а"
     }
   },
   "contactCard": {
     "phone": "Телефон:",
-    "addresses": "Адреса:",
-    "submitButton": "Подать заявку"
+    "address": "Адрес:",
+    "submitButton": "Связаться"
   },
   "modal": {
     "yourData": "Ваши данные",

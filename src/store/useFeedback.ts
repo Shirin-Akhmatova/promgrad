@@ -8,8 +8,6 @@ interface FeedbackState {
   sendFeedback: (formData: {
     name: string;
     phone_number: string;
-    email: string;
-    organization: string;
   }) => Promise<void>;
 }
 

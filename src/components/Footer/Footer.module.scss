@@ -2,80 +2,86 @@ footer {
   max-width: 100%;
   overflow: hidden;
 }
-
+footer a {
+  color: white;
+  text-decoration: none;
+}
 .navbar {
   background: black;
   color: white;
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   align-items: center;
   justify-content: center;
   height: 192px;
   gap: 32px;
-
-  a {
-    color: inherit;
-    text-decoration: none;
-  }
+  position: relative;
 }
-
-.navbar__menu {
-  display: flex;
-  gap: 30px;
-  font-size: 16px;
-  font-weight: 600;
+.navbar__logo {
+  font-family: Impact, sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  display: none;
+  line-height: 100%;
+  letter-spacing: 1%;
 }
-
-.navbar__menu li {
-  cursor: pointer;
+.navbar__logo_hidden {
+  font-family: Impact, sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  margin: 0 12px;
+  display: block;
+  line-height: 100%;
+  letter-spacing: 1%;
 }
-
 .navbar__icons {
   display: flex;
   align-items: center;
   gap: 16px;
 }
-
-.navbar__icons img {
-  cursor: pointer;
+.navbar__menu {
+  display: flex;
+  gap: 30px;
+  font-size: 16px;
+  font-weight: 600;
+  padding-top: 20px;
 }
-
-.navbar__logo {
+.navbar__menu li {
   cursor: pointer;
-
-  .logo {
-    display: none;
-  }
 }
 
 @media (max-width: 768px) {
   .navbar {
-    height: 228px;
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
+    height: auto;
+    align-items: start;
+    text-align: start;
+    padding: 50px 16px;
+    gap: 24px;
+  }
+  .navbar__logo {
+    display: block;
+    font-size: 16px;
+    order: 1;
+  }
+  .navbar__icons {
+    order: 2;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .navbar__logo_hidden {
+    display: none;
   }
   .navbar__menu {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px 20px;
-    justify-content: center;
-    text-align: start;
+    order: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 20px;
     font-size: 14px;
   }
   .navbar__menu li {
     white-space: nowrap;
-    padding: 0 40px;
-  }
-  .navbar__icons {
-    gap: 23px;
-  }
-
-  .navbar__logo {
-    .logo {
-      display: block;
-    }
-    .logo_desktop {
-      display: none;
-    }
   }
 }
