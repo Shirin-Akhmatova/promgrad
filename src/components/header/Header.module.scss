@@ -1,6 +1,7 @@
 a {
   background-color: transparent !important;
   -webkit-tap-highlight-color: transparent;
+  color: white;
 }
 
 .header {
@@ -12,7 +13,7 @@ a {
   padding-bottom: 20px;
   background: transparent;
   transition: transform 0.3s ease-in-out, background-color 0.2s ease-in-out;
-  z-index: 1000;
+  z-index: 2000;
   transform: translateY(0);
 
   &.hidden {
@@ -53,7 +54,20 @@ a {
   }
 
   .logo {
+    font-family: Impact, sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 100%;
+    letter-spacing: 1%;
     display: none;
+  }
+  .logo_desktop {
+    font-family: Impact, sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    display: block;
+    line-height: 100%;
+    letter-spacing: 1%;
   }
 
   .nav {
@@ -269,6 +283,7 @@ a {
     }
 
     .logo {
+      font-size: 15px;
       display: block;
     }
     .logo_desktop {

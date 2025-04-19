@@ -27,14 +27,15 @@
 }
 
 .content {
-  padding: 20px 30px;
-  background: #f7f7f9;
+  background: #fff;
   border-radius: 12px;
+  padding: 41px;
 }
 
 .label {
   font-weight: 700;
   margin-bottom: 16px;
+  color: #000;
 }
 
 .info {
@@ -49,9 +50,9 @@
 }
 
 .button {
-  background: #04132a;
+  background: #1a427f;
   color: white;
-  width: 320px;
+  width: 298px;
   height: 49px;
   padding: 10px;
   border: none;
@@ -67,14 +68,15 @@
     max-width: 328px;
     width: 100%;
     margin: 0 auto;
-    margin-block: 20px;
-    padding: 0 16px;
   }
   .category_button {
     width: 100%;
   }
   .content {
-    padding: 20px 20px;
+    padding: 16px 16px;
+  }
+  .label {
+    color: #6f6d73;
   }
   .button {
     width: 100%;

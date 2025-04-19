@@ -11,9 +11,9 @@ const Map = () => {
   return (
     <div className={styles.map_container}>
       <MapContainer
-        center={[42.8746, 74.625]}
-        zoom={14}
-        style={{ height: "100%", width: "100%" }}
+        center={[42.8700, 74.625]}
+        zoom={13}
+        style={{ height: "100%", width: "100%", borderRadius: "12px" }}
         zoomControl={false}
         scrollWheelZoom={false}
       >

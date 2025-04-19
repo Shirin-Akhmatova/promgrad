@@ -1,11 +1,10 @@
 .map_container {
-  max-width: 1410px;
+  max-width: 990px;
   width: 100%;
-  margin: 0 auto;
   overflow: hidden;
-  height: 550px;
+  height: 370px;
   border-radius: 20px;
-  margin-block: 50px;
+  margin-block: 20px;
 }
 
 :global(.leaflet-control-zoom) {
@@ -14,9 +13,11 @@
 
 @media (max-width: 768px) {
   .map_container {
-    height: 708px;
+    height: 572px;
+    width: 328px;
     margin-block: 0;
-    border-radius: 0;
+    border-radius: 12px;
+    padding: 0 16px;
   }
 
   .leaflet-control-zoom {

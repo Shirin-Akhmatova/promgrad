@@ -1,7 +1,7 @@
 .custom_zoom_controls {
   position: absolute;
   right: 20px;
-  top: 50%;
+  top: 55%;
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
@@ -14,7 +14,7 @@
   border-radius: 12px;
   width: 44px;
   height: 44px;
-  font-size: 30px;
+  font-size: 32px;
   font-weight: bold;
   cursor: pointer;
   z-index: 999;
@@ -22,7 +22,6 @@
 }
 
 .scroll_button {
-  // background: #04132a;
   background-color: #04132a !important;
   border: none;
   border-radius: 12px;
