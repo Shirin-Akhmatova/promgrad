@@ -5,8 +5,6 @@ import { useLanguageStore } from "../../store/useLanguage";
 import { useTranslation } from "react-i18next";
 import vector from "../../assets/icons/Vector.svg";
 import language1 from "../../assets/icons/language.svg";
-import logo from "../../assets/icons/logo_mobile.svg";
-import logo_desktop from "../../assets/icons/logo_mobile_big.svg";
 import { useModalProps } from "../../store/useModalProps";
 
 const Header = () => {
@@ -105,14 +103,12 @@ const Header = () => {
           <Hamburger toggled={isMenuOpen} toggle={toggleMenu} />
         </div>
 
-        <a href="#" className={styles.logo1}>
-          {/* LOGO */}
-          <img
-            src={logo_desktop}
-            alt="logo Icon"
-            className={styles.logo_desktop}
-          />
-          <img src={logo} alt="logo Icon" className={styles.logo} />
+        <a href="#" className={styles.logo_desktop}>
+          {t("consortiumPromgrad")}
+        </a>
+
+        <a href="#" className={styles.logo}>
+          {t("consortiumPromgrad")}
         </a>
 
         <nav className={`${styles.nav} ${isMenuOpen ? styles.open : ""}`}>
