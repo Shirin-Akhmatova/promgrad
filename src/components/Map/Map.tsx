@@ -11,11 +11,12 @@ const Map = () => {
   return (
     <div className={styles.map_container}>
       <MapContainer
-        center={[42.8700, 74.625]}
+        center={[42.87, 74.625]}
         zoom={13}
         style={{ height: "100%", width: "100%", borderRadius: "12px" }}
         zoomControl={false}
         scrollWheelZoom={false}
+        attributionControl={false}
       >
         <TileLayer url="https://tile2.maps.2gis.com/tiles?x={x}&y={y}&z={z}" />
 
