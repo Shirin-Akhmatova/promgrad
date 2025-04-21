@@ -18,7 +18,7 @@ const Header = () => {
   const { isModalOpens } = useModalProps();
 
   const languageMapping = {
-    KG: "ky",
+    KG: "kg",
     RU: "ru",
     EN: "en",
   } as const;
@@ -171,8 +171,8 @@ const Header = () => {
               className={styles.languageModal}
               onClick={(e) => e.stopPropagation()}
             >
-              <button onClick={() => handleLanguageSelect("KG")}>KY</button>
               <button onClick={() => handleLanguageSelect("RU")}>RU</button>
+              <button onClick={() => handleLanguageSelect("KG")}>KG</button>
               <button onClick={() => handleLanguageSelect("EN")}>EN</button>
             </div>
           )}

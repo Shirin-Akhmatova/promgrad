@@ -5,6 +5,7 @@ import AboutUs from "./components/AboutUs/AboutUs";
 import Header from "./components/header/Header";
 import MainSlider from "./components/mainSlider/MainSlider";
 import OurWork from "./components/ourWork/OurWork";
+import OurResults from "./components/OurResults/OurResults";
 import { FloatingWhatsApp } from "react-floating-whatsapp";
 import "./App.scss";
 import { useTranslation } from "react-i18next";
@@ -18,6 +19,7 @@ const App = () => {
       <MainSlider />
       <AboutUs />
       <OurWork />
+      <OurResults />
       <OurContacts />
       <Footer />
 

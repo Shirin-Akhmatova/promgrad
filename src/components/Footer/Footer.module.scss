@@ -1,6 +1,10 @@
 footer {
   max-width: 100%;
   overflow: hidden;
+  
+  img {
+    cursor: pointer;
+  }
 }
 footer a {
   color: white;

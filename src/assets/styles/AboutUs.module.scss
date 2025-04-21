@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Bungee&family=Edu+AU+VIC+WA+NT+Arrows:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=M+PLUS+1p&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Rubik+Vinyl&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Bungee&family=Edu+AU+VIC+WA+NT+Arrows:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=M+PLUS+1p&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Rubik+Vinyl&display=swap");
 
-@import url('https://fonts.googleapis.com/css2?family=Bungee&family=Edu+AU+VIC+WA+NT+Arrows:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=M+PLUS+1p&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Rubik+Vinyl&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Bungee&family=Edu+AU+VIC+WA+NT+Arrows:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=M+PLUS+1p&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Rubik+Vinyl&display=swap");
 
 .aboutContainer {
   width: 100%;
   margin: 0 auto;
-  background-color: #F7F7F9;
+  background-color: #f7f7f9;
 
   h1 {
     font-size: 32px;
@@ -13,6 +13,7 @@
     line-height: 40px;
     text-align: center;
     padding-top: 50px;
+    color: #000;
 
     @media (max-width: 1024px) {
       font-family: Montserrat;
@@ -84,21 +85,22 @@
       align-items: center;
       color: rgb(0, 0, 0);
       font-family: Montserrat;
-      font-weight: 600;
-      font-size: 32px;
+      font-weight: 500;
+      font-size: 20px;
       line-height: 130%;
       align-self: stretch;
       text-align: left;
       flex: 1 1 40%;
+
       @media (max-width: 1024px) {
         flex: 1 1 100%;
         display: flex;
         padding: 0px;
         color: rgb(0, 0, 0);
         font-family: Montserrat;
-        font-size: 32px;
-        font-weight: 700;
-        line-height: 40px;
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 20px;
       }
 
       @media (max-width: 768px) {
@@ -106,9 +108,8 @@
         padding: 0px;
         color: rgb(0, 0, 0);
         font-family: Montserrat;
-        font-size: 32px;
-        font-weight: 700;
-        line-height: 40px;
+        font-size: 20px;
+        font-weight: 500;
         align-self: stretch;
       }
 
@@ -118,23 +119,24 @@
         padding: 0px;
         color: rgb(0, 0, 0);
         font-family: Montserrat;
-        font-size: 32px;
-        font-weight: 700;
+        font-size: 18px;
+        font-weight: 500;
       }
       @media (max-width: 320px) {
         width: 288px;
         height: 240px;
         color: rgb(0, 0, 0);
         font-family: Montserrat;
-        font-size: 30px;
-        font-weight: 700;
+        font-size: 16px;
+        font-weight: 500;
       }
     }
 
     p {
-      font-size: 16px;
+      font-size: 32px;
       text-align: left;
       font-weight: 700;
+      line-height: 130%;
       padding: 0px;
       color: rgb(0, 0, 0);
       font-family: Mulish;
@@ -147,9 +149,9 @@
       @media (max-width: 768px) {
         color: rgb(0, 0, 0);
         font-family: Mulish;
-        font-size: 16px;
-        font-weight: 400;
-        line-height: 24px;
+        font-size: 30px;
+        font-weight: 700;
+        line-height: 40px;
         text-align: left;
 
         span {
@@ -160,9 +162,9 @@
       @media (max-width: 480px) {
         color: rgb(0, 0, 0);
         font-family: Mulish;
-        font-size: 16px;
-        font-weight: 400;
-        line-height: 24px;
+        font-size: 26px;
+        font-weight: 700;
+        line-height: 40px;
         text-align: left;
 
         span {
@@ -173,13 +175,19 @@
         text-align: left;
         padding: 0px;
         font-family: Mulish;
-        font-size: 14px;
-        font-weight: 400;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 40px;
         span {
           font-weight: 700;
         }
       }
     }
+  }
+
+  .aboutWrapper {
+    max-width: 1280px;
+    margin: 0 auto;
   }
 
   .OurDirections {
@@ -228,19 +236,58 @@
     }
   }
 
+  h4 {
+    padding: 0 78px 32px 78px;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 120%;
+    text-align: start;
+    color: #1a427f;
+
+    @media (max-width: 1024px) {
+      padding-top: 20px;
+      padding: 0 16px;
+      font-family: Montserrat;
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 40px;
+      text-align: start;
+    }
+
+    @media (max-width: 768px) {
+      padding-top: 20px;
+      font-size: 24px;
+      line-height: 36px;
+    }
+
+    @media (max-width: 480px) {
+      padding-top: 20px;
+      font-family: Montserrat;
+      font-weight: 700;
+      font-size: 24px;
+    }
+    @media (max-width: 320px) {
+      padding-top: 20px;
+      font-family: Montserrat;
+      font-weight: 700;
+      font-size: 24px;
+    }
+  }
+
   .CardGrid {
     display: flex;
     flex-wrap: wrap;
     padding: 0 16px;
     gap: 20px;
     justify-content: center;
-    .aboutUsCard, .aboutUsCard2 {
+    padding-bottom: 40px;
+    .aboutUsCard,
+    .aboutUsCard2 {
       flex: 1 1 calc(33.33% - 20px);
-      max-width: 380px; 
+      max-width: 380px;
       min-width: 328px;
-   }
-   
-  
+    }
+
     @media (max-width: 768px) {
       .aboutUsCard,
       .aboutUsCard2 {
@@ -248,14 +295,14 @@
         max-width: calc(50% - 20px);
       }
     }
-  
+
     @media (max-width: 480px) {
       .aboutUsCard,
       .aboutUsCard2 {
         flex: 1 1 100%;
         max-width: 100%;
       }
-    }  
+    }
     @media (max-width: 320px) {
       .aboutUsCard,
       .aboutUsCard2 {
@@ -265,26 +312,26 @@
       }
     }
     .aboutUsCard {
-      height: 531px;
+      height: 338px;
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
       align-items: flex-start;
       border-radius: 12px;
       background-color: rgb(255, 255, 255);
-      margin-top: 56px; 
+      margin-top: 32px;
       @media (max-width: 480px) {
         height: auto;
-        margin-top: 0px; 
-      }  
+        margin-top: 0px;
+      }
       .textContent {
         padding: 16px 0 16px 24px;
         @media (max-width: 480px) {
           padding: 16px 0 16px 16px;
-        }  
+        }
         @media (max-width: 320px) {
           padding: 16px 0 16px 16px;
-        }  
+        }
         .subtitle {
           color: rgb(0, 0, 0);
           font-family: Montserrat;
@@ -293,7 +340,7 @@
           line-height: 22px;
           width: 100%;
           margin-top: 8px;
-  
+
           @media (max-width: 768px) {
             font-size: 18px;
           }
@@ -302,18 +349,18 @@
           }
         }
       }
-  
+
       .stats {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         margin-bottom: 10px;
-  
+
         .years {
           font-size: 32px;
           font-weight: 700;
           color: rgb(26, 66, 127);
-  
+
           @media (max-width: 768px) {
             font-size: 28px;
           }
@@ -322,7 +369,7 @@
           }
         }
       }
-  
+
       .content {
         width: 100%;
         margin-top: 36px;
@@ -335,11 +382,11 @@
           font-size: 20px;
           font-weight: 700;
           line-height: 24px;
-        
+
           @media (max-width: 768px) {
             font-size: 18px;
           }
-        
+
           @media (max-width: 320px) {
             font-size: 16px;
             line-height: 18px;
@@ -356,35 +403,35 @@
           font-family: Mulish;
         }
       }
-  
+
       .images {
         margin-top: auto;
         display: flex;
         justify-content: center;
-  
+
         img {
           width: 100%;
         }
       }
     }
-  
+
     .aboutUsCard2 {
       max-width: 360px;
-      max-height: 472px;
-      margin: 20px 0;
+      max-height: 540px;
+      margin: 20px 0 0 0;
       border-radius: 12px;
       overflow: hidden;
       background-color: white;
-  
+
       .imgHan {
         width: 100%;
         height: auto;
         object-fit: cover;
       }
-  
+
       .card2Content {
         padding: 12px;
-  
+
         h3 {
           color: #000;
           font-size: 18px;
@@ -392,7 +439,7 @@
           font-family: Montserrat;
           margin: 16px 0;
         }
-  
+
         p {
           color: rgb(71, 71, 71);
           font-size: 14px;

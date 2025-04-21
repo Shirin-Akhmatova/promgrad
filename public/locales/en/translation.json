@@ -12,8 +12,8 @@
     "button": "Our works"
   },
   "aboutUs": {
-    "comfort": "Comfort. Reliability. Precise deadlines. Extensive experience. A team of professionals",
-    "companyDescription": "Promgradstroy is a reliable partner in the field of building design and drafting, offering a full range of services in three key areas: architectural design, engineering communications, and structural solutions. We have many years of experience in the construction industry and strive to provide our clients with high-quality and innovative solutions.",
+    "comfort": "Promgrad is a reliable partner in the field of design and drawings of buildings, offering a full range of services in three key areas: architectural design, engineering communications and structural solutions.",
+    "companyDescription": "A consortium is a temporary association of several organizations to implement one project.",
     "sectionTitle": "About Us"
   },
   "directions": {
@@ -43,6 +43,10 @@
     "sectionTitle": "Our Works",
     "workTitle": "Choose the direction as you wish",
     "allProjects": "All projects"
+  },
+  "ourResults": {
+    "sectionTitle": "Our results",
+    "resultsTitle": "Confidence in every step"
   },
   "ourContacts": {
     "sectionTitle": "Our Contacts",
