@@ -23,8 +23,12 @@ const OurWork = () => {
 
   useEffect(() => {
     fetchTags();
-    fetchProjects(); // Вызов fetchProjects() в одном useEffect
+    fetchProjects();
   }, [language]);
+
+  useEffect(() => {
+    fetchProjects();
+  }, []);
 
   const filterProjectsByTags = () => {
     if (selectedTags.length === 0) return projects;
@@ -42,9 +46,6 @@ const OurWork = () => {
     openModal();
   };
 
-  const excludeSpecialTags = tags.filter((tag) => ![7, 8, 9].includes(tag.id));
-  const specialTags = tags.filter((tag) => [7, 8, 9].includes(tag.id));
-
   return (
     <div className={styles.container} id="works">
       <div className={styles.ourWork}>
@@ -53,58 +54,62 @@ const OurWork = () => {
           <p className={styles.workTitle}>{t("ourWork.workTitle")}</p>
         </div>
 
-        {/* Кнопки для тегов, исключая специальные */}
+        {/*  кнопки для тегов */}
         <div className={styles.workButtons}>
-          {excludeSpecialTags.map((tag) => (
-            <button
-              key={tag.id}
-              className={styles.workButton}
-              onClick={() => handleTagClick(tag.id)}
-            >
-              <img src={bird} alt="bird Icon" className={styles.icon} />
-              <span>{tag.title}</span>
-            </button>
+          {/*Delete button <Our works> and <best work> */}
+          {tags
+            .filter((tag) => [7, 8, 9].includes(tag.id)) // фильтруем по стабильным ID
+            .map((tag) => (
+              <button
+                key={tag.id}
+                className={styles.workButton}
+                onClick={() => handleTagClick(tag.id)}
+              >
+                <img src={bird} alt="bird Icon" className={styles.icon} />
+                <span>{tag.title}</span>
+              </button>
+            ))}
+          {/*Delete button <Our works> and <best work> */}
+        </div>
+
+        {/* cards */}
+        <div className={styles.cards}>
+          {filterProjectsByTags().map((project) => (
+            <Card
+              key={project.id}
+              project={project}
+              // onClick={() => setSelectedProject(project)}
+              onClick={() => handleProjectClick(project)}
+            />
           ))}
         </div>
 
-        {/* Кнопки для специальных тегов */}
-        <div className={styles.workButtons}>
-          {specialTags.map((tag) => (
-            <button
-              key={tag.id}
-              className={styles.workButton}
-              onClick={() => handleTagClick(tag.id)}
-            >
-              <img src={bird} alt="bird Icon" className={styles.icon} />
-              <span>{tag.title}</span>
-            </button>
-          ))}
-        </div>
+        {/* modal */}
+        {/* {selectedProject && (
+          <div className={styles.card_modal}>
+            <Modal
+              project={selectedProject}
+              // onClose={() => setSelectedProject(null)}
+              onClose={() => {
+                setSelectedProject(null);
+                closeModal(); // закрываем модалку
+              }}
+            />
+          </div>
+        )} */}
+        {/* modal */}
+        {isModalOpens && selectedProject && (
+          <div className={styles.card_modal}>
+            <Modal
+              project={selectedProject}
+              onClose={() => {
+                setSelectedProject(null);
+                closeModal(); // Закрываем модалку
+              }}
+            />
+          </div>
+        )}
       </div>
-
-      {/* cards */}
-      <div className={styles.cards}>
-        {filterProjectsByTags().map((project) => (
-          <Card
-            key={project.id}
-            project={project}
-            onClick={() => handleProjectClick(project)}
-          />
-        ))}
-      </div>
-
-      {/* modal */}
-      {isModalOpens && selectedProject && (
-        <div className={styles.card_modal}>
-          <Modal
-            project={selectedProject}
-            onClose={() => {
-              setSelectedProject(null);
-              closeModal(); // Закрываем модалку
-            }}
-          />
-        </div>
-      )}
     </div>
   );
 };
