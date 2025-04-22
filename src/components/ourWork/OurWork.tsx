@@ -30,6 +30,9 @@ const OurWork = () => {
     fetchProjects();
   }, []);
 
+
+  
+  
   const filterProjectsByTags = () => {
     if (selectedTags.length === 0) return projects;
     return projects.filter((project) =>
@@ -57,10 +60,8 @@ const OurWork = () => {
         {/*  кнопки для тегов */}
         <div className={styles.workButtons}>
        {/*Delete button <Our works> and <best work> */}
-        {tags
-  .filter((tag) =>
-    ["Архитектурное проектирование", "Конструктивные решения", "Инженерные коммуникации"].includes(tag.title)
-  )
+       {tags
+  .filter((tag) => [7, 8, 9].includes(tag.id)) // фильтруем по стабильным ID
   .map((tag) => (
     <button
       key={tag.id}
@@ -68,7 +69,7 @@ const OurWork = () => {
       onClick={() => handleTagClick(tag.id)}
     >
       <img src={bird} alt="bird Icon" className={styles.icon} />
-      <span>{tag.title}</span>
+      <span>{tag.title}</span> 
     </button>
 ))}
 {/*Delete button <Our works> and <best work> */}
