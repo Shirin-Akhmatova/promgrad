@@ -56,6 +56,7 @@ const OurWork = () => {
 
         {/*  кнопки для тегов */}
         <div className={styles.workButtons}>
+          {/* Добавление кнопок с иконками для всех тегов */}
           <button
             className={styles.workButton}
             onClick={() => setSelectedTags([])}
@@ -73,6 +74,20 @@ const OurWork = () => {
               <span>{tag.title}</span>
             </button>
           ))}
+
+          {/* Фильтрация по ID для удаления ненужных кнопок */}
+          {tags
+            .filter((tag) => [7, 8, 9].includes(tag.id)) // фильтруем по стабильным ID
+            .map((tag) => (
+              <button
+                key={tag.id}
+                className={styles.workButton}
+                onClick={() => handleTagClick(tag.id)}
+              >
+                <img src={bird} alt="bird Icon" className={styles.icon} />
+                <span>{tag.title}</span>
+              </button>
+            ))}
         </div>
 
         {/* cards */}
