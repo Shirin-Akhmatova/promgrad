@@ -63,8 +63,10 @@
     background: rgb(243, 248, 255);
     transition: 0.3s ease, transform 0.3s ease;
 
+    // убрала Все проекты
     &:first-child {
       padding: 16px 50px;
+      display: none;
     }
 
     span {
@@ -164,6 +166,11 @@
       padding: 24px 0px 24px 0px;
     }
   }
+}
+
+// убрала Лучшие работы
+.workButton:nth-child(2) {
+  display: none;
 }
 
 @media (max-width: 359px) {

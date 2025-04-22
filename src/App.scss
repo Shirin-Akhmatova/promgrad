@@ -5,3 +5,8 @@
 html {
   scroll-behavior: smooth;
 }
+
+.whatsapp-button {
+  z-index: 1000 !important;
+  position: fixed !important;
+}

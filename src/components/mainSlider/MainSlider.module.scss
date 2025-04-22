@@ -21,7 +21,7 @@
 
 //! textBlock
 .textBlock {
-  position: absolute;
+  // position: absolute;
   width: 630px;
   margin-left: 50px;
   color: white;
@@ -137,6 +137,21 @@
   align-items: center;
   justify-content: start;
 
+  .wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    z-index: 100;
+    width: 100%;
+  }
+
+  .iconPartners {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-right: 50px;
+  }
+
   .customPrev,
   .customNext {
     position: absolute;
@@ -157,6 +172,25 @@
   //! media 768px
   @media (max-width: 768px) {
     justify-content: center;
+
+    .wrapper {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+    }
+
+    .iconPartners {
+      display: flex;
+      flex-direction: row;
+      margin: 0;
+      padding-top: 37px;
+    }
+
+    .iconPartners img {
+      width: 45px;
+      height: 45px;
+    }
 
     .customPrev,
     .customNext {

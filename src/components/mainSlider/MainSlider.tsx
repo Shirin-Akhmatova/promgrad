@@ -15,6 +15,10 @@ import img2 from "../../assets/images/mainSlider2.jpg";
 import left from "../../assets/icons/Arrow_left.svg";
 import right from "../../assets/icons/Arrow_right.svg";
 
+import Organization01 from "../../assets/icons/Frame.svg";
+import Organization02 from "../../assets/icons/Frame (1).svg";
+import Organization03 from "../../assets/icons/Frame (2).svg";
+
 import { useTranslation } from "react-i18next";
 
 const MainSlider = () => {
@@ -23,19 +27,26 @@ const MainSlider = () => {
   return (
     <div className={styles.sliderContainer} id="home">
       <div className={styles.sliderWrapper}>
-        <div className={styles.textBlock}>
-          <h1>{t("slider.name")}</h1>
-          <h2>{t("slider.title")}</h2>
-          <p>{t("slider.description")}</p>
-          <button
-            onClick={() => {
-              document
-                .getElementById("works")
-                ?.scrollIntoView({ behavior: "smooth" });
-            }}
-          >
-            {t("slider.button")}
-          </button>
+        <div className={styles.wrapper}>
+          <div className={styles.textBlock}>
+            <h1>{t("slider.name")}</h1>
+            <h2>{t("slider.title")}</h2>
+            <p>{t("slider.description")}</p>
+            <button
+              onClick={() => {
+                document
+                  .getElementById("works")
+                  ?.scrollIntoView({ behavior: "smooth" });
+              }}
+            >
+              {t("slider.button")}
+            </button>
+          </div>
+          <div className={styles.iconPartners}>
+            <img src={Organization01} />
+            <img src={Organization02} />
+            <img src={Organization03} />
+          </div>
         </div>
 
         <button className={styles.customPrev}>

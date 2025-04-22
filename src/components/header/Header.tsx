@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
-import { Divide as Hamburger } from "hamburger-react";
 import styles from "./Header.module.scss";
 import { useLanguageStore } from "../../store/useLanguage";
 import { useTranslation } from "react-i18next";
 import vector from "../../assets/icons/Vector.svg";
 import language1 from "../../assets/icons/language.svg";
 import { useModalProps } from "../../store/useModalProps";
+import burgerMenuIcon from "../../assets/icons/Icons.svg";
+import closeIcon from "../../assets/icons/Plus.svg";
 
 const Header = () => {
   const { t, i18n } = useTranslation();
@@ -100,7 +101,19 @@ const Header = () => {
       <div className={styles.container}>
         {/* Бургер-меню */}
         <div className={styles.burger}>
-          <Hamburger toggled={isMenuOpen} toggle={toggleMenu} />
+          <button
+            className={styles.menuBtn}
+            onClick={toggleMenu}
+            style={{ display: isMenuOpen ? "none" : "block" }}
+          >
+            <img src={burgerMenuIcon} />
+          </button>
+
+          {isMenuOpen && (
+            <button className={styles.closeBtn} onClick={toggleMenu}>
+              <img src={closeIcon} />
+            </button>
+          )}
         </div>
 
         <a href="#" className={styles.logo_desktop}>

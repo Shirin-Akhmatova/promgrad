@@ -30,9 +30,6 @@ const OurWork = () => {
     fetchProjects();
   }, []);
 
-
-  
-  
   const filterProjectsByTags = () => {
     if (selectedTags.length === 0) return projects;
     return projects.filter((project) =>
@@ -59,21 +56,23 @@ const OurWork = () => {
 
         {/*  кнопки для тегов */}
         <div className={styles.workButtons}>
-       {/*Delete button <Our works> and <best work> */}
-       {tags
-  .filter((tag) => [7, 8, 9].includes(tag.id)) // фильтруем по стабильным ID
-  .map((tag) => (
-    <button
-      key={tag.id}
-      className={styles.workButton}
-      onClick={() => handleTagClick(tag.id)}
-    >
-      <img src={bird} alt="bird Icon" className={styles.icon} />
-      <span>{tag.title}</span> 
-    </button>
-))}
-{/*Delete button <Our works> and <best work> */}
-
+          <button
+            className={styles.workButton}
+            onClick={() => setSelectedTags([])}
+          >
+            <img src={bird} alt="bird Icon" className={styles.icon} />
+            <span>{t("ourWork.allProjects")}</span>
+          </button>
+          {tags.map((tag) => (
+            <button
+              key={tag.id}
+              className={styles.workButton}
+              onClick={() => handleTagClick(tag.id)}
+            >
+              <img src={bird} alt="bird Icon" className={styles.icon} />
+              <span>{tag.title}</span>
+            </button>
+          ))}
         </div>
 
         {/* cards */}
@@ -82,25 +81,11 @@ const OurWork = () => {
             <Card
               key={project.id}
               project={project}
-              // onClick={() => setSelectedProject(project)}
               onClick={() => handleProjectClick(project)}
             />
           ))}
         </div>
 
-        {/* modal */}
-        {/* {selectedProject && (
-          <div className={styles.card_modal}>
-            <Modal
-              project={selectedProject}
-              // onClose={() => setSelectedProject(null)}
-              onClose={() => {
-                setSelectedProject(null);
-                closeModal(); // закрываем модалку
-              }}
-            />
-          </div>
-        )} */}
         {/* modal */}
         {isModalOpens && selectedProject && (
           <div className={styles.card_modal}>
