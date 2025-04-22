@@ -56,23 +56,23 @@ const OurWork = () => {
 
         {/*  кнопки для тегов */}
         <div className={styles.workButtons}>
-          <button
-            className={styles.workButton}
-            onClick={() => setSelectedTags([])}
-          >
-            <img src={bird} alt="bird Icon" className={styles.icon} />
-            <span>{t("ourWork.allProjects")}</span>
-          </button>
-          {tags.map((tag) => (
-            <button
-              key={tag.id}
-              className={styles.workButton}
-              onClick={() => handleTagClick(tag.id)}
-            >
-              <img src={bird} alt="bird Icon" className={styles.icon} />
-              <span>{tag.title}</span>
-            </button>
-          ))}
+       {/*Delete button <Our works> and <best work> */}
+        {tags
+  .filter((tag) =>
+    ["Архитектурное проектирование", "Конструктивные решения", "Инженерные коммуникации"].includes(tag.title)
+  )
+  .map((tag) => (
+    <button
+      key={tag.id}
+      className={styles.workButton}
+      onClick={() => handleTagClick(tag.id)}
+    >
+      <img src={bird} alt="bird Icon" className={styles.icon} />
+      <span>{tag.title}</span>
+    </button>
+))}
+{/*Delete button <Our works> and <best work> */}
+
         </div>
 
         {/* cards */}
