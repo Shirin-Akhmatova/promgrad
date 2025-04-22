@@ -23,7 +23,7 @@ const OurWork = () => {
 
   useEffect(() => {
     fetchTags();
-    fetchProjects();
+    fetchProjects(); // Вызов fetchProjects() в одном useEffect
   }, [language]);
 
   const filterProjectsByTags = () => {
@@ -53,29 +53,33 @@ const OurWork = () => {
           <p className={styles.workTitle}>{t("ourWork.workTitle")}</p>
         </div>
 
-        {/* Кнопки для всех тегов */}
-        {excludeSpecialTags.map((tag) => (
-          <button
-            key={tag.id}
-            className={styles.workButton}
-            onClick={() => handleTagClick(tag.id)}
-          >
-            <img src={bird} alt="bird Icon" className={styles.icon} />
-            <span>{tag.title}</span>
-          </button>
-        ))}
+        {/* Кнопки для тегов, исключая специальные */}
+        <div className={styles.workButtons}>
+          {excludeSpecialTags.map((tag) => (
+            <button
+              key={tag.id}
+              className={styles.workButton}
+              onClick={() => handleTagClick(tag.id)}
+            >
+              <img src={bird} alt="bird Icon" className={styles.icon} />
+              <span>{tag.title}</span>
+            </button>
+          ))}
+        </div>
 
-        {/* Фильтрация по ID для удаления кнопок "Our works" и "Best work" */}
-        {specialTags.map((tag) => (
-          <button
-            key={tag.id}
-            className={styles.workButton}
-            onClick={() => handleTagClick(tag.id)}
-          >
-            <img src={bird} alt="bird Icon" className={styles.icon} />
-            <span>{tag.title}</span>
-          </button>
-        ))}
+        {/* Кнопки для специальных тегов */}
+        <div className={styles.workButtons}>
+          {specialTags.map((tag) => (
+            <button
+              key={tag.id}
+              className={styles.workButton}
+              onClick={() => handleTagClick(tag.id)}
+            >
+              <img src={bird} alt="bird Icon" className={styles.icon} />
+              <span>{tag.title}</span>
+            </button>
+          ))}
+        </div>
       </div>
 
       {/* cards */}
