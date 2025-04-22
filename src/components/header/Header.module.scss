@@ -53,6 +53,14 @@ a {
     }
   }
 
+  .menuBtn {
+    display: none;
+  }
+
+  .closeBtn {
+    display: none;
+  }
+
   .logo {
     font-family: Impact, sans-serif;
     font-weight: 400;
@@ -219,14 +227,13 @@ a {
     }
 
     .nav {
-      // display: none;
       width: 100%;
-      height: 110vh;
+      height: 115vh;
       position: fixed;
       top: 0;
       left: 0;
       bottom: 0;
-      background-color: #000;
+      background-color: #181818;
       justify-content: start;
       align-items: center;
       z-index: 1000;
@@ -281,9 +288,27 @@ a {
       display: flex;
     }
 
+    .menuBtn {
+      position: absolute;
+      top: 24px;
+      left: 16px;
+      z-index: 1001;
+      cursor: pointer;
+    }
+
+    .closeBtn {
+      display: block;
+      cursor: pointer;
+      z-index: 1001;
+      position: absolute;
+      top: 716px;
+      left: 216px;
+    }
+
     .logo {
       font-size: 15px;
       display: block;
+      padding-left: 30px;
     }
     .logo_desktop {
       display: none;
