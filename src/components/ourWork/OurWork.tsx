@@ -64,6 +64,7 @@ const OurWork = () => {
             <img src={bird} alt="bird Icon" className={styles.icon} />
             <span>{t("ourWork.allProjects")}</span>
           </button>
+
           {tags.map((tag) => (
             <button
               key={tag.id}
@@ -75,7 +76,7 @@ const OurWork = () => {
             </button>
           ))}
 
-          {/* Фильтрация по ID для удаления ненужных кнопок */}
+          {/* Фильтрация по ID для удаления кнопок "Our works" и "Best work" */}
           {tags
             .filter((tag) => [7, 8, 9].includes(tag.id)) // фильтруем по стабильным ID
             .map((tag) => (
