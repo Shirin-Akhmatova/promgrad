@@ -48,6 +48,10 @@
     "sectionTitle": "Биздин натыйжалар",
     "resultsTitle": "Ар бир кадамда ишеним"
   },
+  "ourSpecialists": {
+    "sectionTitle": "Биздин адистер",
+    "specialistsTitle": "Өз тармагындагы адистер"
+  },
   "ourContacts": {
     "sectionTitle": "Биздин байланыштар",
     "subtitle": "Талапка жараша категорияны тандаңыз",

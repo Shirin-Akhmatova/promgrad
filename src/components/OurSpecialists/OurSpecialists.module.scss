@@ -1,0 +1,237 @@
+@import url("https://fonts.googleapis.com/css2?family=Bungee&family=Edu+AU+VIC+WA+NT+Arrows:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=M+PLUS+1p&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Rubik+Vinyl&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Bungee&family=Edu+AU+VIC+WA+NT+Arrows:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=M+PLUS+1p&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Rubik+Vinyl&display=swap");
+
+.specialistsContainer {
+  width: 100%;
+  margin: 0 auto;
+  background-color: #f7f7f9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .specialistsWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+  }
+
+  h1 {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 40px;
+    text-align: left;
+    padding-top: 50px;
+    color: #000;
+
+    @media (max-width: 1024px) {
+      font-family: Montserrat;
+      font-weight: 700;
+      font-size: 30px;
+      line-height: 40px;
+      text-align: left;
+      color: #000000;
+      padding: 50px 0 0;
+    }
+    @media (max-width: 768px) {
+      font-size: 28px;
+      line-height: 36px;
+      text-align: left;
+    }
+    @media (max-width: 480px) {
+      color: rgb(0, 0, 0);
+      font-family: Montserrat;
+      font-weight: 700;
+      font-size: 26px;
+      text-align: left;
+    }
+    @media (max-width: 320px) {
+      color: rgb(0, 0, 0);
+      font-family: Montserrat;
+      font-weight: 700;
+      font-size: 24px;
+      text-align: left;
+    }
+  }
+
+  p {
+    font-family: Montserrat;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 22px;
+    padding: 16px 0 0 0;
+    text-align: left;
+
+    @media (max-width: 1024px) {
+      font-family: Montserrat;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 40px;
+      text-align: left;
+      color: #474747;
+    }
+    @media (max-width: 768px) {
+      font-size: 16px;
+      line-height: 36px;
+      padding-bottom: 20px;
+      text-align: left;
+      color: #474747;
+    }
+    @media (max-width: 480px) {
+      font-family: Montserrat;
+      font-weight: 700;
+      font-size: 16px;
+      text-align: left;
+    }
+    @media (max-width: 320px) {
+      font-family: Montserrat;
+      font-weight: 700;
+      font-size: 14px;
+      text-align: left;
+    }
+  }
+
+  .error {
+    color: red;
+    font-size: 16px;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .CardGrid {
+    margin: 0 50px;
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding: 40px 0;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+
+    ::-webkit-scrollbar {
+      width: 0;
+      height: 0;
+    }
+
+    scrollbar-width: none;
+
+    .specialistsCard {
+      flex: 0 0 auto;
+      max-width: 380px;
+      width: 100%;
+      border-radius: 12px;
+      overflow: hidden;
+      background-color: #fff;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+      scroll-snap-align: start;
+
+      .imgHan {
+        width: 100%;
+        height: 269px;
+        object-fit: cover;
+        padding: 4px;
+        border-radius: 8px;
+      }
+
+      .card2Content {
+        padding: 12px;
+
+        h3 {
+          font-size: 18px;
+          font-weight: 600;
+          color: #000;
+          font-family: Montserrat, sans-serif;
+          line-height: 22px;
+        }
+        .position {
+          font-size: 16px;
+          font-weight: 500;
+          font-family: Montserrat, sans-serif;
+          color: #6f6d73;
+          line-height: 120%;
+          padding: 16px 0 0;
+        }
+        .description {
+          font-size: 16px;
+          font-weight: 400;
+          font-family: Mulish, sans-serif;
+          color: #474747;
+          line-height: 22px;
+          padding: 16px 0 0;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .CardGrid {
+      margin: 0;
+      flex-direction: column;
+      gap: 26px;
+      overflow-x: visible;
+      overflow-y: visible;
+      margin-left: 0;
+      padding: 0;
+      scroll-snap-type: none;
+      padding: 0 16px 50px;
+    }
+    .specialistsCard {
+      max-width: 100%;
+      scroll-snap-align: none;
+    }
+    .position {
+      padding: 16px 0 0 0;
+    }
+    .description {
+      padding: 16px 0 0 0;
+      line-height: 24px;
+    }
+  }
+  @media (max-width: 768px) {
+    .CardGrid {
+      margin: 0;
+      flex-direction: column;
+      gap: 26px;
+      overflow-x: visible;
+      overflow-y: visible;
+      margin-left: 0;
+      padding: 0;
+      scroll-snap-type: none;
+      padding: 0 16px 50px;
+    }
+    .specialistsCard {
+      max-width: 100%;
+      scroll-snap-align: none;
+    }
+    .position {
+      padding: 16px 0 0 0;
+    }
+    .description {
+      padding: 16px 0 0 0;
+    }
+  }
+  @media (max-width: 320px) {
+    .CardGrid {
+      margin: 0;
+      flex-direction: column;
+      overflow-x: visible;
+      overflow-y: visible;
+      margin-left: 0;
+      padding: 0;
+      gap: 26px;
+      scroll-snap-type: none;
+      padding: 0 16px 50px;
+    }
+    .specialistsCard {
+      max-width: 100%;
+      scroll-snap-align: none;
+    }
+    .position {
+      padding: 16px 0 0 0;
+    }
+    .description {
+      padding: 16px 0 0 0;
+    }
+  }
+}
