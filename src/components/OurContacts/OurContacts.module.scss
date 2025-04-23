@@ -1,9 +1,16 @@
 .contacts_container {
   padding: 40px 0px 40px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  margin: 0 auto;
+  text-align: start;
 }
 
 section {
   max-width: 1440px;
+  width: 100%;
   margin: 0 auto;
   overflow: hidden;
 }
@@ -26,6 +33,19 @@ section {
 }
 
 @media (max-width: 768px) {
+  .contact_card_wrapper {
+    flex-direction: column;
+    gap: 20px;
+    flex-wrap: nowrap;
+    padding: 0;
+  }
+  .title {
+    font-size: 24px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 320px) {
   .contact_card_wrapper {
     flex-direction: column;
     gap: 20px;

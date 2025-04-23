@@ -12,9 +12,10 @@
   justify-content: center;
 
   .specialistsWrapper {
+    width: 100%;
     display: flex;
     justify-content: center;
-    align-items: start;
+    align-items: center;
     flex-direction: column;
   }
 
@@ -56,13 +57,13 @@
     }
   }
 
-  p {
+  .specialistsSubtitle {
     font-family: Montserrat;
     font-size: 18px;
     font-weight: 600;
     line-height: 22px;
     padding: 16px 0 0 0;
-    text-align: left;
+    text-align: center;
 
     @media (max-width: 1024px) {
       font-family: Montserrat;
@@ -212,6 +213,10 @@
     }
   }
   @media (max-width: 320px) {
+    .specialistsWrapper {
+      padding-left: 16px;
+      align-items: start;
+    }
     .CardGrid {
       margin: 0;
       flex-direction: column;

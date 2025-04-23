@@ -10,7 +10,9 @@ const OurSpecialists: React.FC = () => {
     <div className={styles.specialistsContainer}>
       <div className={styles.specialistsWrapper}>
         <h1>{t("ourSpecialists.sectionTitle")}</h1>
-        <p>{t("ourSpecialists.specialistsTitle")}</p>
+        <p className={styles.specialistsSubtitle}>
+          {t("ourSpecialists.specialistsTitle")}
+        </p>
       </div>
 
       {loading && <p>{t("loading")}</p>}
