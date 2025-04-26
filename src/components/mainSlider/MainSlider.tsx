@@ -43,9 +43,15 @@ const MainSlider = () => {
             </button>
           </div>
           <div className={styles.iconPartners}>
-            <img src={Organization01} />
-            <img src={Organization02} />
-            <img src={Organization03} />
+            <a href="#about">
+              <img src={Organization01} />
+            </a>
+            <a href="#about">
+              <img src={Organization02} />
+            </a>
+            <a href="#about">
+              <img src={Organization03} />
+            </a>
           </div>
         </div>
 

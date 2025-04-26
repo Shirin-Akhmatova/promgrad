@@ -2,7 +2,9 @@ import styles from "./Footer.module.scss";
 import Telegram from "../../assets/icons/Icons-21.svg";
 import WhatsApp from "../../assets/icons/Icons-22.svg";
 import Instagram from "../../assets/icons/Component.svg";
-import Twitter from "../../assets/icons/Component (1).svg";
+import VK from "../../assets/icons/VK.svg";
+import Facebook from "../../assets/icons/Facebook.svg";
+import LinkedIn from "../../assets/icons/LinkedIn.svg";
 import { useTranslation } from "react-i18next";
 
 const Footer = () => {
@@ -15,13 +17,43 @@ const Footer = () => {
           {t("consortiumPromgrad")}
         </a>
         <div className={styles.navbar__icons}>
-          <img src={Telegram} />
-          <img src={WhatsApp} />
+          <a
+            href="https://telegram.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src={Telegram} />
+          </a>
+          <a href="https://wa.me/" target="_blank" rel="noopener noreferrer">
+            <img src={WhatsApp} />
+          </a>
+          <a
+            href="https://www.linkedin.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src={LinkedIn} />
+          </a>
           <a href="#home" className={styles.navbar__logo_hidden}>
             {t("consortiumPromgrad")}
           </a>
-          <img src={Instagram} />
-          <img src={Twitter} />
+          <a
+            href="https://www.instagram.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src={Instagram} />
+          </a>
+          <a href="https://vk.com/" target="_blank" rel="noopener noreferrer">
+            <img src={VK} />
+          </a>
+          <a
+            href="https://www.facebook.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src={Facebook} />
+          </a>
         </div>
         <ul className={styles.navbar__menu}>
           <li>

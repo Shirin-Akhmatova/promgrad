@@ -1,7 +1,6 @@
 footer {
   max-width: 100%;
   overflow: hidden;
-  
   img {
     cursor: pointer;
   }
@@ -43,6 +42,14 @@ footer a {
   align-items: center;
   gap: 16px;
 }
+.navbar__icons a {
+  display: flex;
+  align-items: center;
+}
+.navbar__icons img {
+  width: 24px;
+  height: 24px;
+}
 .navbar__menu {
   display: flex;
   gap: 30px;
@@ -73,6 +80,9 @@ footer a {
     order: 2;
     gap: 16px;
     flex-wrap: wrap;
+  }
+  .navbar__icons a:nth-child(4) {
+    display: none;
   }
   .navbar__logo_hidden {
     display: none;
