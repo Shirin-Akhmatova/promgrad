@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styles from "../../assets/styles/AboutUs.module.scss";
 import style from "./OurResults.module.scss";
 import { useTranslation } from "react-i18next";
@@ -13,6 +13,8 @@ interface CardData {
 
 const OurResults: React.FC = () => {
   const { t } = useTranslation();
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [startCount, setStartCount] = useState(false);
 
   const cards: CardData[] = [
     {
@@ -43,12 +45,34 @@ const OurResults: React.FC = () => {
   );
 
   useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setStartCount(true);
+            observer.disconnect(); // отключаем, чтобы не запускать заново
+          }
+        });
+      },
+      { threshold: 0.3 } // элемент на 30% в зоне видимости
+    );
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!startCount) return;
+
     const timers = cards
       .map((card, index) => {
         if (card.number === undefined) return null;
         const end = card.number;
-        const duration = card.number === 5 ? 20000 : 10000;
-        const step = card.number === 5 ? 1 : Math.ceil(end / (duration / 50));
+        const duration = card.number === 5 ? 3000 : 2000; // быстрее — 2–3 секунды
+        const step = Math.ceil(end / (duration / 30)); // шаг с интервалом 30ms
         const interval = setInterval(() => {
           setCounts((prevCounts) => {
             const newCounts = [...prevCounts];
@@ -59,22 +83,22 @@ const OurResults: React.FC = () => {
             }
             return newCounts;
           });
-        }, 50);
+        }, 30);
 
         return interval;
       })
       .filter(Boolean);
 
     return () => timers.forEach((timer) => clearInterval(timer!));
-  }, []);
+  }, [startCount, cards]);
 
   return (
-    <div className={styles.aboutContainer}>
+    <div ref={containerRef} className={styles.aboutContainer}>
       <div className={styles.ourWork_header}>
         <h1 className={styles.ourWork_h1}>{t("ourResults.sectionTitle")}</h1>
         <p className={style.resultsTitle}>{t("ourResults.resultsTitle")}</p>
       </div>
-      <div className={styles.CardGrid}>
+      <div style={{ justifyContent: "center" }} className={styles.CardGrid}>
         {cards.map((card, index) => (
           <div key={index} className={styles.aboutUsCard}>
             <div className={styles.textContent}>
