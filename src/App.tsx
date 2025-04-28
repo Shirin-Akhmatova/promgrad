@@ -27,12 +27,12 @@ const App = () => {
       <Footer />
       <div className="btns">
         <div className="whatsapp-button">
-          <a href="https://wa.me/996505230605">
+          <a target="_blank" href="https://wa.me/996505230605">
             <img src={WhatsApp} alt="whatsApp" />
           </a>
         </div>
         <div className="telegram-button">
-          <a href="https://t.me/Arsenoverkill">
+          <a target="_blank" href="https://t.me/Arsenoverkill">
             <img src={Telegram} alt="telegram" />
           </a>
         </div>
