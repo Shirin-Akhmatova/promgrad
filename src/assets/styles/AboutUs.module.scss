@@ -50,7 +50,7 @@
   }
   .aboutCardBlock {
     overflow: hidden;
-    max-width: 1180px;
+    max-width: 85%;
     margin: 56px auto;
     display: flex;
     align-items: stretch;
@@ -58,7 +58,6 @@
     gap: 20px;
     .aboutCard {
       height: auto;
-      max-width: 380px;
       max-height: 256px;
       background: #ffffff;
       border-radius: 16px;
@@ -86,6 +85,12 @@
         color: #000000;
       }
     }
+    @media (max-width: 1240px) {
+      .aboutCard {
+        max-width: 380px;
+      }
+    }
+
     @media (max-width: 1024px) {
       flex-wrap: wrap;
       justify-content: center;
