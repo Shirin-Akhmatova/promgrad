@@ -2,6 +2,7 @@ import styles from "../../assets/styles/AboutUs.module.scss";
 import img4 from "./image/Rectangle (1).png";
 import img5 from "./image/Rectangle (2).png";
 import img6 from "./image/Rectangle (3).png";
+import img7 from "./image/Rectangle (4).png";
 import { useTranslation } from "react-i18next";
 
 interface CardData2 {
@@ -31,6 +32,11 @@ const AboutUs: React.FC = () => {
       title: t("directions.architecturalDesign"),
       description: t("descriptions.architectural"),
       images: [img6],
+    },
+    {
+      title: t("directions.techTitle"),
+      description: t("descriptions.technology"),
+      images: [img7],
     },
   ];
 

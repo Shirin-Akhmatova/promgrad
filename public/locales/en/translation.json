@@ -30,7 +30,8 @@
     "sectionTitle": "Our Directions",
     "engineeringCommunications": "Engineering Communications:",
     "structuralSolutions": "Structural Solutions:",
-    "architecturalDesign": "Architectural Design:"
+    "architecturalDesign": "Architectural Design:",
+    "techTitle": "Technical solution:"
   },
   "card": {
     "years": "years",
@@ -47,7 +48,8 @@
   "descriptions": {
     "engineering": "We design heating, ventilation, air conditioning, power supply, and water supply systems, ensuring efficiency and reliability in all engineering communications. Our team considers all technical norms and requirements to guarantee maximum safety and comfort.",
     "structural": "We develop structural solutions that ensure the strength, stability, and durability of buildings. Our team conducts calculations and analysis to propose optimal structural schemes that meet project requirements and operating conditions.",
-    "architectural": "We create functional and aesthetically appealing architectural solutions that meet modern requirements and client needs. Our team develops detailed architectural plans, facades, and sections, ensuring a harmonious combination of form and function."
+    "architectural": "We create functional and aesthetically appealing architectural solutions that meet modern requirements and client needs. Our team develops detailed architectural plans, facades, and sections, ensuring a harmonious combination of form and function.",
+    "technology": "We develop design solutions that ensure the strength, stability and durability of buildings. Our team performs calculations and analysis to offer optimal design schemes that meet the project requirements and operating conditions."
   },
   "ourWork": {
     "sectionTitle": "Our Works",
