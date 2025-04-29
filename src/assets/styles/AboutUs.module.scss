@@ -1,6 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Bungee&family=Edu+AU+VIC+WA+NT+Arrows:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=M+PLUS+1p&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Rubik+Vinyl&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Bungee&family=Edu+AU+VIC+WA+NT+Arrows:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=M+PLUS+1p&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Rubik+Vinyl&display=swap');
 
-@import url("https://fonts.googleapis.com/css2?family=Bungee&family=Edu+AU+VIC+WA+NT+Arrows:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=M+PLUS+1p&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Rubik+Vinyl&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Bungee&family=Edu+AU+VIC+WA+NT+Arrows:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=M+PLUS+1p&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Rubik+Vinyl&display=swap');
 
 .aboutContainer {
   width: 100%;
@@ -46,145 +46,77 @@
       font-size: 26px;
     }
   }
-
-  .Comfort {
-    max-width: 1280px;
-    width: 100%;
-    padding: 32px;
-    border-radius: 16px;
+  .aboutCardBlock {
+    overflow: hidden;
+    max-width: 1180px;
     margin: 56px auto;
     display: flex;
-    align-items: center;
-    background: rgb(255, 255, 255);
+    align-items: stretch;
     justify-content: space-between;
-    gap: 28px;
-
+    gap: 20px;
+    .aboutCard {
+      height: auto;
+      max-width: 380px;
+      max-height: 256px;
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 25px 10px 25px 30px;
+      &__title {
+        margin-bottom: 10px;
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 120%;
+        color: #1a427f;
+      }
+      &_info {
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 7;
+        overflow: hidden;
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 120%;
+        color: #000000;
+      }
+    }
     @media (max-width: 1024px) {
-      flex-direction: column;
-      text-align: center;
-      background: rgb(255, 255, 255);
+      flex-wrap: wrap;
+      justify-content: center;
+      .aboutCard {
+        &__title {
+          font-size: 16px;
+        }
+        &__info {
+          font-size: 14px;
+        }
+      }
     }
 
     @media (max-width: 768px) {
-      padding: 20px;
-      background: rgb(255, 255, 255);
-      margin: 28px auto;
+      width: 100%;
+      max-width: auto;
+      .aboutCard {
+        &__title {
+          font-size: 14px;
+        }
+        &__info {
+          font-size: 12px;
+        }
+      }
     }
 
     @media (max-width: 480px) {
-      background: none repeat;
       margin: 28px auto;
     }
     @media (max-width: 320px) {
-      background: none repeat;
       margin: 20px auto;
     }
-
-    h2 {
-      display: flex;
-      align-items: center;
-      color: rgb(0, 0, 0);
-      font-family: Montserrat;
-      font-weight: 500;
-      font-size: 20px;
-      line-height: 130%;
-      align-self: stretch;
-      text-align: left;
-      flex: 1 1 40%;
-
-      @media (max-width: 1024px) {
-        flex: 1 1 100%;
-        display: flex;
-        padding: 0px;
-        color: rgb(0, 0, 0);
-        font-family: Montserrat;
-        font-size: 20px;
-        font-weight: 500;
-        line-height: 20px;
-      }
-
-      @media (max-width: 768px) {
-        display: flex;
-        padding: 0px;
-        color: rgb(0, 0, 0);
-        font-family: Montserrat;
-        font-size: 20px;
-        font-weight: 500;
-        align-self: stretch;
-      }
-
-      @media (max-width: 480px) {
-        width: 328px;
-        height: 240px;
-        padding: 0px;
-        color: rgb(0, 0, 0);
-        font-family: Montserrat;
-        font-size: 18px;
-        font-weight: 500;
-      }
-      @media (max-width: 320px) {
-        width: 270px;
-        height: 240px;
-        color: rgb(0, 0, 0);
-        font-family: Montserrat;
-        font-size: 16px;
-        font-weight: 500;
-      }
-    }
-
-    p {
-      font-size: 32px;
-      text-align: left;
-      font-weight: 700;
-      line-height: 130%;
-      padding: 0px;
-      color: rgb(0, 0, 0);
-      font-family: Mulish;
-      flex: 1 1 32%;
-
-      @media (max-width: 1024px) {
-        flex: 1 1 100%;
-      }
-
-      @media (max-width: 768px) {
-        color: rgb(0, 0, 0);
-        font-family: Mulish;
-        font-size: 30px;
-        font-weight: 700;
-        line-height: 40px;
-        text-align: left;
-
-        span {
-          font-weight: 700;
-        }
-      }
-
-      @media (max-width: 480px) {
-        color: rgb(0, 0, 0);
-        font-family: Mulish;
-        font-size: 26px;
-        font-weight: 700;
-        line-height: 40px;
-        text-align: left;
-
-        span {
-          font-weight: 700;
-        }
-      }
-      @media (max-width: 320px) {
-        text-align: left;
-        padding: 0px;
-        font-family: Mulish;
-        font-size: 24px;
-        font-weight: 700;
-        line-height: 40px;
-        span {
-          font-weight: 700;
-        }
-      }
-    }
   }
-
   .aboutWrapper {
     max-width: 1280px;
     margin: 0 auto;
