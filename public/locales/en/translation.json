@@ -1,6 +1,6 @@
 {
   "navigation": "Site Navigation",
-  "consortiumPromgrad": "CONSORTIUM PROMGRAD",
+  "consortiumPromgrad": "CONSORTIUM PROMGRADSTROY",
   "home": "Home",
   "about": "About Us",
   "works": "Our Works",
@@ -12,9 +12,25 @@
     "button": "Our works"
   },
   "aboutUs": {
+<<<<<<< HEAD
     "comfort": "Promgradstroy is a reliable partner in the field of design and drawings of buildings, offering a full range of services in three key areas: architectural design, engineering communications and structural solutions.",
     "companyDescription": "A consortium is a temporary association of several organizations to implement one project.",
     "sectionTitle": "About Us"
+=======
+    "sectionTitle": "About Us",
+    "Promgrad": {
+      "title": "Promgrad",
+      "info": "A reliable partner in building design, offering services in architecture, engineering communications and structural solutions."
+    },
+    "ArchiVibe": {
+      "title": "Archi Vibe",
+      "info": "A reliable partner in building development, offering services in the field of architecture, engineering solutions and structural design."
+    },
+    "BimKg": {
+      "title": "Bim kg",
+      "info": "A reliable ally in building design, providing services in the field of architecture, engineering systems and structural solutions."
+    }
+>>>>>>> d44ec84dbd934d58e5625cca8bce428cea730378
   },
   "directions": {
     "sectionTitle": "Our Directions",
