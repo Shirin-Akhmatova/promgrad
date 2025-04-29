@@ -11,8 +11,11 @@ interface CardData2 {
   images: string[];
 }
 
+
 const AboutUs: React.FC = () => {
   const { t } = useTranslation();
+
+  const aboutCards: string[] = ["Promgrad", "ArchiVibe", "BimKg"]
 
   const cards2: CardData2[] = [
     {
@@ -40,11 +43,16 @@ const AboutUs: React.FC = () => {
   return (
     <div className={styles.aboutContainer} id="about">
       <h1>{t("aboutUs.sectionTitle")}</h1>
-      <div className={styles.Comfort}>
-        <h2>{t("aboutUs.comfort")}</h2>
-        <p>{t("aboutUs.companyDescription")}</p>
+      <div className={styles.aboutCardBlock}>
+        {
+          aboutCards.map((card) => (
+            <div className={styles.aboutCard}>
+              <h2 className={styles.aboutCard__title}>{t(`aboutUs.${card}.title`)}</h2>
+              <p className={styles.aboutCard__info}>{t(`aboutUs.${card}.info`)}</p>
+            </div>
+          ))
+        }
       </div>
-
       <div className={styles.aboutWrapper}>
         <h4>{t("directions.sectionTitle")}</h4>
         <div className={styles.CardGrid}>
