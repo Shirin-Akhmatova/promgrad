@@ -42,7 +42,7 @@ const MainSlider = () => {
               {t("slider.button")}
             </button>
           </div>
-          <div className={styles.iconPartners}>
+          <div className={styles.iconPartners}> 
             <a href="#about">
               <img src={Organization01} />
             </a>
