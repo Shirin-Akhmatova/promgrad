@@ -15,9 +15,9 @@ import img2 from "../../assets/images/mainSlider2.jpg";
 import left from "../../assets/icons/Arrow_left.svg";
 import right from "../../assets/icons/Arrow_right.svg";
 
-import Organization01 from "../../assets/icons/Frame.svg";
-import Organization02 from "../../assets/icons/Frame (1).svg";
-import Organization03 from "../../assets/icons/Frame (2).svg";
+import Organization01 from "../../assets/icons/PGS Logo.svg";
+import Organization02 from "../../assets/icons/ArchVibe Logo.svg";
+import Organization03 from "../../assets/icons/BIM Logo.svg";
 
 import { useTranslation } from "react-i18next";
 
@@ -64,7 +64,6 @@ const MainSlider = () => {
       </div>
       <div className={styles.reactSwiper}>
         <Swiper
-          // Swiper modules
           modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
           spaceBetween={0}
           slidesPerView={1}
