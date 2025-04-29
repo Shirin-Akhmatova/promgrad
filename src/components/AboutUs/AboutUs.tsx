@@ -1,3 +1,4 @@
+import { useState, useEffect, useRef } from "react";
 import styles from "../../assets/styles/AboutUs.module.scss";
 import img4 from "./image/Rectangle (1).png";
 import img5 from "./image/Rectangle (2).png";
@@ -13,6 +14,8 @@ interface CardData2 {
 
 const AboutUs: React.FC = () => {
   const { t } = useTranslation();
+  const [cards, setCards] = useState<CardData2[]>([]);
+  const scrollRef = useRef<HTMLDivElement | null>(null);
 
   const cards2: CardData2[] = [
     {
@@ -37,6 +40,18 @@ const AboutUs: React.FC = () => {
     },
   ];
 
+  useEffect(() => {
+    setCards(cards2);
+  }, [t]);
+
+  const handleScroll = () => {
+    if (!scrollRef.current) return;
+    const { scrollLeft, clientWidth, scrollWidth } = scrollRef.current;
+    if (scrollLeft + clientWidth >= scrollWidth - 10) {
+      setCards((prev) => [...prev, ...cards2]);
+    }
+  };
+
   return (
     <div className={styles.aboutContainer} id="about">
       <h1>{t("aboutUs.sectionTitle")}</h1>
@@ -47,8 +62,12 @@ const AboutUs: React.FC = () => {
 
       <div className={styles.aboutWrapper}>
         <h4>{t("directions.sectionTitle")}</h4>
-        <div className={styles.CardGrid}>
-          {cards2.map((card, index) => (
+        <div
+          className={styles.CardGrid}
+          onScroll={handleScroll}
+          ref={scrollRef}
+        >
+          {cards.map((card, index) => (
             <div key={index} className={styles.aboutUsCard2}>
               <div>
                 {card.images.map((img, imgIndex) => (

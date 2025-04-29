@@ -239,16 +239,16 @@
   }
 
   h4 {
-    padding: 0 78px 32px 0;
-    font-size: 24px;
+    padding: 0 0 32px 0;
+    font-size: 32px;
     font-weight: 700;
-    line-height: 120%;
-    text-align: start;
-    color: #1a427f;
+    line-height: 40px;
+    text-align: center;
+    padding-top: 50px;
+    color: #000;
 
     @media (max-width: 1024px) {
-      padding-top: 20px;
-      padding: 0 16px;
+      padding: 0 78px 32px 0;
       font-family: Montserrat;
       font-weight: 700;
       font-size: 24px;
@@ -257,7 +257,7 @@
     }
 
     @media (max-width: 768px) {
-      padding-top: 20px;
+      padding: 0 78px 32px 0;
       font-size: 24px;
       line-height: 36px;
     }
@@ -283,6 +283,8 @@
     gap: 20px;
     padding-bottom: 40px;
     overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+
     &::-webkit-scrollbar {
       height: 0;
     }

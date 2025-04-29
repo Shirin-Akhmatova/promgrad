@@ -18,13 +18,6 @@ const OurResults: React.FC = () => {
 
   const cards: CardData[] = [
     {
-      number: 5,
-      title: t("card.years"),
-      subtitle: t("card.experience"),
-      heading: t("card.complex1"),
-      description: t("card.descriptions1"),
-    },
-    {
       number: 1245,
       title: "+",
       subtitle: t("card.projects"),
@@ -37,6 +30,13 @@ const OurResults: React.FC = () => {
       subtitle: t("card.clients"),
       heading: t("card.clientOrientation3"),
       description: t("card.descriptions3"),
+    },
+    {
+      number: 5,
+      title: t("card.years"),
+      subtitle: t("card.experience"),
+      heading: t("card.complex1"),
+      description: t("card.descriptions1"),
     },
   ];
 
