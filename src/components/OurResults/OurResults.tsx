@@ -18,6 +18,13 @@ const OurResults: React.FC = () => {
 
   const cards: CardData[] = [
     {
+      number: 5,
+      title: t("card.years"),
+      subtitle: t("card.experience"),
+      heading: t("card.complex1"),
+      description: t("card.descriptions1"),
+    },
+    {
       number: 1245,
       title: "+",
       subtitle: t("card.projects"),
@@ -31,13 +38,6 @@ const OurResults: React.FC = () => {
       heading: t("card.clientOrientation3"),
       description: t("card.descriptions3"),
     },
-    {
-      number: 5,
-      title: t("card.years"),
-      subtitle: t("card.experience"),
-      heading: t("card.complex1"),
-      description: t("card.descriptions1"),
-    },
   ];
 
   const [counts, setCounts] = useState<number[]>(
@@ -48,21 +48,25 @@ const OurResults: React.FC = () => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
+          if (entry.isIntersecting && !startCount) {
             setStartCount(true);
-            observer.disconnect(); // отключаем, чтобы не запускать заново
           }
         });
       },
-      { threshold: 0.3 } // элемент на 30% в зоне видимости
+      { threshold: 0.5 }
     );
 
-    if (containerRef.current) {
-      observer.observe(containerRef.current);
+    const currentRef = containerRef.current;
+    if (currentRef) {
+      observer.observe(currentRef);
     }
 
-    return () => observer.disconnect();
-  }, []);
+    return () => {
+      if (currentRef) {
+        observer.unobserve(currentRef);
+      }
+    };
+  }, [startCount]);
 
   useEffect(() => {
     if (!startCount) return;
@@ -71,8 +75,8 @@ const OurResults: React.FC = () => {
       .map((card, index) => {
         if (card.number === undefined) return null;
         const end = card.number;
-        const duration = card.number === 5 ? 3000 : 2000; // быстрее — 2–3 секунды
-        const step = Math.ceil(end / (duration / 30)); // шаг с интервалом 30ms
+        const duration = card.number === 5 ? 3000 : 2000;
+        const step = Math.ceil(end / (duration / 30));
         const interval = setInterval(() => {
           setCounts((prevCounts) => {
             const newCounts = [...prevCounts];
@@ -98,19 +102,19 @@ const OurResults: React.FC = () => {
         <h1 className={styles.ourWork_h1}>{t("ourResults.sectionTitle")}</h1>
         <p className={style.resultsTitle}>{t("ourResults.resultsTitle")}</p>
       </div>
-      <div style={{ justifyContent: "center" }} className={styles.CardGrid}>
+      <div style={{ justifyContent: "center" }} className={style.CardGrid}>
         {cards.map((card, index) => (
-          <div key={index} className={styles.aboutUsCard}>
-            <div className={styles.textContent}>
-              <div className={styles.stats}>
+          <div key={index} className={style.aboutUsCard}>
+            <div className={style.textContent}>
+              <div className={style.stats}>
                 {card.number !== undefined && (
-                  <span className={styles.years}>
+                  <span className={style.years}>
                     {counts[index]} {card.title}
                   </span>
                 )}
-                <p className={styles.subtitle}>{card.subtitle}</p>
+                <p className={style.subtitle}>{card.subtitle}</p>
               </div>
-              <div className={styles.content}>
+              <div className={style.content}>
                 <h3>{card.heading}</h3>
                 <p>{card.description}</p>
               </div>
