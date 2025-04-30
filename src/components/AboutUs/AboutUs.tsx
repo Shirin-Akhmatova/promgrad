@@ -95,7 +95,7 @@ const AboutUs: React.FC = () => {
                 <h3>{card.title}</h3>
                 {width < 428 ? (
                   <p>
-                    {card.description.slice(0, 100)}
+                    {isOpen ? card.description : card.description.slice(0, 100)}
                     {isOpen ? (
                       <span onClick={() => setIsOpen(false)}>...Закрыть</span>
                     ) : (
