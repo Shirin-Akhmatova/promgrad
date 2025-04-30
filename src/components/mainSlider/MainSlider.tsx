@@ -42,7 +42,7 @@ const MainSlider = () => {
               {t("slider.button")}
             </button>
           </div>
-          <div className={styles.iconPartners}> 
+          <div className={styles.iconPartners}>
             <a href="#about">
               <img src={Organization01} />
             </a>
@@ -67,6 +67,7 @@ const MainSlider = () => {
           modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
           spaceBetween={0}
           slidesPerView={1}
+          loop={true}
           navigation={{
             nextEl: `.${styles.customNext}`,
             prevEl: `.${styles.customPrev}`,
