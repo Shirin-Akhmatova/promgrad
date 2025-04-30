@@ -44,9 +44,20 @@
   gap: 8px;
   margin-bottom: 16px;
 }
+.icons {
+  align-items: center;
+  display: flex;
+}
 .icons img {
   margin-right: 16px;
   cursor: pointer;
+  width: 24px;
+  height: 24px;
+}
+
+.icons span:nth-child(n + 4) img {
+  width: 20px;
+  height: 20px;
 }
 
 .button {

@@ -6,7 +6,9 @@ import locatorIcon from "../../assets/icons/locator.svg";
 import telegramIcon from "../../assets/icons/Component (2).svg";
 import whatsAppIcon from "../../assets/icons/Component (3).svg";
 import instagramIcon from "../../assets/icons/Component (4).svg";
-import twitterIcon from "../../assets/icons/Component (5).svg";
+import VK from "../../assets/icons/VK (1).svg";
+import Facebook from "../../assets/icons/facebookLogo.svg";
+import LinkedIn from "../../assets/icons/linkedinLogo.svg";
 import { useModalStore } from "../../store/modalStore";
 import { useTranslation } from "react-i18next";
 
@@ -52,7 +54,13 @@ const ContactCard: React.FC<ContactCardProps> = ({ phone, email, address }) => {
             <img src={instagramIcon} />
           </span>
           <span>
-            <img src={twitterIcon} />
+            <img src={Facebook} />
+          </span>
+          <span>
+            <img src={LinkedIn} />
+          </span>
+          <span>
+            <img src={VK} />
           </span>
         </div>
 

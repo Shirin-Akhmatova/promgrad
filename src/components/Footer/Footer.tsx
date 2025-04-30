@@ -2,8 +2,8 @@ import styles from "./Footer.module.scss";
 import Telegram from "../../assets/icons/Icons-21.svg";
 import WhatsApp from "../../assets/icons/Icons-22.svg";
 import Instagram from "../../assets/icons/Component.svg";
-import VK from "../../assets/icons/VK.svg";
-import Facebook from "../../assets/icons/Facebook.svg";
+import VK from "../../assets/icons/Frame 5.svg";
+import Facebook from "../../assets/icons/Frame 6.svg";
 import LinkedIn from "../../assets/icons/LinkedIn.svg";
 import { useTranslation } from "react-i18next";
 
@@ -28,11 +28,11 @@ const Footer = () => {
             <img src={WhatsApp} />
           </a>
           <a
-            href="https://www.linkedin.com/"
+            href="https://www.facebook.com/"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img src={LinkedIn} />
+            <img src={Facebook} />
           </a>
           <a href="#home" className={styles.navbar__logo_hidden}>
             {t("consortiumPromgrad")}
@@ -44,15 +44,15 @@ const Footer = () => {
           >
             <img src={Instagram} />
           </a>
-          <a href="https://vk.com/" target="_blank" rel="noopener noreferrer">
-            <img src={VK} />
-          </a>
           <a
-            href="https://www.facebook.com/"
+            href="https://www.linkedin.com/"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img src={Facebook} />
+            <img src={LinkedIn} />
+          </a>
+          <a href="https://vk.com/" target="_blank" rel="noopener noreferrer">
+            <img src={VK} />
           </a>
         </div>
         <ul className={styles.navbar__menu}>
