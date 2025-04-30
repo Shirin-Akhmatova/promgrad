@@ -12,13 +12,15 @@ interface CardData2 {
   images: string[];
 }
 
-
 const AboutUs: React.FC = () => {
   const { t } = useTranslation();
   const [cards, setCards] = useState<CardData2[]>([]);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
   const scrollRef = useRef<HTMLDivElement | null>(null);
 
-  const aboutCards: string[] = ["Promgrad", "ArchiVibe", "BimKg"]
+  const aboutCards: string[] = ["Promgrad", "ArchiVibe", "BimKg"];
+
+  const width = window.innerWidth;
 
   const cards2: CardData2[] = [
     {
@@ -59,14 +61,16 @@ const AboutUs: React.FC = () => {
     <div className={styles.aboutContainer} id="about">
       <h1>{t("aboutUs.sectionTitle")}</h1>
       <div className={styles.aboutCardBlock}>
-        {
-          aboutCards.map((card) => (
-            <div className={styles.aboutCard}>
-              <h2 className={styles.aboutCard__title}>{t(`aboutUs.${card}.title`)}</h2>
-              <p className={styles.aboutCard__info}>{t(`aboutUs.${card}.info`)}</p>
-            </div>
-          ))
-        }
+        {aboutCards.map((card) => (
+          <div className={styles.aboutCard}>
+            <h2 className={styles.aboutCard__title}>
+              {t(`aboutUs.${card}.title`)}
+            </h2>
+            <p className={styles.aboutCard__info}>
+              {t(`aboutUs.${card}.info`)}
+            </p>
+          </div>
+        ))}
       </div>
       <div className={styles.aboutWrapper}>
         <h4>{t("directions.sectionTitle")}</h4>
@@ -89,7 +93,18 @@ const AboutUs: React.FC = () => {
               </div>
               <div className={styles.card2Content}>
                 <h3>{card.title}</h3>
-                <p>{card.description}</p>
+                {width < 428 ? (
+                  <p>
+                    {card.description.slice(0, 100)}
+                    {isOpen ? (
+                      <span onClick={() => setIsOpen(false)}>...Закрыть</span>
+                    ) : (
+                      <span onClick={() => setIsOpen(true)}>...Дальше</span>
+                    )}
+                  </p>
+                ) : (
+                  <p>{card.description}</p>
+                )}
               </div>
             </div>
           ))}
