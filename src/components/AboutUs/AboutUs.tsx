@@ -17,11 +17,7 @@ const AboutUs: React.FC = () => {
   const { t } = useTranslation();
   const [cards, setCards] = useState<CardData2[]>([]);
   const scrollRef = useRef<HTMLDivElement | null>(null);
-<<<<<<< HEAD
   const { expanded, toggleAll } = useDescriptionToggle();
-=======
-  const width = window.innerWidth;
->>>>>>> 81bedaf1b05d78eefce4ea445f306f5c1a7af629
 
   const aboutCards: string[] = ["Promgrad", "ArchiVibe", "BimKg"];
 
@@ -49,7 +45,7 @@ const AboutUs: React.FC = () => {
   ];
 
   useEffect(() => {
-    setCards([...cards2, ...cards2, ...cards2]); 
+    setCards([...cards2, ...cards2, ...cards2]);
   }, [t]);
 
   const handleScroll = () => {
@@ -76,13 +72,8 @@ const AboutUs: React.FC = () => {
     <div className={styles.aboutContainer} id="about">
       <h1>{t("aboutUs.sectionTitle")}</h1>
       <div className={styles.aboutCardBlock}>
-<<<<<<< HEAD
-        {aboutCards.map((card) => (
-          <div key={card} className={styles.aboutCard}>
-=======
         {aboutCards.map((card, index) => (
           <div className={styles.aboutCard} key={index}>
->>>>>>> 81bedaf1b05d78eefce4ea445f306f5c1a7af629
             <h2 className={styles.aboutCard__title}>
               {t(`aboutUs.${card}.title`)}
             </h2>
