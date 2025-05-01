@@ -70,7 +70,9 @@
   },
   "ourSpecialists": {
     "sectionTitle": "Биздин адистер",
-    "specialistsTitle": "Өз тармагындагы адистер"
+    "specialistsTitle": "Өз тармагындагы адистер",
+    "showMore": "Толуураак",
+    "showLess": "Жашыруу"
   },
   "ourContacts": {
     "sectionTitle": "Биздин байланыштар",

@@ -10,6 +10,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  overflow: hidden; /* Отключаем прокрутку по всему блоку */
 
   .specialistsWrapper {
     width: 100%;
@@ -103,6 +104,8 @@
 
   .CardGrid {
     margin: 0 50px;
+    width: 90%;
+    max-width: 100%;
     display: flex;
     gap: 20px;
     overflow-x: auto;
@@ -154,12 +157,49 @@
           padding: 16px 0 0;
         }
         .description {
+          padding-top: 16px;
           font-size: 16px;
-          font-weight: 400;
-          font-family: Mulish, sans-serif;
+          font-family: Montserrat, sans-serif;
           color: #474747;
           line-height: 22px;
-          padding: 16px 0 0;
+          transition: max-height 0.3s ease;
+          overflow: hidden;
+          text-overflow: ellipsis;
+
+          max-height: none;
+          display: -webkit-box;
+          -webkit-line-clamp: unset;
+          -webkit-box-orient: vertical;
+
+          @media (max-width: 768px) {
+            max-height: 100px;
+            -webkit-line-clamp: 4;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+          }
+        }
+        .expanded {
+          max-height: none !important;
+          -webkit-line-clamp: unset !important;
+        }
+        .readMoreBtn {
+          display: none;
+          background: none;
+          border: none;
+          color: #1a427f;
+          font-size: 16px;
+          font-weight: 600;
+          margin-top: 8px;
+          cursor: pointer;
+          padding: 0;
+          font-family: Montserrat, sans-serif;
+
+          @media (max-width: 768px) {
+            display: inline-block;
+          }
+          @media (max-width: 320px) {
+            display: inline-block;
+          }
         }
       }
     }
@@ -167,14 +207,7 @@
 
   @media (max-width: 1024px) {
     .CardGrid {
-      margin: 0;
-      flex-direction: column;
-      gap: 26px;
-      overflow-x: visible;
-      overflow-y: visible;
-      margin-left: 0;
-      padding: 0;
-      scroll-snap-type: none;
+      gap: 16px;
       padding: 0 16px 50px;
     }
     .specialistsCard {
@@ -191,19 +224,10 @@
   }
   @media (max-width: 768px) {
     .CardGrid {
-      margin: 0;
-      flex-direction: column;
-      gap: 26px;
-      overflow-x: visible;
-      overflow-y: visible;
-      margin-left: 0;
-      padding: 0;
-      scroll-snap-type: none;
-      padding: 0 16px 50px;
+      gap: 14px;
     }
     .specialistsCard {
       max-width: 100%;
-      scroll-snap-align: none;
     }
     .position {
       padding: 16px 0 0 0;
@@ -219,18 +243,19 @@
     }
     .CardGrid {
       margin: 0;
-      flex-direction: column;
-      overflow-x: visible;
-      overflow-y: visible;
-      margin-left: 0;
-      padding: 0;
-      gap: 26px;
-      scroll-snap-type: none;
+      flex-direction: row;
+      overflow-x: scroll;
+      overflow-y: hidden;
       padding: 0 16px 50px;
+      gap: 16px;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
     }
     .specialistsCard {
-      max-width: 100%;
-      scroll-snap-align: none;
+      width: 100%;
+      flex: 0 0 auto;
+      scroll-snap-align: start;
+      max-width: none;
     }
     .position {
       padding: 16px 0 0 0;

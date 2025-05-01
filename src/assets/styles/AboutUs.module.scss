@@ -365,9 +365,48 @@
       }
     }
 
+    .description {
+      overflow: visible;
+      white-space: normal;
+    }
+
+    .readMoreBtn {
+      display: none;
+      background: none;
+      border: none;
+      color: #1a427f;
+      font-size: 14px;
+      font-weight: 600;
+      margin-top: 8px;
+      cursor: pointer;
+      padding: 0;
+      font-family: Montserrat, sans-serif;
+
+      @media (max-width: 768px) {
+        display: inline-block;
+      }
+      @media (max-width: 320px) {
+        display: inline-block;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .description {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+      }
+
+      .expanded {
+        overflow: visible;
+        -webkit-line-clamp: unset;
+      }
+    }
+
     .aboutUsCard2 {
       max-width: 360px;
-      max-height: 630px;
       margin: 20px 0 0 0;
       border-radius: 12px;
       overflow: hidden;
