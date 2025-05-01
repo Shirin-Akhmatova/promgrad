@@ -72,6 +72,7 @@ const Modal = ({ project, onClose }: ModalProps) => {
             }}
             pagination={{ clickable: true }}
             scrollbar={{ draggable: true }}
+            loop={true}
             className={styles.card_swiper}
           >
             {images.map((img, index) => (
