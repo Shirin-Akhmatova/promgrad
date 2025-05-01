@@ -17,10 +17,9 @@ const AboutUs: React.FC = () => {
   const [cards, setCards] = useState<CardData2[]>([]);
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const scrollRef = useRef<HTMLDivElement | null>(null);
+  const width = window.innerWidth;
 
   const aboutCards: string[] = ["Promgrad", "ArchiVibe", "BimKg"];
-
-  const width = window.innerWidth;
 
   const cards2: CardData2[] = [
     {
@@ -46,14 +45,26 @@ const AboutUs: React.FC = () => {
   ];
 
   useEffect(() => {
-    setCards(cards2);
+    setCards([...cards2, ...cards2, ...cards2]); 
   }, [t]);
 
   const handleScroll = () => {
     if (!scrollRef.current) return;
     const { scrollLeft, clientWidth, scrollWidth } = scrollRef.current;
+
     if (scrollLeft + clientWidth >= scrollWidth - 10) {
       setCards((prev) => [...prev, ...cards2]);
+    }
+
+    if (scrollLeft <= 10) {
+      setCards((prev) => [...cards2, ...prev]);
+
+      setTimeout(() => {
+        if (scrollRef.current) {
+          const cardWidth = scrollRef.current.scrollWidth / cards.length;
+          scrollRef.current.scrollLeft = cardWidth * cards2.length;
+        }
+      }, 0);
     }
   };
 
@@ -61,8 +72,8 @@ const AboutUs: React.FC = () => {
     <div className={styles.aboutContainer} id="about">
       <h1>{t("aboutUs.sectionTitle")}</h1>
       <div className={styles.aboutCardBlock}>
-        {aboutCards.map((card) => (
-          <div className={styles.aboutCard}>
+        {aboutCards.map((card, index) => (
+          <div className={styles.aboutCard} key={index}>
             <h2 className={styles.aboutCard__title}>
               {t(`aboutUs.${card}.title`)}
             </h2>
@@ -72,6 +83,7 @@ const AboutUs: React.FC = () => {
           </div>
         ))}
       </div>
+
       <div className={styles.aboutWrapper}>
         <h4>{t("directions.sectionTitle")}</h4>
         <div
@@ -87,7 +99,7 @@ const AboutUs: React.FC = () => {
                     className={styles.imgHan}
                     key={imgIndex}
                     src={img}
-                    alt="Card Image"
+                    alt="Card"
                   />
                 ))}
               </div>
