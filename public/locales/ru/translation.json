@@ -64,7 +64,9 @@
   },
   "ourSpecialists": {
     "sectionTitle": "Наши специалисты",
-    "specialistsTitle": "Профессионалы своего дела"
+    "specialistsTitle": "Профессионалы своего дела",
+    "showMore": "Подробнее",
+    "showLess": "Скрыть"
   },
   "ourContacts": {
     "sectionTitle": "Наши контакты",

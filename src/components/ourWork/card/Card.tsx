@@ -72,7 +72,6 @@ const Card = ({ project, onClick }: CardProps) => {
             },
           }}
           speed={380}
-          // pagination={{ clickable: true }}
           pagination={{
             clickable: true,
             renderBullet: (index, className) => {
@@ -80,6 +79,7 @@ const Card = ({ project, onClick }: CardProps) => {
             },
           }}
           scrollbar={{ draggable: true }}
+          loop={true}
           className={styles.card_swiper}
         >
           {images.map((img, index) => (

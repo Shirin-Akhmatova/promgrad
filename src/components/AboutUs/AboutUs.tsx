@@ -1,10 +1,11 @@
-import { useState, useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import styles from "../../assets/styles/AboutUs.module.scss";
 import img4 from "./image/Rectangle (1).png";
 import img5 from "./image/Rectangle (2).png";
 import img6 from "./image/Rectangle (3).png";
 import img7 from "./image/Rectangle (4).png";
 import { useTranslation } from "react-i18next";
+import { useDescriptionToggle } from "../../store/useDescriptionToggle";
 
 interface CardData2 {
   title: string;
@@ -15,12 +16,10 @@ interface CardData2 {
 const AboutUs: React.FC = () => {
   const { t } = useTranslation();
   const [cards, setCards] = useState<CardData2[]>([]);
-  const [isOpen, setIsOpen] = useState<boolean>(false);
   const scrollRef = useRef<HTMLDivElement | null>(null);
+  const { expanded, toggleAll } = useDescriptionToggle();
 
   const aboutCards: string[] = ["Promgrad", "ArchiVibe", "BimKg"];
-
-  const width = window.innerWidth;
 
   const cards2: CardData2[] = [
     {
@@ -46,14 +45,26 @@ const AboutUs: React.FC = () => {
   ];
 
   useEffect(() => {
-    setCards(cards2);
+    setCards([...cards2, ...cards2, ...cards2]);
   }, [t]);
 
   const handleScroll = () => {
     if (!scrollRef.current) return;
     const { scrollLeft, clientWidth, scrollWidth } = scrollRef.current;
+
     if (scrollLeft + clientWidth >= scrollWidth - 10) {
       setCards((prev) => [...prev, ...cards2]);
+    }
+
+    if (scrollLeft <= 10) {
+      setCards((prev) => [...cards2, ...prev]);
+
+      setTimeout(() => {
+        if (scrollRef.current) {
+          const cardWidth = scrollRef.current.scrollWidth / cards.length;
+          scrollRef.current.scrollLeft = cardWidth * cards2.length;
+        }
+      }, 0);
     }
   };
 
@@ -61,8 +72,8 @@ const AboutUs: React.FC = () => {
     <div className={styles.aboutContainer} id="about">
       <h1>{t("aboutUs.sectionTitle")}</h1>
       <div className={styles.aboutCardBlock}>
-        {aboutCards.map((card) => (
-          <div className={styles.aboutCard}>
+        {aboutCards.map((card, index) => (
+          <div className={styles.aboutCard} key={index}>
             <h2 className={styles.aboutCard__title}>
               {t(`aboutUs.${card}.title`)}
             </h2>
@@ -72,6 +83,7 @@ const AboutUs: React.FC = () => {
           </div>
         ))}
       </div>
+
       <div className={styles.aboutWrapper}>
         <h4>{t("directions.sectionTitle")}</h4>
         <div
@@ -87,24 +99,24 @@ const AboutUs: React.FC = () => {
                     className={styles.imgHan}
                     key={imgIndex}
                     src={img}
-                    alt="Card Image"
+                    alt="Card"
                   />
                 ))}
               </div>
               <div className={styles.card2Content}>
                 <h3>{card.title}</h3>
-                {width < 428 ? (
-                  <p>
-                    {isOpen ? card.description : card.description.slice(0, 100)}
-                    {isOpen ? (
-                      <span onClick={() => setIsOpen(false)}>...Закрыть</span>
-                    ) : (
-                      <span onClick={() => setIsOpen(true)}>...Дальше</span>
-                    )}
-                  </p>
-                ) : (
-                  <p>{card.description}</p>
-                )}
+                <p
+                  className={`${styles.description} ${
+                    expanded ? styles.expanded : ""
+                  }`}
+                >
+                  {card.description}
+                </p>
+                <button onClick={toggleAll} className={styles.readMoreBtn}>
+                  {expanded
+                    ? t("ourSpecialists.showLess")
+                    : t("ourSpecialists.showMore")}
+                </button>
               </div>
             </div>
           ))}

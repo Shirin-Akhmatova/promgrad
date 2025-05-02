@@ -64,7 +64,9 @@
   },
   "ourSpecialists": {
     "sectionTitle": "Our specialists",
-    "specialistsTitle": "Professionals in their field"
+    "specialistsTitle": "Professionals in their field",
+    "showMore": "Read more",
+    "showLess": "Hide"
   },
   "ourContacts": {
     "sectionTitle": "Our Contacts",
