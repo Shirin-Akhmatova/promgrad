@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from "react";
 import styles from "./OurSpecialists.module.scss";
 import { useTranslation } from "react-i18next";
 import { useSpecialists } from "../../store/useSpecialists";
@@ -7,6 +8,35 @@ const OurSpecialists: React.FC = () => {
   const { t } = useTranslation();
   const { specialists, loading, error } = useSpecialists();
   const { expanded, toggleAll } = useDescriptionToggle();
+
+  const [loopedSpecialists, setLoopedSpecialists] = useState(specialists);
+  const scrollRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    setLoopedSpecialists([...specialists, ...specialists, ...specialists]);
+  }, [specialists]);
+
+  const handleScroll = () => {
+    const container = scrollRef.current;
+    if (!container) return;
+
+    const { scrollLeft, scrollWidth, clientWidth } = container;
+
+    if (scrollLeft + clientWidth >= scrollWidth - 10) {
+      setLoopedSpecialists((prev) => [...prev, ...specialists]);
+    }
+
+    if (scrollLeft <= 10) {
+      setLoopedSpecialists((prev) => [...specialists, ...prev]);
+      setTimeout(() => {
+        if (scrollRef.current) {
+          const cardWidth =
+            scrollRef.current.scrollWidth / loopedSpecialists.length;
+          scrollRef.current.scrollLeft = cardWidth * specialists.length;
+        }
+      }, 0);
+    }
+  };
 
   return (
     <div className={styles.specialistsContainer}>
@@ -20,13 +50,21 @@ const OurSpecialists: React.FC = () => {
       {loading && <p>{t("loading")}</p>}
       {error && <p className={styles.error}>{error}</p>}
 
-      <div className={styles.CardGrid}>
-        {specialists.map((spec) => {
+      <div className={styles.CardGrid} ref={scrollRef} onScroll={handleScroll}>
+        {loopedSpecialists.map((spec, index) => {
           const isExpanded = expanded || false;
 
           return (
-            <div key={spec.id} className={styles.specialistsCard}>
-              <img className={styles.imgHan} src={spec.photo} />
+            <div
+              key={`${spec.id}-${index}`}
+              className={styles.specialistsCard}
+              style={{ display: "inline-block", verticalAlign: "top" }}
+            >
+              <img
+                className={styles.imgHan}
+                src={spec.photo}
+                alt={spec.name_and_surname}
+              />
               <div className={styles.card2Content}>
                 <h3>{spec.name_and_surname}</h3>
                 <p className={styles.position}>
@@ -39,10 +77,7 @@ const OurSpecialists: React.FC = () => {
                 >
                   {spec.description}
                 </p>
-                <button
-                  onClick={() => toggleAll()}
-                  className={styles.readMoreBtn}
-                >
+                <button onClick={toggleAll} className={styles.readMoreBtn}>
                   {isExpanded
                     ? t("ourSpecialists.showLess")
                     : t("ourSpecialists.showMore")}
